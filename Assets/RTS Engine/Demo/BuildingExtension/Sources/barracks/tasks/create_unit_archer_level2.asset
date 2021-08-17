@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf428716af4f8f438cb34c5c761450b, type: 3}
+  m_Name: create_unit_archer_level2
+  m_EditorClassIdentifier: 
+  data:
+    code: create_unit_archer_level2
+    enabled: 1
+    displayType: 1
+    icon: {fileID: 21300000, guid: 9ac0f9115f75b764eb0f4a9d8147a776, type: 3}
+    panelCategory: 0
+    forceSlot: 1
+    slotIndex: 2
+    tooltipEnabled: 1
+    description: Create Archer 2.
+    hideTooltipOnClick: 0
+    reloadTime: 11
+    cursor:
+      icon: {fileID: 0}
+      hotspot: {x: 0, y: 0}

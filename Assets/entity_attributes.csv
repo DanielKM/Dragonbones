@@ -1,0 +1,13 @@
+,type,implements,attack_power,population,easy_min,easy_max,hard_min,hard_max,per_building_center
+villager,unit,"IEntity, IFactionEntity, IUnit",0,1,0.1/3,0.2/18,0.1/5,0.2/20,NULL
+siege_tower,unit,"IEntity, IFactionEntity, IUnit",0,3,0.05/1,0.1/3,0.05/2,0.05/4,NULL
+light_infantry,unit,"IEntity, IFactionEntity, IUnit",13,1,0.15/2,0.2/17,0.15/5,0.2/20,NULL
+heavy_infantry,unit,"IEntity, IFactionEntity, IUnit",17,1,0.15/2,0.2/14,0.15/4,0.2/17,NULL
+healer,unit,"IEntity, IFactionEntity, IUnit",0,1,0.05/2,0.05/3,0.05/2,0.05/5,NULL
+converter,unit,"IEntity, IFactionEntity, IUnit",0,1,0.05/2,0.05/3,0.05/2,0.05/4,NULL
+catapult,unit,"IEntity, IFactionEntity, IUnit",0,3,0.05/2,0.05/4,0.05/3,0.1/6,NULL
+archer_level1,unit,"IEntity, IFactionEntity, IUnit",14,1,0.15/2,0.2/14,0.15/4,0.2/19,NULL
+archer_level2,unit,"IEntity, IFactionEntity, IUnit",24,1,0.15/2,0.2/14,0.15/4,0.2/19,NULL
+barracks_level2,building,"IEntity, IFactionEntity, IBuilding",14,0,,,,,TRUE
+tower_level1,building,"IEntity, IFactionEntity, IBuilding",14,0,,,,,TRUE
+tower_level2,building,"IEntity, IFactionEntity, IBuilding",24,0,,,,,TRUE

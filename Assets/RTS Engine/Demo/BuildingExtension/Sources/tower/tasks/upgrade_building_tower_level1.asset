@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf428716af4f8f438cb34c5c761450b, type: 3}
+  m_Name: upgrade_building_tower_level1
+  m_EditorClassIdentifier: 
+  data:
+    code: upgrade_building_tower_level1
+    enabled: 1
+    displayType: 0
+    icon: {fileID: 21300000, guid: e5b91d946a6712b44bd2fe0ad636f72a, type: 3}
+    panelCategory: 1
+    forceSlot: 1
+    slotIndex: 0
+    tooltipEnabled: 1
+    description: Upgrade Tower 1 to Tower 2.
+    hideTooltipOnClick: 1
+    reloadTime: 20
+    cursor:
+      icon: {fileID: 0}
+      hotspot: {x: 0, y: 0}

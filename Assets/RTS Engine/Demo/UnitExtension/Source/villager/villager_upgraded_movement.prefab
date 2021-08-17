@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &667197928241164540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2134850950125518320}
+  - component: {fileID: 4156009481459806536}
+  - component: {fileID: 8107823037729207694}
+  m_Layer: 0
+  m_Name: villager_upgraded_movement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2134850950125518320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667197928241164540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4156009481459806536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667197928241164540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5753921ccbe21134dad27bb458d7cfb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: movement_upgraded
+  isActive: 1
+  priority: -1
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 0
+    reloadTime: 5
+    range: 10
+    idleOnly: 0
+  setTargetTaskUI: {fileID: 11400000, guid: 061c8973e3c577f4ea6c9b563d77bf00, type: 2}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 0
+      defaultValue: 2
+  movableTerrainAreas:
+  - {fileID: 11400000, guid: 37d2dffab9a31a84c81d764228531ba7, type: 2}
+  formation:
+    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    properties:
+      floatProperties:
+      - name: spacing
+        value: 0.3
+      intProperties: []
+  speed:
+    value: 12
+  acceleration:
+    value: 999
+  mvtAngularSpeed:
+    value: 999
+  canMoveRotate: 1
+  minMoveAngle: 40
+  canIdleRotate: 1
+  smoothIdleRotation: 1
+  idleAngularSpeed:
+    value: 999
+  mvtAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 0
+      defaultValue: 0
+  invalidMvtPathAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 0
+      defaultValue: 0
+--- !u!114 &8107823037729207694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667197928241164540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8083c6726f780bf44ae59c7cee549d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

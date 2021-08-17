@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a5909d87adb784baec7259f49cc8d6, type: 3}
+  m_Name: town_center_npc_easy_npc_regulator_data
+  m_EditorClassIdentifier: 
+  minAmountRange:
+    _min: 1
+    _max: 1
+    test: 0
+  maxAmountRange:
+    _min: 1
+    _max: 2
+    test: 0
+  maxPendingAmount:
+    _min: 1
+    _max: 1
+    test: 0
+  createOnDemand: 1
+  startCreatingAfter:
+    _min: 300
+    _max: 350
+    test: 0
+  spawnReloadRange:
+    _min: 15
+    _max: 20
+    test: 0
+  autoCreate: 1
+  regulatePerBuildingCenter: 0
+  placeAround:
+  - entityType:
+      codes:
+      - npc_town_center_build_around
+      categories: []
+    range:
+      _min: 1.5
+      _max: 7
+      test: 0
+  forcePlaceAround: 1
+  canRotate: 0

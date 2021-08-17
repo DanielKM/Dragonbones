@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+          <Title>Require True (Logger)</Title>
+          <Description>Generates an if statement that uses a logger service to require that a boolean expression is true.</Description>
+          <Author>Oussama Bouanani</Author>
+          <Shortcut>reqTrue</Shortcut>
+        </Header>
+        <Snippet>
+          <Code Language="CSharp">
+              <![CDATA[
+              if(!$LoggerField$.RequireTrue($TestStatement$,
+                $$"[{GetType().Name}] $FailureMessage$"))
+                return; $end$]]>
+          </Code>
+          <Declarations>
+            <Literal>
+              <ID>LoggerField</ID>
+              <ToolTip>Name of the field that has the logger service.</ToolTip>
+              <Default>logger</Default>
+            </Literal>
+            <Literal>
+              <ID>TestStatement</ID>
+              <ToolTip>Name of the field that represents the boolean expression to test.</ToolTip>
+              <Default>booleanExpression</Default>
+            </Literal>
+            <Literal>
+              <ID>FailureMessage</ID>
+              <ToolTip>Message that gets logged when the test statement is false.</ToolTip>
+              <Default>Test statement is false!</Default>
+            </Literal>
+          </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
