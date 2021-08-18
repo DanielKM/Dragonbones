@@ -15,19 +15,19 @@ TagManager:
   - 
   - GroundTerrain
   - Obstacle
-  - 
-  - 
-  - 
+  - Building
+  - Resources
+  - Unit
   - Border
-  - 
-  - 
+  - Hidden
+  - GroundUnitTargetPos
   - ToBePlaced
-  - 
+  - Treasure
   - MinimapUI
   - HoverHealthBar
   - MvtTargetObj
   - AllCams
-  - 
+  - AirUnitTargetPos
   - AirTerrain
   - EntitySelection
   - 
