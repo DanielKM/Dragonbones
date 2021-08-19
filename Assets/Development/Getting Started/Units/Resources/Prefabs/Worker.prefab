@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   code: movement
   isActive: 1
   priority: 0
@@ -261,6 +261,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1346672618781911430}
   - component: {fileID: 4495960666899269724}
+  - component: {fileID: 2778319567306012267}
+  - component: {fileID: 5373467219355321152}
   m_Layer: 12
   m_Name: unit_components
   m_TagString: Untagged
@@ -322,7 +324,8 @@ MonoBehaviour:
       defaultValue: 2
   progressOverrideController:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 22100000, guid: 2fff9ddd7e166114ca9dd003288b1b06, type: 2}
   progressDuration: 1
   progressMaxDistance: 1
   inProgressObject: {fileID: 2080154078430498068}
@@ -354,6 +357,15 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 0}
       color: {r: 0, g: 0, b: 0, a: 0}
+  - taskTitle: 'Place Building: barrack_level1'
+    prefabObject: {fileID: 1757281130161208, guid: 3eb2c20080a7fec4dac2031ee35cbf78,
+      type: 3}
+    taskUI: {fileID: 11400000, guid: fd1e6260970937443944df9b1991c0fd, type: 2}
+    requiredResources: []
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
   upgradeTargetCreationTasks: []
   constructionAudio:
     fetchType: 0
@@ -362,6 +374,107 @@ MonoBehaviour:
     cooldown:
       enabled: 0
       defaultValue: 0
+--- !u!114 &2778319567306012267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4301144014425258921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b611935c044ac3479865dddaa61c62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabID:
+    x: 0
+    y: 2
+  code: collection_component
+  isActive: 1
+  priority: 1
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 1
+    reloadTime: 1
+    range: 20
+    idleOnly: 1
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 0
+      defaultValue: 0
+  progressEnabledAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressOverrideController:
+    fetchType: 0
+    items:
+    - {fileID: 22100000, guid: 30e925fc2c65f6c4e887dfc21f80fd63, type: 2}
+  progressDuration: 1
+  progressMaxDistance: 0.2
+  inProgressObject: {fileID: 0}
+  sourceEffect: {fileID: 0}
+  targetEffect: {fileID: 0}
+  collectableResources:
+  - type: {fileID: 11400000, guid: b49040b772bf6f743aa1c2d0e7594530, type: 2}
+    amount: 10
+    obj: {fileID: 4869238990860591624}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 2fff9ddd7e166114ca9dd003288b1b06, type: 2}
+--- !u!114 &5373467219355321152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4301144014425258921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160a6844ec79b1a46bd1ada800ddf31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tabID:
+    x: 0
+    y: 0
+  code: dropoff_source_component
+  isActive: 1
+  priority: 2
+  requireIdleEntity: 0
+  targetFinderData:
+    enabled: 0
+    reloadTime: 1
+    range: 100
+    idleOnly: 0
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 0
+      defaultValue: 0
+  targetPicker:
+    type: 0
+    options:
+      codes: []
+      categories: []
+  maxDropOffDistanceEnabled: 0
+  maxDropOffDistance: 10
+  dropOffResources:
+  - type: {fileID: 11400000, guid: b49040b772bf6f743aa1c2d0e7594530, type: 2}
+    amount: 100
+    obj: {fileID: 5019191664468112689}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 3dc3dd81313aab34c97314e986905cfd, type: 2}
+  totalMaxCapacity: 100
 --- !u!1 &4964185479887797113
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +503,7 @@ Transform:
   m_GameObject: {fileID: 4964185479887797113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.15, y: 1, z: 0.15}
+  m_LocalScale: {x: 0.1, y: 1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6259171011077390578}
   m_RootOrder: 1
@@ -546,7 +659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7168786717453400073}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.85639, y: 0, z: 70.41398}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2619939410434731956}
@@ -757,7 +870,7 @@ Animator:
   m_GameObject: {fileID: 7168786717453400073}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4f28c54bfb24b3a489502c2758d6e46e, type: 2}
+  m_Controller: {fileID: 22100000, guid: 18a8fb9d9b710874caca86d0b8d3ce10, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -880,9 +993,21 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 3840408855499866888}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4869238990860591624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8563837210547167488, guid: cdbe91a91060b1e4eb4bd0b52d578091,
+    type: 3}
+  m_PrefabInstance: {fileID: 3840408855499866888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2080154078430498068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2996563486281797148, guid: cdbe91a91060b1e4eb4bd0b52d578091,
+    type: 3}
+  m_PrefabInstance: {fileID: 3840408855499866888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5019191664468112689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8136913503570933305, guid: cdbe91a91060b1e4eb4bd0b52d578091,
     type: 3}
   m_PrefabInstance: {fileID: 3840408855499866888}
   m_PrefabAsset: {fileID: 0}
