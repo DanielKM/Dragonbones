@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992e646db1208fc46bbbe5ddc17aa7f5, type: 3}
+  m_Name: population_resource_type
+  m_EditorClassIdentifier: 
+  key: population_resource
+  displayName: Population
+  description: The capacity your settlement has for more people.
+  hasCapacity: 0
+  startingAmount:
+    amount: 0
+    capacity: 0
+  icon: {fileID: 21300000, guid: ea345a26bdd5b2945a0d0cc332ecc9a5, type: 3}
