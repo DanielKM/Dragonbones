@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf428716af4f8f438cb34c5c761450b, type: 3}
+  m_Name: create_building_human_lumber_yard
+  m_EditorClassIdentifier: 
+  data:
+    code: create_building_lumber_yard
+    enabled: 1
+    displayType: 2
+    icon: {fileID: 21300000, guid: 5dd783c92ed384248ba8604db8e18e78, type: 3}
+    panelCategory: 2
+    forceSlot: 1
+    slotIndex: 1
+    tooltipEnabled: 1
+    description: Creates a Lumber Yard.
+    hideTooltipOnClick: 1
+    reloadTime: 0.1
+    cursor:
+      icon: {fileID: 21300000, guid: f0322edec49f5cd49b55fc4786a4c823, type: 3}
+      hotspot: {x: 12, y: 9}

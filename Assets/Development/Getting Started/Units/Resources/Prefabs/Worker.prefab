@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
   code: movement
   isActive: 1
   priority: 0
@@ -115,88 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8083c6726f780bf44ae59c7cee549d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2445143313885860676
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 687427097098572387}
-  - component: {fileID: 3249039323738657368}
-  - component: {fileID: 6395060139255139054}
-  m_Layer: 12
-  m_Name: model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &687427097098572387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2445143313885860676}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
-  m_Children: []
-  m_Father: {fileID: 6259171011077390578}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3249039323738657368
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2445143313885860676}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6395060139255139054
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2445143313885860676}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4261230131764402893
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +284,24 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 0}
       color: {r: 0, g: 0, b: 0, a: 0}
+  - taskTitle: 'Place Building: human_blacksmith'
+    prefabObject: {fileID: 5681861929274110148, guid: 0cbc8ce9843fc75409042ddb25777c16,
+      type: 3}
+    taskUI: {fileID: 11400000, guid: 3b3866ca605073241867a6fbea86a50c, type: 2}
+    requiredResources: []
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+  - taskTitle: 'Place Building: human_lumber_yard'
+    prefabObject: {fileID: 5681861929274110148, guid: 7352eba6ba10505458ef276147d94d73,
+      type: 3}
+    taskUI: {fileID: 11400000, guid: 41e7b478f2ca28a4b884845b6625cefa, type: 2}
+    requiredResources: []
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
   upgradeTargetCreationTasks: []
   constructionAudio:
     fetchType: 0
@@ -435,6 +371,34 @@ MonoBehaviour:
       fetchType: 0
       items:
       - {fileID: 22100000, guid: 2fff9ddd7e166114ca9dd003288b1b06, type: 2}
+  - type: {fileID: 11400000, guid: 4d807c5885fc0b043b5058ac1d510ac3, type: 2}
+    amount: 10
+    obj: {fileID: 2525419126469478446}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 2fff9ddd7e166114ca9dd003288b1b06, type: 2}
+  - type: {fileID: 11400000, guid: c984e7e231aa27f47a03b9c5099ffa44, type: 2}
+    amount: 10
+    obj: {fileID: 2525419126469478446}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 2fff9ddd7e166114ca9dd003288b1b06, type: 2}
+  - type: {fileID: 11400000, guid: 564bfb29cdb91fb409293420f0a901a7, type: 2}
+    amount: 10
+    obj: {fileID: 2525419126469478446}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 2fff9ddd7e166114ca9dd003288b1b06, type: 2}
+  - type: {fileID: 11400000, guid: bf34e8cafce24c04ca8c42a381137d45, type: 2}
+    amount: 10
+    obj: {fileID: 4869238990860591624}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 2fff9ddd7e166114ca9dd003288b1b06, type: 2}
 --- !u!114 &5373467219355321152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +446,34 @@ MonoBehaviour:
       items:
       - {fileID: 22100000, guid: 3dc3dd81313aab34c97314e986905cfd, type: 2}
   - type: {fileID: 11400000, guid: 36ce6cc75966aca4eb6f1f228ec09e16, type: 2}
+    amount: 100
+    obj: {fileID: 5019191664468112695}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 04ea34203acb743438fb91bd9fc486ec, type: 2}
+  - type: {fileID: 11400000, guid: 4d807c5885fc0b043b5058ac1d510ac3, type: 2}
+    amount: 100
+    obj: {fileID: 5019191664468112695}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 04ea34203acb743438fb91bd9fc486ec, type: 2}
+  - type: {fileID: 11400000, guid: c984e7e231aa27f47a03b9c5099ffa44, type: 2}
+    amount: 100
+    obj: {fileID: 5019191664468112695}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 04ea34203acb743438fb91bd9fc486ec, type: 2}
+  - type: {fileID: 11400000, guid: 564bfb29cdb91fb409293420f0a901a7, type: 2}
+    amount: 100
+    obj: {fileID: 5019191664468112695}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 04ea34203acb743438fb91bd9fc486ec, type: 2}
+  - type: {fileID: 11400000, guid: bf34e8cafce24c04ca8c42a381137d45, type: 2}
     amount: 100
     obj: {fileID: 5019191664468112695}
     animatorOverrideController:
@@ -680,7 +672,6 @@ Transform:
   - {fileID: 4421659480375364784}
   - {fileID: 7711999763104050470}
   - {fileID: 1346672618781911430}
-  - {fileID: 687427097098572387}
   - {fileID: 5019191664468470099}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -930,7 +921,7 @@ PrefabInstance:
     - target: {fileID: 8136913503570831963, guid: cdbe91a91060b1e4eb4bd0b52d578091,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8136913503570831963, guid: cdbe91a91060b1e4eb4bd0b52d578091,
         type: 3}
@@ -1013,6 +1004,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3840408855499866888}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2080154078430498068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2996563486281797148, guid: cdbe91a91060b1e4eb4bd0b52d578091,
+    type: 3}
+  m_PrefabInstance: {fileID: 3840408855499866888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2525419126469478446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1605472592396110630, guid: cdbe91a91060b1e4eb4bd0b52d578091,
@@ -1034,12 +1031,6 @@ GameObject:
 --- !u!137 &5019191664479680589 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8136913503576144709, guid: cdbe91a91060b1e4eb4bd0b52d578091,
-    type: 3}
-  m_PrefabInstance: {fileID: 3840408855499866888}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2080154078430498068 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2996563486281797148, guid: cdbe91a91060b1e4eb4bd0b52d578091,
     type: 3}
   m_PrefabInstance: {fileID: 3840408855499866888}
   m_PrefabAsset: {fileID: 0}

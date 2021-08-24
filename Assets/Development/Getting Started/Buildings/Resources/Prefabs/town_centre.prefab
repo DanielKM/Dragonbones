@@ -518,7 +518,7 @@ MonoBehaviour:
     y: 0
   _name: Town Centre
   code: human_town_centre
-  category: capital_building
+  category: capital_building, dropoff_building
   description: The center of Andarian towns, the Town Centre is where villagers work
     and do commerce.
   icon: {fileID: 21300000, guid: 30402a0a944a9bf4299286ccc3712013, type: 3}
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6873ac66dad55e8468bdf59e2a9eaeeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCount: 8
+  maxCount: 6
 --- !u!1 &7567507246225540690
 GameObject:
   m_ObjectHideFlags: 0

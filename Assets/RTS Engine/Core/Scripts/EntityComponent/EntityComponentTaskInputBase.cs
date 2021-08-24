@@ -138,7 +138,7 @@ namespace RTSEngine.EntityComponent
         }
     }
 
-    public abstract class FactionEntityCreationTask<T> : EntityComponentTaskInputBase<T> where T : IFactionEntity
+    public abstract class FactionMultiEntityCreationTask<T> : MultiEntityComponentTaskInputBase<T> where T : IFactionEntity
     {
         public override ErrorMessage CanComplete()
         {

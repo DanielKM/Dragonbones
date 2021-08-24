@@ -17,6 +17,6 @@ MonoBehaviour:
   description: Strong bones that can still be used for something.
   hasCapacity: 0
   startingAmount:
-    amount: 0
+    amount: 400
     capacity: 0
   icon: {fileID: 21300000, guid: ccdd60a5d1a6f0642af579e26cb04a3a, type: 3}

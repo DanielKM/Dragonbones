@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6873ac66dad55e8468bdf59e2a9eaeeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCount: 8
+  maxCount: 6
 --- !u!114 &-7900438293571029893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,8 +1118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbae8f71eab72148a833e0d515fa7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placableTerrainAreas:
-  - {fileID: 11400000, guid: c424933072420334cb01dc9be41361a3, type: 2}
+  placableTerrainAreas: []
   canPlaceOutsideBorder: 1
 --- !u!65 &8397381295519832607
 BoxCollider:
@@ -1545,6 +1544,50 @@ MonoBehaviour:
     prefabObject: {fileID: 1943697157073760, guid: 48ad0a7ea1b136c4fa7cd03837ff6efc,
       type: 3}
     taskUI: {fileID: 11400000, guid: 0e60b498db3b591439556057206912d6, type: 2}
+    requiredResources: []
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    limit: 0
+    maxAmount: 0
+  - taskTitle: 'Create Unit: human_outrider'
+    prefabObject: {fileID: 1943697157073760, guid: 0651b5e32549de640ba1811716b1f6f5,
+      type: 3}
+    taskUI: {fileID: 11400000, guid: 5f9a668ef54dfa447a60687f5d9c78c3, type: 2}
+    requiredResources: []
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    limit: 0
+    maxAmount: 0
+  - taskTitle: 'Create Unit: human_knight'
+    prefabObject: {fileID: 1943697157073760, guid: 434da049ad4d57c48b4010d3a1c6db10,
+      type: 3}
+    taskUI: {fileID: 11400000, guid: a90e227b38af65b4090736a220acd2b3, type: 2}
+    requiredResources: []
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    limit: 0
+    maxAmount: 0
+  - taskTitle: 'Create Unit: human_archer'
+    prefabObject: {fileID: 1241045417843294, guid: c98f380487dc9504ca25f4f49a40a849,
+      type: 3}
+    taskUI: {fileID: 11400000, guid: 25a98880ec8734e4d932dd0c8cac6d55, type: 2}
+    requiredResources: []
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    limit: 0
+    maxAmount: 0
+  - taskTitle: 'Create Unit: human_ranger'
+    prefabObject: {fileID: 1241045417843294, guid: 8eb7abea97ed6a64f8e2cdce248385b6,
+      type: 3}
+    taskUI: {fileID: 11400000, guid: fff738bc610dbd8418a7488327549c49, type: 2}
     requiredResources: []
     factionEntityRequirements: []
     missingRequirementData:
