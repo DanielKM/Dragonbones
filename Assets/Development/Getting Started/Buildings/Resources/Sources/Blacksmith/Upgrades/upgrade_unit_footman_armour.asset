@@ -21,7 +21,7 @@ MonoBehaviour:
     forceSlot: 1
     slotIndex: 1
     tooltipEnabled: 1
-    description: Upgrade footman's armour
+    description: Upgrade footman's armour.
     hideTooltipOnClick: 1
     reloadTime: 10
     cursor:

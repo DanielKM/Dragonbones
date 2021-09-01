@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 95063582957771290}
   - component: {fileID: 82749788022874772}
   - component: {fileID: 5190594049649388308}
-  - component: {fileID: 8979306242649330551}
   - component: {fileID: -7578617396392229141}
   m_Layer: 12
   m_Name: Archer
@@ -156,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: Archer
   code: human_archer
   category: fighter_foot_category
@@ -165,27 +164,17 @@ MonoBehaviour:
   radius: 0.4
   model: {fileID: 7286691753969888452}
   isMainEntity: 0
-  isFactionLocked: 0
+  isFactionLocked: 1
   initResources:
-  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
     value:
       amount: 1
       capacity: 0
     nonConsumable: 0
-  - type: {fileID: 11400000, guid: 529981de806b0754da40426ffd9ebabb, type: 2}
-    value:
-      amount: 14
-      capacity: 0
-    nonConsumable: 0
   disableResources:
-  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
     value:
       amount: -1
-      capacity: 0
-    nonConsumable: 0
-  - type: {fileID: 11400000, guid: 529981de806b0754da40426ffd9ebabb, type: 2}
-    value:
-      amount: -14
       capacity: 0
     nonConsumable: 0
   coloredRenderers:
@@ -208,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   maxHealth: 100
   initialHealth: 100
   canIncrease: 1
@@ -222,8 +211,8 @@ MonoBehaviour:
     cooldown:
       enabled: 1
       defaultValue: 2
-  destroyObject: 1
-  destroyObjectDelay: 3
+  destroyObject: 0
+  destroyObjectDelay: 0
   destroyAward: []
   destructionAudio:
     fetchType: 0
@@ -390,33 +379,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 7
   m_ObstacleAvoidanceType: 0
---- !u!114 &8979306242649330551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241045417843294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 976ebcf693c3e0d49a4f3e81bfef2899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceEntity: {fileID: 1241045417843294}
-  sourceInstanceOnly: 0
-  updateSpawnedInstances: 1
-  upgradeEffect: {fileID: 5759691463754869283, guid: eef6860fe5f7edf4495683186d907db2,
-    type: 3}
-  triggerUpgrades: []
-  upgradeTarget: {fileID: 1241045417843294, guid: 8eb7abea97ed6a64f8e2cdce248385b6,
-    type: 3}
-  entityComponentMatcher:
-  - sourceComponentCode: movement_component
-    targetComponentCode: movement_component
-  - sourceComponentCode: archer_level1_basic_attack
-    targetComponentCode: archer_level2_basic_attack
-  - sourceComponentCode: carriable_unit
-    targetComponentCode: carriable_unit
 --- !u!114 &-7578617396392229141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,18 +391,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097adb8e7fba4d74588a9b1abcdbae6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allTypes: {fileID: 0}
+  allTypes: {fileID: 11400000, guid: 17707d3096b8b7f45a71c2fc42f91672, type: 2}
   typeSpecific:
   - ignoreFactionType: 1
     factionType: {fileID: 0}
     ignoreNPCType: 0
     npcType: {fileID: 11400000, guid: 3493c8af534d298418a9824742a03c90, type: 2}
-    regulatorData: {fileID: 11400000, guid: d0547b204e138a446976bbf3aefd60b4, type: 2}
+    regulatorData: {fileID: 11400000, guid: 17707d3096b8b7f45a71c2fc42f91672, type: 2}
   - ignoreFactionType: 1
     factionType: {fileID: 0}
     ignoreNPCType: 0
     npcType: {fileID: 11400000, guid: 91a9ec14b39b8cf41852be1ae356a847, type: 2}
-    regulatorData: {fileID: 11400000, guid: 97b1b6fd207af6b48a4bb9988d075e08, type: 2}
+    regulatorData: {fileID: 11400000, guid: 17707d3096b8b7f45a71c2fc42f91672, type: 2}
 --- !u!1 &1472317962180716
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +573,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3991546047274531710}
-  - component: {fileID: 1243773076342311890}
   m_Layer: 12
   m_Name: unit_demo_components
   m_TagString: Untagged
@@ -633,23 +594,6 @@ Transform:
   m_Father: {fileID: 4972337864068538}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1243773076342311890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3609813624080016470}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b575b34f6c64348853724946c80b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbodies: []
-  forceIntensityRange:
-    _min: -2.5
-    _max: 2.5
-    test: 0
 --- !u!1 &5108881677972755709
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 1
-    y: 0
+    y: 1
   code: movement_component
   isActive: 1
   priority: 0
@@ -753,6 +697,8 @@ MonoBehaviour:
         value: 1
       - name: horizontal-spacing
         value: 1
+      - name: spacing
+        value: 0
       intProperties:
       - name: amountPerRow
         value: 4
@@ -1071,6 +1017,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1766187822123785090}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &7286691753979404146 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9051467776328910064, guid: b08f9c9d30cebba4a958de1f4b589ded,
+    type: 3}
+  m_PrefabInstance: {fileID: 1766187822123785090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8111351357729512219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7499493260668600473, guid: b08f9c9d30cebba4a958de1f4b589ded,
@@ -1080,12 +1032,6 @@ Transform:
 --- !u!137 &7286691753983484350 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 9051467776324745788, guid: b08f9c9d30cebba4a958de1f4b589ded,
-    type: 3}
-  m_PrefabInstance: {fileID: 1766187822123785090}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &7286691753979404146 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9051467776328910064, guid: b08f9c9d30cebba4a958de1f4b589ded,
     type: 3}
   m_PrefabInstance: {fileID: 1766187822123785090}
   m_PrefabAsset: {fileID: 0}

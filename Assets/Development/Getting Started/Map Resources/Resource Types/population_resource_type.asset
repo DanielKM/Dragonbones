@@ -15,7 +15,7 @@ MonoBehaviour:
   key: population_resource
   displayName: Population
   description: The capacity your settlement has for more people.
-  hasCapacity: 0
+  hasCapacity: 1
   startingAmount:
     amount: 0
     capacity: 0

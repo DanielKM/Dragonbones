@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: Skeleton
   code: undead_skeleton
   category: fighter_foot_category
@@ -265,25 +265,25 @@ MonoBehaviour:
   isMainEntity: 0
   isFactionLocked: 0
   initResources:
-  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
     value:
       amount: 1
       capacity: 0
     nonConsumable: 0
   - type: {fileID: 11400000, guid: 529981de806b0754da40426ffd9ebabb, type: 2}
     value:
-      amount: 13
+      amount: 10
       capacity: 0
     nonConsumable: 0
   disableResources:
-  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
     value:
       amount: -1
       capacity: 0
     nonConsumable: 0
   - type: {fileID: 11400000, guid: 529981de806b0754da40426ffd9ebabb, type: 2}
     value:
-      amount: -13
+      amount: -10
       capacity: 0
     nonConsumable: 0
   coloredRenderers:
@@ -500,18 +500,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097adb8e7fba4d74588a9b1abcdbae6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allTypes: {fileID: 0}
+  allTypes: {fileID: 11400000, guid: b8d386cabff6f7e459c633b01472f972, type: 2}
   typeSpecific:
   - ignoreFactionType: 1
-    factionType: {fileID: 0}
-    ignoreNPCType: 0
-    npcType: {fileID: 11400000, guid: 3493c8af534d298418a9824742a03c90, type: 2}
-    regulatorData: {fileID: 11400000, guid: 7f32ad04603a57f41ba6a34644ef0326, type: 2}
-  - ignoreFactionType: 1
-    factionType: {fileID: 0}
-    ignoreNPCType: 0
-    npcType: {fileID: 11400000, guid: 91a9ec14b39b8cf41852be1ae356a847, type: 2}
-    regulatorData: {fileID: 11400000, guid: 69ab2a39d40a5b54385d82b43f878289, type: 2}
+    factionType: {fileID: 11400000, guid: 4463293a9b2668e4fb0eb4d1b87012e9, type: 2}
+    ignoreNPCType: 1
+    npcType: {fileID: 11400000, guid: 3bae0942613940b48a784f3322c25a68, type: 2}
+    regulatorData: {fileID: 11400000, guid: b8d386cabff6f7e459c633b01472f972, type: 2}
 --- !u!114 &2498185160510965049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,7 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 1
-    y: 1
+    y: 0
   code: movement_component
   isActive: 1
   priority: 0
@@ -663,15 +658,11 @@ MonoBehaviour:
       defaultValue: 2
   movableTerrainAreas: []
   formation:
-    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
-    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
     properties:
-      floatProperties:
-      - name: spacing
-        value: 0.3
-      intProperties:
-      - name: amountPerRow
-        value: 4
+      floatProperties: []
+      intProperties: []
   speed:
     value: 3.5
   acceleration:
@@ -717,7 +708,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7702360944539594765}
-  - component: {fileID: 1183856326857337855}
   m_Layer: 12
   m_Name: unit_demo_components
   m_TagString: Untagged
@@ -739,23 +729,6 @@ Transform:
   m_Father: {fileID: 4721859516458986}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1183856326857337855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5188857674347349413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b575b34f6c64348853724946c80b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbodies: []
-  forceIntensityRange:
-    _min: -2.5
-    _max: 2.5
-    test: 0
 --- !u!1 &8817947086767355087
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,8 +773,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 1
-    y: 2
+    x: 0
+    y: 0
   code: light_infantry_basic_attack
   isActive: 1
   priority: 0
@@ -828,7 +801,7 @@ MonoBehaviour:
   progressOverrideController:
     fetchType: 0
     items:
-    - {fileID: 22100000, guid: e23bf38cb8e961d4ea0b822facada802, type: 2}
+    - {fileID: 22100000, guid: 1cd2db8069af98645bbc4379002d94a8, type: 2}
   progressDuration: 0.4
   progressMaxDistance: 1
   inProgressObject: {fileID: 0}

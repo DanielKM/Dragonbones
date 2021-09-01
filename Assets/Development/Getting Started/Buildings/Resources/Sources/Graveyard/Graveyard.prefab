@@ -9,77 +9,77 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1660399362315054}
+  m_RootGameObject: {fileID: 1147065019700630}
   m_IsPrefabParent: 1
---- !u!1 &1660399362315054
+--- !u!1 &1147065019700630
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4244529776383388}
-  - component: {fileID: 33845003124742100}
-  - component: {fileID: 23340323382242846}
-  - component: {fileID: 64640542653623464}
+  - component: {fileID: 4371386912546518}
+  - component: {fileID: 33270728143047922}
+  - component: {fileID: 23293143878011932}
+  - component: {fileID: 64547797360680718}
   m_Layer: 0
-  m_Name: SM_Bld_Dwarf_Building_02 1
+  m_Name: Graveyard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1994536978142960
+--- !u!1 &1851216546670572
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4295210269745608}
-  - component: {fileID: 33400480376515176}
-  - component: {fileID: 23335777525228096}
-  - component: {fileID: 64524278977293646}
+  - component: {fileID: 4360418347528722}
+  - component: {fileID: 33414064963973478}
+  - component: {fileID: 23337085109518774}
+  - component: {fileID: 65617698456357130}
   m_Layer: 0
-  m_Name: SM_Bld_Dwarf_Building_02_Door
+  m_Name: SM_Bld_Dwarf_Building_03_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4244529776383388
+--- !u!4 &4360418347528722
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1660399362315054}
+  m_GameObject: {fileID: 1851216546670572}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.0495055, y: 1.0857862, z: 3.6814592}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4371386912546518}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4371386912546518
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147065019700630}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4295210269745608}
+  - {fileID: 4360418347528722}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4295210269745608
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994536978142960}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2016857, y: 1.1173632, z: 1.4695129}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4244529776383388}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23335777525228096
+--- !u!23 &23293143878011932
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994536978142960}
+  m_GameObject: {fileID: 1147065019700630}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -106,12 +106,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23340323382242846
+--- !u!23 &23337085109518774
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1660399362315054}
+  m_GameObject: {fileID: 1851216546670572}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -138,40 +138,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33400480376515176
+--- !u!33 &33270728143047922
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994536978142960}
-  m_Mesh: {fileID: 4300002, guid: cba4fd3f14f7fdf4c98a3497b8da837b, type: 3}
---- !u!33 &33845003124742100
+  m_GameObject: {fileID: 1147065019700630}
+  m_Mesh: {fileID: 4300000, guid: 6c3ec66b84f218749a88a4b8c4e63c6e, type: 3}
+--- !u!33 &33414064963973478
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1660399362315054}
-  m_Mesh: {fileID: 4300000, guid: cba4fd3f14f7fdf4c98a3497b8da837b, type: 3}
---- !u!64 &64524278977293646
+  m_GameObject: {fileID: 1851216546670572}
+  m_Mesh: {fileID: 4300002, guid: 6c3ec66b84f218749a88a4b8c4e63c6e, type: 3}
+--- !u!64 &64547797360680718
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1994536978142960}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 43693191330507598, guid: 7754210e468404f4bb830055d4647cb4, type: 2}
---- !u!64 &64640542653623464
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1660399362315054}
+  m_GameObject: {fileID: 1147065019700630}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -179,4 +165,16 @@ MeshCollider:
   m_Convex: 0
   m_InflateMesh: 0
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: f98c85f4db1d260408cdf2d095bd404d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 76c6a1e22c855174caddf8cf23ce0b5d, type: 3}
+--- !u!65 &65617698456357130
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851216546670572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5325171, y: 2.1676111, z: 0.11703491}
+  m_Center: {x: -0.7151056, y: 0, z: 0.0084171295}

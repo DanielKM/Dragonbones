@@ -21,7 +21,7 @@ MonoBehaviour:
     forceSlot: 1
     slotIndex: 0
     tooltipEnabled: 1
-    description: Upgrade footman unit to hit harder
+    description: Upgrade footman's weapon.
     hideTooltipOnClick: 1
     reloadTime: 10
     cursor:

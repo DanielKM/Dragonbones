@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180695681473768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 0, z: 6.98}
+  m_LocalPosition: {x: 0.09, y: 0, z: 7.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4416401323951700}
@@ -230,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 1474872480633068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4156658975133354}
   m_Father: {fileID: 4416401323951700}
@@ -263,7 +263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680771893485510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1.4, y: 1, z: 1.4}
   m_Children: []
   m_Father: {fileID: 4416401323951700}
@@ -752,13 +752,8 @@ MonoBehaviour:
   - ignoreFactionType: 1
     factionType: {fileID: 0}
     ignoreNPCType: 0
-    npcType: {fileID: 11400000, guid: 3493c8af534d298418a9824742a03c90, type: 2}
-    regulatorData: {fileID: 11400000, guid: b689f100b5f337848be66d81ce9fa967, type: 2}
-  - ignoreFactionType: 1
-    factionType: {fileID: 0}
-    ignoreNPCType: 0
-    npcType: {fileID: 11400000, guid: 91a9ec14b39b8cf41852be1ae356a847, type: 2}
-    regulatorData: {fileID: 11400000, guid: 2a9b4a0ea7501644cacb0728fd0926f7, type: 2}
+    npcType: {fileID: 11400000, guid: 088f62822f1075d49b4dd6b49f7471e8, type: 2}
+    regulatorData: {fileID: 11400000, guid: b0ded683bbf851644910f4eb22788cb7, type: 2}
 --- !u!1 &1828314204369414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,8 +1126,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.8, y: 2, z: 4.8}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 13, y: 10, z: 12}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!54 &595546293359954362
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1525,7 +1520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
+    y: 0
   code: unit_creator
   isActive: 1
   creationTasks:

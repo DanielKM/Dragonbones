@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: Wizard
   code: human_wizard
   category: magic_unit
@@ -167,25 +167,25 @@ MonoBehaviour:
   isMainEntity: 0
   isFactionLocked: 0
   initResources:
-  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
     value:
       amount: 1
       capacity: 0
     nonConsumable: 0
   - type: {fileID: 11400000, guid: 529981de806b0754da40426ffd9ebabb, type: 2}
     value:
-      amount: 14
+      amount: 30
       capacity: 0
     nonConsumable: 0
   disableResources:
-  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
     value:
       amount: -1
       capacity: 0
     nonConsumable: 0
   - type: {fileID: 11400000, guid: 529981de806b0754da40426ffd9ebabb, type: 2}
     value:
-      amount: -14
+      amount: -30
       capacity: 0
     nonConsumable: 0
   coloredRenderers:
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
+    y: 1
   maxHealth: 100
   initialHealth: 100
   canIncrease: 1
@@ -222,7 +222,7 @@ MonoBehaviour:
     cooldown:
       enabled: 1
       defaultValue: 2
-  destroyObject: 1
+  destroyObject: 0
   destroyObjectDelay: 3
   destroyAward: []
   destructionAudio:
@@ -429,18 +429,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097adb8e7fba4d74588a9b1abcdbae6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allTypes: {fileID: 0}
+  allTypes: {fileID: 11400000, guid: 17707d3096b8b7f45a71c2fc42f91672, type: 2}
   typeSpecific:
   - ignoreFactionType: 1
-    factionType: {fileID: 0}
-    ignoreNPCType: 0
-    npcType: {fileID: 11400000, guid: 3493c8af534d298418a9824742a03c90, type: 2}
-    regulatorData: {fileID: 11400000, guid: d0547b204e138a446976bbf3aefd60b4, type: 2}
-  - ignoreFactionType: 1
-    factionType: {fileID: 0}
-    ignoreNPCType: 0
-    npcType: {fileID: 11400000, guid: 91a9ec14b39b8cf41852be1ae356a847, type: 2}
-    regulatorData: {fileID: 11400000, guid: 97b1b6fd207af6b48a4bb9988d075e08, type: 2}
+    factionType: {fileID: 11400000, guid: e521a1482c459704a96d4e302ae578c6, type: 2}
+    ignoreNPCType: 1
+    npcType: {fileID: 11400000, guid: 088f62822f1075d49b4dd6b49f7471e8, type: 2}
+    regulatorData: {fileID: 11400000, guid: 17707d3096b8b7f45a71c2fc42f91672, type: 2}
 --- !u!1 &1472317962180716
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +606,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3991546047274531710}
-  - component: {fileID: 1243773076342311890}
   m_Layer: 12
   m_Name: unit_demo_components
   m_TagString: Untagged
@@ -633,23 +627,6 @@ Transform:
   m_Father: {fileID: 4972337864068538}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1243773076342311890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3609813624080016470}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b575b34f6c64348853724946c80b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbodies: []
-  forceIntensityRange:
-    _min: -2.5
-    _max: 2.5
-    test: 0
 --- !u!1 &5589247735418608910
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
+    x: 1
     y: 0
   code: movement_component
   isActive: 1
@@ -715,17 +692,11 @@ MonoBehaviour:
       defaultValue: 2
   movableTerrainAreas: []
   formation:
-    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
-    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
     properties:
-      floatProperties:
-      - name: vertical-spacing
-        value: 1
-      - name: horizontal-spacing
-        value: 1
-      intProperties:
-      - name: amountPerRow
-        value: 4
+      floatProperties: []
+      intProperties: []
   speed:
     value: 3
   acceleration:
@@ -1071,6 +1042,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2018740834483323679}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &994726999401984526 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1281829314528817425, guid: 8002f815a2e2df14ab1303c70e901b0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2018740834483323679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1568498295666615891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 702683536606881100, guid: 8002f815a2e2df14ab1303c70e901b0e,
@@ -1080,12 +1057,6 @@ Transform:
 --- !u!137 &994726999397862622 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1281829314533117889, guid: 8002f815a2e2df14ab1303c70e901b0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2018740834483323679}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &994726999401984526 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1281829314528817425, guid: 8002f815a2e2df14ab1303c70e901b0e,
     type: 3}
   m_PrefabInstance: {fileID: 2018740834483323679}
   m_PrefabAsset: {fileID: 0}

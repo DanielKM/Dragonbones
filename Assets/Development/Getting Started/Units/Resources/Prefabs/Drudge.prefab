@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 1
-    y: 1
+    y: 0
   code: movement
   isActive: 1
   priority: 0
@@ -66,19 +66,11 @@ MonoBehaviour:
   movableTerrainAreas:
   - {fileID: 11400000, guid: c424933072420334cb01dc9be41361a3, type: 2}
   formation:
-    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
-    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
     properties:
-      floatProperties:
-      - name: vertical-spacing
-        value: 2
-      - name: horizontal-spacing
-        value: 1
-      - name: spacing
-        value: 0
-      intProperties:
-      - name: amountPerRow
-        value: 4
+      floatProperties: []
+      intProperties: []
   speed:
     value: 3
   acceleration:
@@ -257,46 +249,28 @@ MonoBehaviour:
       categories: []
   restrictBuildingPlacementOnly: 1
   creationTasks:
-  - taskTitle: 'Place Building: human_town_centre'
-    prefabObject: {fileID: 5681861929274110148, guid: f3ea2916256219a4cb5630ea12a5b0ac,
+  - taskTitle: 'Place Building: undead_sarcophagus'
+    prefabObject: {fileID: 5681861929274110148, guid: d908d68e44152d64999b5705e19554bc,
       type: 3}
-    taskUI: {fileID: 11400000, guid: 8df5332831a7ab4498b92cab51daa1f3, type: 2}
+    taskUI: {fileID: 11400000, guid: 406a37e98f6560f4c8c94f7fb46d35f8, type: 2}
     requiredResources: []
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
       color: {r: 0, g: 0, b: 0, a: 0}
-  - taskTitle: 'Place Building: human_house'
-    prefabObject: {fileID: 5681861929274110148, guid: 732d41fc91526a94bba41b0cfd296569,
+  - taskTitle: 'Place Building: undead_graveyard'
+    prefabObject: {fileID: 1757281130161208, guid: 12f58ef51c037b04e9699a767647ec2e,
       type: 3}
-    taskUI: {fileID: 11400000, guid: d724cf6dc39bf684f854f90585f35165, type: 2}
+    taskUI: {fileID: 11400000, guid: 2de3050907feceb4b92cfe3934ba9401, type: 2}
     requiredResources: []
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
       color: {r: 0, g: 0, b: 0, a: 0}
-  - taskTitle: 'Place Building: barrack_level1'
-    prefabObject: {fileID: 1757281130161208, guid: 3eb2c20080a7fec4dac2031ee35cbf78,
+  - taskTitle: 'Place Building: undead_mausoleum'
+    prefabObject: {fileID: 5681861929274110148, guid: fa31f892fd4f5974ca1ba8773cd6d2a8,
       type: 3}
-    taskUI: {fileID: 11400000, guid: fd1e6260970937443944df9b1991c0fd, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-  - taskTitle: 'Place Building: human_blacksmith'
-    prefabObject: {fileID: 5681861929274110148, guid: 0cbc8ce9843fc75409042ddb25777c16,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: 3b3866ca605073241867a6fbea86a50c, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-  - taskTitle: 'Place Building: human_lumber_yard'
-    prefabObject: {fileID: 5681861929274110148, guid: 7352eba6ba10505458ef276147d94d73,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: 41e7b478f2ca28a4b884845b6625cefa, type: 2}
+    taskUI: {fileID: 11400000, guid: 44d52ff7a47c6264088f97f70df5b48d, type: 2}
     requiredResources: []
     factionEntityRequirements: []
     missingRequirementData:
@@ -357,21 +331,7 @@ MonoBehaviour:
   sourceEffect: {fileID: 0}
   targetEffect: {fileID: 0}
   collectableResources:
-  - type: {fileID: 11400000, guid: b49040b772bf6f743aa1c2d0e7594530, type: 2}
-    amount: 10
-    obj: {fileID: 1832177950717983932}
-    animatorOverrideController:
-      fetchType: 0
-      items:
-      - {fileID: 22100000, guid: c42fa624e1559a84699d2bd428f09d01, type: 2}
-  - type: {fileID: 11400000, guid: 36ce6cc75966aca4eb6f1f228ec09e16, type: 2}
-    amount: 10
-    obj: {fileID: 1832177950717983932}
-    animatorOverrideController:
-      fetchType: 0
-      items:
-      - {fileID: 22100000, guid: c42fa624e1559a84699d2bd428f09d01, type: 2}
-  - type: {fileID: 11400000, guid: 4d807c5885fc0b043b5058ac1d510ac3, type: 2}
+  - type: {fileID: 11400000, guid: bf34e8cafce24c04ca8c42a381137d45, type: 2}
     amount: 10
     obj: {fileID: 1832177950717983932}
     animatorOverrideController:
@@ -385,6 +345,13 @@ MonoBehaviour:
       fetchType: 0
       items:
       - {fileID: 22100000, guid: c42fa624e1559a84699d2bd428f09d01, type: 2}
+  - type: {fileID: 11400000, guid: 4d807c5885fc0b043b5058ac1d510ac3, type: 2}
+    amount: 10
+    obj: {fileID: 1832177950717983932}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: c42fa624e1559a84699d2bd428f09d01, type: 2}
   - type: {fileID: 11400000, guid: 564bfb29cdb91fb409293420f0a901a7, type: 2}
     amount: 10
     obj: {fileID: 1832177950717983932}
@@ -392,7 +359,14 @@ MonoBehaviour:
       fetchType: 0
       items:
       - {fileID: 22100000, guid: c42fa624e1559a84699d2bd428f09d01, type: 2}
-  - type: {fileID: 11400000, guid: bf34e8cafce24c04ca8c42a381137d45, type: 2}
+  - type: {fileID: 11400000, guid: 36ce6cc75966aca4eb6f1f228ec09e16, type: 2}
+    amount: 10
+    obj: {fileID: 1832177950717983932}
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: c42fa624e1559a84699d2bd428f09d01, type: 2}
+  - type: {fileID: 11400000, guid: b49040b772bf6f743aa1c2d0e7594530, type: 2}
     amount: 10
     obj: {fileID: 1832177950717983932}
     animatorOverrideController:
@@ -412,8 +386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 2
+    x: 1
+    y: 0
   code: dropoff_source_component
   isActive: 1
   priority: 2
@@ -650,6 +624,7 @@ GameObject:
   - component: {fileID: 5488730337589745085}
   - component: {fileID: 4056556962282526253}
   - component: {fileID: 1791692475774513099}
+  - component: {fileID: 1605508556724013963}
   m_Layer: 12
   m_Name: Drudge
   m_TagString: Untagged
@@ -690,7 +665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: Drudge
   code: undead_drudge
   category: builder_category, harvester_category
@@ -700,8 +675,18 @@ MonoBehaviour:
   model: {fileID: 5600804873077514273}
   isMainEntity: 0
   isFactionLocked: 1
-  initResources: []
-  disableResources: []
+  initResources:
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
+    value:
+      amount: 1
+      capacity: 0
+    nonConsumable: 0
+  disableResources:
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
+    value:
+      amount: -1
+      capacity: 0
+    nonConsumable: 0
   coloredRenderers:
   - renderer: {fileID: 4556111079697313353}
     materialID: 0
@@ -905,6 +890,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 7
   m_ObstacleAvoidanceType: 0
+--- !u!114 &1605508556724013963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168786717453400073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097adb8e7fba4d74588a9b1abcdbae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allTypes: {fileID: 11400000, guid: f17b06e7efc1fb24cbfa82c23ddee9aa, type: 2}
+  typeSpecific:
+  - ignoreFactionType: 1
+    factionType: {fileID: 11400000, guid: 4463293a9b2668e4fb0eb4d1b87012e9, type: 2}
+    ignoreNPCType: 1
+    npcType: {fileID: 11400000, guid: 3bae0942613940b48a784f3322c25a68, type: 2}
+    regulatorData: {fileID: 11400000, guid: f17b06e7efc1fb24cbfa82c23ddee9aa, type: 2}
 --- !u!1001 &5401706133762904503
 PrefabInstance:
   m_ObjectHideFlags: 0

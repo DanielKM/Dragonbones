@@ -194,8 +194,6 @@ GameObject:
   m_Component:
   - component: {fileID: 744285025581246237}
   - component: {fileID: 698638444093132608}
-  - component: {fileID: 275920883315067285}
-  - component: {fileID: 4943585549566159888}
   m_Layer: 10
   m_Name: building_components
   m_TagString: Untagged
@@ -237,82 +235,6 @@ MonoBehaviour:
   - {fileID: 0}
   forcedTerrainAreas: []
   showWorkers: 1
---- !u!114 &275920883315067285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5208977293259312766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9113c0bd693a7d429490d84152a822b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 1
-  code: upgrade_launcher
-  isActive: 1
-  upgradeTasks:
-  - taskTitle: 'Upgrade: human_footman (light_infantry_basic_attack -> heavy_infantry_basic_attack)'
-    prefabObject: {fileID: 1943697157073760, guid: 48ad0a7ea1b136c4fa7cd03837ff6efc,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: f4faa38864136074a95286fdc6ef79db, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-  - taskTitle: 'Upgrade: human_footman (light_infantry_basic_attack -> heavy_infantry_basic_attack)'
-    prefabObject: {fileID: 1943697157073760, guid: 48ad0a7ea1b136c4fa7cd03837ff6efc,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: f8bdddadf3632d24d8cd11a30d8ad858, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-  - taskTitle: 'Upgrade: human_swordsman (light_infantry_basic_attack -> light_infantry_basic_attack)'
-    prefabObject: {fileID: 1943697157073760, guid: cdddddb9fee5d974a900c39dd18ebb82,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: 10ecc09c50eabbf4686ada4852ee3ef2, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-  - taskTitle: 'Upgrade: human_swordsman (light_infantry_basic_attack -> light_infantry_basic_attack)'
-    prefabObject: {fileID: 1943697157073760, guid: cdddddb9fee5d974a900c39dd18ebb82,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: 170a3f2550191184290b81f5f7b90dc3, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-  entityTargetUpgradeTasks: []
-  entityComponentTargetUpgradeTasks: []
---- !u!114 &4943585549566159888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5208977293259312766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f711e2a1b7e8ca6469bc97d131f238d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 0
-  code: new_component_code
-  isActive: 1
-  upgradeTasks: []
-  entityTargetUpgradeTasks: []
-  entityComponentTargetUpgradeTasks: []
 --- !u!1 &5681861929274110148
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +250,7 @@ GameObject:
   - component: {fileID: 1462038200933504238}
   - component: {fileID: 4654175441586173842}
   - component: {fileID: 7674579624068035406}
+  - component: {fileID: 8157686609029506424}
   m_Layer: 10
   m_Name: lumber_yard
   m_TagString: Untagged
@@ -639,6 +562,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCount: 6
+--- !u!114 &8157686609029506424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5681861929274110148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7752bd4b3b280274bb53e7d0cde8408c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allTypes: {fileID: 0}
+  typeSpecific:
+  - ignoreFactionType: 1
+    factionType: {fileID: 0}
+    ignoreNPCType: 0
+    npcType: {fileID: 11400000, guid: 3493c8af534d298418a9824742a03c90, type: 2}
+    regulatorData: {fileID: 11400000, guid: b689f100b5f337848be66d81ce9fa967, type: 2}
+  - ignoreFactionType: 1
+    factionType: {fileID: 0}
+    ignoreNPCType: 0
+    npcType: {fileID: 11400000, guid: 91a9ec14b39b8cf41852be1ae356a847, type: 2}
+    regulatorData: {fileID: 11400000, guid: 2a9b4a0ea7501644cacb0728fd0926f7, type: 2}
 --- !u!1 &7567507246225540690
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +644,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 5, z: 5}
+  m_Size: {x: 8, y: 5, z: 6}
   m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!54 &8579725078445364005
 Rigidbody:
@@ -865,15 +812,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f965e6640243f441963f3b8c3d37be3, type: 3}
---- !u!1 &2066629086781689936 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1372040286346358, guid: 0f965e6640243f441963f3b8c3d37be3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2065740359362563110}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2064260657475074742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4294455949784720, guid: 0f965e6640243f441963f3b8c3d37be3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2065740359362563110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2066629086781689936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1372040286346358, guid: 0f965e6640243f441963f3b8c3d37be3,
     type: 3}
   m_PrefabInstance: {fileID: 2065740359362563110}
   m_PrefabAsset: {fileID: 0}
@@ -1156,15 +1103,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f965e6640243f441963f3b8c3d37be3, type: 3}
---- !u!1 &5227512069038392749 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1372040286346358, guid: 0f965e6640243f441963f3b8c3d37be3,
-    type: 3}
-  m_PrefabInstance: {fileID: 5228403579659442651}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5224250962857209675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4294455949784720, guid: 0f965e6640243f441963f3b8c3d37be3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5228403579659442651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5227512069038392749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1372040286346358, guid: 0f965e6640243f441963f3b8c3d37be3,
     type: 3}
   m_PrefabInstance: {fileID: 5228403579659442651}
   m_PrefabAsset: {fileID: 0}

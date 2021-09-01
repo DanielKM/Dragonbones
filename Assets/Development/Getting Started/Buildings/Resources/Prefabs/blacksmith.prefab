@@ -257,19 +257,10 @@ MonoBehaviour:
   code: upgrade_launcher
   isActive: 1
   upgradeTasks:
-  - taskTitle: 'Upgrade: human_footman (light_infantry_basic_attack -> heavy_infantry_basic_attack)'
+  - taskTitle: 'Upgrade: human_footman (heavy_infantry_basic_attack -> heavy_infantry_basic_attack)'
     prefabObject: {fileID: 1943697157073760, guid: 48ad0a7ea1b136c4fa7cd03837ff6efc,
       type: 3}
     taskUI: {fileID: 11400000, guid: f4faa38864136074a95286fdc6ef79db, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-  - taskTitle: 'Upgrade: human_footman (light_infantry_basic_attack -> heavy_infantry_basic_attack)'
-    prefabObject: {fileID: 1943697157073760, guid: 48ad0a7ea1b136c4fa7cd03837ff6efc,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: f8bdddadf3632d24d8cd11a30d8ad858, type: 2}
     requiredResources: []
     factionEntityRequirements: []
     missingRequirementData:
@@ -279,15 +270,6 @@ MonoBehaviour:
     prefabObject: {fileID: 1943697157073760, guid: cdddddb9fee5d974a900c39dd18ebb82,
       type: 3}
     taskUI: {fileID: 11400000, guid: 10ecc09c50eabbf4686ada4852ee3ef2, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-  - taskTitle: 'Upgrade: human_swordsman (light_infantry_basic_attack -> light_infantry_basic_attack)'
-    prefabObject: {fileID: 1943697157073760, guid: cdddddb9fee5d974a900c39dd18ebb82,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: 170a3f2550191184290b81f5f7b90dc3, type: 2}
     requiredResources: []
     factionEntityRequirements: []
     missingRequirementData:
@@ -330,6 +312,7 @@ GameObject:
   - component: {fileID: 1462038200933504238}
   - component: {fileID: 4654175441586173842}
   - component: {fileID: 7674579624068035406}
+  - component: {fileID: 2249337805522838019}
   m_Layer: 10
   m_Name: blacksmith
   m_TagString: Untagged
@@ -658,6 +641,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCount: 6
+--- !u!114 &2249337805522838019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5681861929274110148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7752bd4b3b280274bb53e7d0cde8408c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allTypes: {fileID: 0}
+  typeSpecific:
+  - ignoreFactionType: 1
+    factionType: {fileID: 0}
+    ignoreNPCType: 0
+    npcType: {fileID: 11400000, guid: 3493c8af534d298418a9824742a03c90, type: 2}
+    regulatorData: {fileID: 11400000, guid: b689f100b5f337848be66d81ce9fa967, type: 2}
+  - ignoreFactionType: 1
+    factionType: {fileID: 0}
+    ignoreNPCType: 0
+    npcType: {fileID: 11400000, guid: 91a9ec14b39b8cf41852be1ae356a847, type: 2}
+    regulatorData: {fileID: 11400000, guid: 2a9b4a0ea7501644cacb0728fd0926f7, type: 2}
 --- !u!1 &7567507246225540690
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +723,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12, y: 7, z: 8.4}
+  m_Size: {x: 15, y: 7, z: 11}
   m_Center: {x: 1, y: 3.5, z: 0}
 --- !u!54 &8579725078445364005
 Rigidbody:

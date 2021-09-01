@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23613894328801412}
   - component: {fileID: 64486990830233492}
   m_Layer: 0
-  m_Name: SM_Bld_Dwarf_Building_01 1
+  m_Name: Mausoleum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

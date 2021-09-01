@@ -21,7 +21,7 @@ MonoBehaviour:
     forceSlot: 1
     slotIndex: 1
     tooltipEnabled: 1
-    description: Upgrade swordsman's armour
+    description: Upgrade swordsman's armour.
     hideTooltipOnClick: 1
     reloadTime: 10
     cursor:

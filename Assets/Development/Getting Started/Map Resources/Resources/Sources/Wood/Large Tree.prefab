@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 64394086689716578}
   - component: {fileID: 64014495586776084}
   m_Layer: 0
-  m_Name: SM_Env_Tree_Large_01 1
+  m_Name: Large Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

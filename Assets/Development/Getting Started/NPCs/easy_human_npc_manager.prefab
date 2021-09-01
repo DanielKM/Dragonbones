@@ -49,7 +49,7 @@ MonoBehaviour:
   debugEnabled: 0
   independentUnits: []
   populationResource:
-    allTypes: {fileID: 0}
+    allTypes: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
     typeSpecific: []
   activeUnitRegulatorLogs: []
 --- !u!114 &5102561480123670594
@@ -67,10 +67,12 @@ MonoBehaviour:
   isActive: 1
   debugEnabled: 0
   prefabs:
-  - {fileID: 1241045417843294, guid: e745e3ea211bdf24992e7e9963d084ff, type: 3}
-  - {fileID: 1851370141575674, guid: d939995db516ba24b8448db79aefcc67, type: 3}
-  - {fileID: 1943697157073760, guid: c4074626397c0b74aa330f0554465a20, type: 3}
-  - {fileID: 8149950746151167398, guid: 239dea5d45508d044a06fb2f5b85558a, type: 3}
+  - {fileID: 1241045417843294, guid: c98f380487dc9504ca25f4f49a40a849, type: 3}
+  - {fileID: 1943697157073760, guid: 48ad0a7ea1b136c4fa7cd03837ff6efc, type: 3}
+  - {fileID: 1943697157073760, guid: 434da049ad4d57c48b4010d3a1c6db10, type: 3}
+  - {fileID: 1943697157073760, guid: 0651b5e32549de640ba1811716b1f6f5, type: 3}
+  - {fileID: 1241045417843294, guid: 8eb7abea97ed6a64f8e2cdce248385b6, type: 3}
+  - {fileID: 1943697157073760, guid: cdddddb9fee5d974a900c39dd18ebb82, type: 3}
   forceCreation:
     enabled: 1
     targetCountUpdateDelay:
@@ -116,9 +118,8 @@ MonoBehaviour:
   isActive: 1
   debugEnabled: 0
   prefabs:
-  - {fileID: 1034443902313416, guid: 0f0769060c3e5894bb49f81a58cf4e0a, type: 3}
-  - {fileID: 1089284315477716, guid: a3faa277c932c6b43b66c16650257147, type: 3}
-  - {fileID: 1771851839187444, guid: b5d835d4b1e9c79488f12d8de483049c, type: 3}
+  - {fileID: 1034443902313416, guid: a3d2def5606545e42a6735422eb2e3f7, type: 3}
+  - {fileID: 1241045417843294, guid: 431b96503acce2448aff18b516adaf85, type: 3}
   forceCreation:
     enabled: 0
     targetCountUpdateDelay:
@@ -198,11 +199,13 @@ MonoBehaviour:
   debugEnabled: 0
   independentBuildings:
   - {fileID: 1757281130161208, guid: 3eb2c20080a7fec4dac2031ee35cbf78, type: 3}
-  - {fileID: 2349096675118822525, guid: 245a47f86e9ef224ba67fb7d7eb7ffe3, type: 3}
-  - {fileID: 1061421805667030, guid: 178b713b32fccd247a42925c0d7dd041, type: 3}
-  - {fileID: 1585572764893566, guid: 926d54fcb19f187488abed77ed850d00, type: 3}
-  - {fileID: 1450904872675106399, guid: 64f36ec767cab8541a2deea57caf7508, type: 3}
-  - {fileID: 4173216077953317450, guid: 5fbc6690efe8ba64e846c61bed78feb1, type: 3}
+  - {fileID: 5681861929274110148, guid: 0cbc8ce9843fc75409042ddb25777c16, type: 3}
+  - {fileID: 1757281130161208, guid: 4cfb1b32fca9460488695a289fac400f, type: 3}
+  - {fileID: 5681861929274110148, guid: 7352eba6ba10505458ef276147d94d73, type: 3}
+  - {fileID: 5681861929274110148, guid: a6eae5314e7986d4a9a973afa429e0cb, type: 3}
+  - {fileID: 5681861929274110148, guid: ee4838ad7b1333b4586dc862a91a3319, type: 3}
+  - {fileID: 5681861929274110148, guid: 9d96bb5cf313aec4ea2b560f50ed289f, type: 3}
+  - {fileID: 1757281130161208, guid: 070dc016ba189a848a8e0c92caffeb6c, type: 3}
   activeBuildingRegulatorLogs: []
 --- !u!114 &114830321987845328
 MonoBehaviour:
@@ -417,8 +420,7 @@ MonoBehaviour:
   isActive: 0
   debugEnabled: 0
   canAttack: 1
-  attackResources:
-  - {fileID: 0}
+  attackResources: []
   targetFactionType: 0
   setTargetFactionDelay:
     _min: 10
@@ -428,18 +430,7 @@ MonoBehaviour:
     _min: 10
     _max: 15
     test: 0
-  launchAttackResources:
-  - type: {fileID: 0}
-    value:
-      amount:
-        _min: 450
-        _max: 600
-        test: 0
-      capacity:
-        _min: 0
-        _max: 0
-        test: 0
-    nonConsumable: 1
+  launchAttackResources: []
   attackOrderReloadRange:
     _min: 4
     _max: 8
@@ -453,18 +444,7 @@ MonoBehaviour:
     engageBuildings: 1
   targetPickerOnly: 0
   targetPreference: 0
-  cancelAttackResources:
-  - type: {fileID: 0}
-    value:
-      amount:
-        _min: 250
-        _max: 350
-        test: 0
-      capacity:
-        _min: 0
-        _max: 0
-        test: 0
-    nonConsumable: 1
+  cancelAttackResources: []
   attackLogs:
     targetFactionID: 0
     isAttacking: 0
@@ -573,7 +553,7 @@ MonoBehaviour:
   collectors:
   - {fileID: 7168786717453400073, guid: 5ae30a030e0d7aa41abe3d715da5a784, type: 3}
   collectionData:
-  - type: {fileID: 0}
+  - type: {fileID: 11400000, guid: bf34e8cafce24c04ca8c42a381137d45, type: 2}
     instanceCollectorsRatio:
       _min: 0.5
       _max: 0.8
@@ -583,7 +563,7 @@ MonoBehaviour:
       _max: 0.5
       test: 0
     minCollectorsAmount: 1
-  - type: {fileID: 0}
+  - type: {fileID: 11400000, guid: c984e7e231aa27f47a03b9c5099ffa44, type: 2}
     instanceCollectorsRatio:
       _min: 0.5
       _max: 0.8
@@ -593,7 +573,7 @@ MonoBehaviour:
       _max: 0.35
       test: 0
     minCollectorsAmount: 2
-  - type: {fileID: 0}
+  - type: {fileID: 11400000, guid: 4d807c5885fc0b043b5058ac1d510ac3, type: 2}
     instanceCollectorsRatio:
       _min: 0.5
       _max: 0.8
@@ -603,7 +583,27 @@ MonoBehaviour:
       _max: 0.3
       test: 0
     minCollectorsAmount: 1
-  - type: {fileID: 0}
+  - type: {fileID: 11400000, guid: 564bfb29cdb91fb409293420f0a901a7, type: 2}
+    instanceCollectorsRatio:
+      _min: 1
+      _max: 1
+      test: 0
+    maxCollectorsRatioRange:
+      _min: 1
+      _max: 1
+      test: 0
+    minCollectorsAmount: 0
+  - type: {fileID: 11400000, guid: 36ce6cc75966aca4eb6f1f228ec09e16, type: 2}
+    instanceCollectorsRatio:
+      _min: 1
+      _max: 1
+      test: 0
+    maxCollectorsRatioRange:
+      _min: 1
+      _max: 1
+      test: 0
+    minCollectorsAmount: 0
+  - type: {fileID: 11400000, guid: b49040b772bf6f743aa1c2d0e7594530, type: 2}
     instanceCollectorsRatio:
       _min: 1
       _max: 1
@@ -664,7 +664,7 @@ MonoBehaviour:
   isActive: 0
   debugEnabled: 0
   capacityResource:
-    allTypes: {fileID: 0}
+    allTypes: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
     typeSpecific: []
   factionEntities:
   - {fileID: 5681861929274110148, guid: 732d41fc91526a94bba41b0cfd296569, type: 3}

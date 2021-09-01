@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf428716af4f8f438cb34c5c761450b, type: 3}
+  m_Name: create_undead_skeleton_warrior
+  m_EditorClassIdentifier: 
+  data:
+    code: create_undead_skeleton_warrior
+    enabled: 1
+    displayType: 2
+    icon: {fileID: 21300000, guid: 240269c71d695234db3d29142fee3352, type: 3}
+    panelCategory: 0
+    forceSlot: 1
+    slotIndex: 1
+    tooltipEnabled: 1
+    description: Trains a Skeleton Warrior.
+    hideTooltipOnClick: 0
+    reloadTime: 10
+    cursor:
+      icon: {fileID: 0}
+      hotspot: {x: 0, y: 0}

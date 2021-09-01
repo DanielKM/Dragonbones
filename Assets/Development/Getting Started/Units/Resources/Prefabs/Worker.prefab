@@ -59,26 +59,19 @@ MonoBehaviour:
   setTargetTaskUI: {fileID: 11400000, guid: 0a91fb425c9e557449a8a62e5b2fc3bd, type: 2}
   orderAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: f586750dc220235488c719906ab461d9, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
   movableTerrainAreas:
   - {fileID: 11400000, guid: c424933072420334cb01dc9be41361a3, type: 2}
   formation:
-    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
-    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
     properties:
-      floatProperties:
-      - name: vertical-spacing
-        value: 2
-      - name: horizontal-spacing
-        value: 1
-      - name: spacing
-        value: 0
-      intProperties:
-      - name: amountPerRow
-        value: 4
+      floatProperties: []
+      intProperties: []
   speed:
     value: 3
   acceleration:
@@ -165,7 +158,8 @@ MonoBehaviour:
   selectOwnerOnly: 0
   selectionAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: b1119fee08f3d664f9c4bfb146a213c3, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -323,8 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
   code: collection_component
   isActive: 1
   priority: 1
@@ -337,7 +331,8 @@ MonoBehaviour:
   setTargetTaskUI: {fileID: 0}
   orderAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: f586750dc220235488c719906ab461d9, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 0
@@ -412,8 +407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 1
-    y: 0
+    x: 0
+    y: 2
   code: dropoff_source_component
   isActive: 1
   priority: 2
@@ -426,7 +421,8 @@ MonoBehaviour:
   setTargetTaskUI: {fileID: 0}
   orderAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: f586750dc220235488c719906ab461d9, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 0
@@ -650,6 +646,7 @@ GameObject:
   - component: {fileID: 5488730337589745085}
   - component: {fileID: 4056556962282526253}
   - component: {fileID: 1791692475774513099}
+  - component: {fileID: 7958985946939876734}
   m_Layer: 12
   m_Name: Worker
   m_TagString: Untagged
@@ -690,7 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: Worker
   code: human_worker
   category: builder_category, harvester_category
@@ -701,8 +698,18 @@ MonoBehaviour:
   model: {fileID: 5019191664468112691}
   isMainEntity: 0
   isFactionLocked: 1
-  initResources: []
-  disableResources: []
+  initResources:
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
+    value:
+      amount: 1
+      capacity: 0
+    nonConsumable: 0
+  disableResources:
+  - type: {fileID: 11400000, guid: e37c449ae9276b646ae0e7f0d571161a, type: 2}
+    value:
+      amount: -1
+      capacity: 0
+    nonConsumable: 0
   coloredRenderers:
   - renderer: {fileID: 5019191664479680589}
     materialID: 0
@@ -906,6 +913,30 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 7
   m_ObstacleAvoidanceType: 0
+--- !u!114 &7958985946939876734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168786717453400073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097adb8e7fba4d74588a9b1abcdbae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allTypes: {fileID: 11400000, guid: 7b9b5e203fd280a4797b169957d5c085, type: 2}
+  typeSpecific:
+  - ignoreFactionType: 1
+    factionType: {fileID: 0}
+    ignoreNPCType: 0
+    npcType: {fileID: 11400000, guid: 3493c8af534d298418a9824742a03c90, type: 2}
+    regulatorData: {fileID: 11400000, guid: 7b9b5e203fd280a4797b169957d5c085, type: 2}
+  - ignoreFactionType: 1
+    factionType: {fileID: 0}
+    ignoreNPCType: 0
+    npcType: {fileID: 11400000, guid: 91a9ec14b39b8cf41852be1ae356a847, type: 2}
+    regulatorData: {fileID: 11400000, guid: 7b9b5e203fd280a4797b169957d5c085, type: 2}
 --- !u!1001 &3840408855499866888
 PrefabInstance:
   m_ObjectHideFlags: 0

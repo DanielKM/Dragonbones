@@ -230,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 1474872480633068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4156658975133354}
   m_Father: {fileID: 4416401323951700}
@@ -1123,7 +1123,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8, y: 16, z: 8}
+  m_Size: {x: 10, y: 16, z: 10}
   m_Center: {x: 0, y: 8, z: 0}
 --- !u!54 &595546293359954362
 Rigidbody:
@@ -1521,65 +1521,10 @@ MonoBehaviour:
   code: unit_creator
   isActive: 1
   creationTasks:
-  - taskTitle: 'Create Unit: human_swordsman'
-    prefabObject: {fileID: 1943697157073760, guid: cdddddb9fee5d974a900c39dd18ebb82,
+  - taskTitle: 'Create Unit: human_wizard'
+    prefabObject: {fileID: 1241045417843294, guid: 431b96503acce2448aff18b516adaf85,
       type: 3}
-    taskUI: {fileID: 11400000, guid: 58b5b392036b96346a8dd55fbf9c46d7, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-    limit: 0
-    maxAmount: 0
-  - taskTitle: 'Create Unit: human_footman'
-    prefabObject: {fileID: 1943697157073760, guid: 48ad0a7ea1b136c4fa7cd03837ff6efc,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: 0e60b498db3b591439556057206912d6, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-    limit: 0
-    maxAmount: 0
-  - taskTitle: 'Create Unit: human_outrider'
-    prefabObject: {fileID: 1943697157073760, guid: 0651b5e32549de640ba1811716b1f6f5,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: 5f9a668ef54dfa447a60687f5d9c78c3, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-    limit: 0
-    maxAmount: 0
-  - taskTitle: 'Create Unit: human_knight'
-    prefabObject: {fileID: 1943697157073760, guid: 434da049ad4d57c48b4010d3a1c6db10,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: a90e227b38af65b4090736a220acd2b3, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-    limit: 0
-    maxAmount: 0
-  - taskTitle: 'Create Unit: human_archer'
-    prefabObject: {fileID: 1241045417843294, guid: c98f380487dc9504ca25f4f49a40a849,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: 25a98880ec8734e4d932dd0c8cac6d55, type: 2}
-    requiredResources: []
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
-    limit: 0
-    maxAmount: 0
-  - taskTitle: 'Create Unit: human_ranger'
-    prefabObject: {fileID: 1241045417843294, guid: 8eb7abea97ed6a64f8e2cdce248385b6,
-      type: 3}
-    taskUI: {fileID: 11400000, guid: fff738bc610dbd8418a7488327549c49, type: 2}
+    taskUI: {fileID: 11400000, guid: 59d6803805514a1409e41c6e7f6bc4f4, type: 2}
     requiredResources: []
     factionEntityRequirements: []
     missingRequirementData:
@@ -1972,6 +1917,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64441481026859432, guid: 328442f74c35c2b469d544b55cdb9164,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
 --- !u!23 &1208306057792452627 stripped
@@ -2045,6 +1995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4840518503648258, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64441481026859432, guid: 328442f74c35c2b469d544b55cdb9164,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2274,6 +2229,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64441481026859432, guid: 328442f74c35c2b469d544b55cdb9164,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
 --- !u!23 &2515517364608278211 stripped
@@ -2427,6 +2387,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64441481026859432, guid: 328442f74c35c2b469d544b55cdb9164,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
 --- !u!23 &3540078072053211145 stripped
@@ -2500,6 +2465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4840518503648258, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64441481026859432, guid: 328442f74c35c2b469d544b55cdb9164,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2733,6 +2703,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64441481026859432, guid: 328442f74c35c2b469d544b55cdb9164,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
 --- !u!23 &5726779233802153811 stripped
@@ -2806,6 +2781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4840518503648258, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64441481026859432, guid: 328442f74c35c2b469d544b55cdb9164,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2959,6 +2939,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4840518503648258, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64441481026859432, guid: 328442f74c35c2b469d544b55cdb9164,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
