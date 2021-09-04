@@ -31,7 +31,7 @@ namespace RTSEngine.UI
 
         //if true, the task panel can not be updated.
         private bool isLocked = false;
-        private List<string> lastTaskCodes;
+        private List<string> lastUnusedTaskCodes;
 
         //Holds the active tasks of the IEntityComponent components organized by their unique codes.
         //key: code of the task in the task panel.
@@ -55,6 +55,9 @@ namespace RTSEngine.UI
             }
 
             isLocked = false; //by default, the task panel is not locked.
+
+            // Initialize data structs:
+            lastUnusedTaskCodes = new List<string>();
 
             //custom events to update/hide UI elements:
             globalEvent.EntityComponentTaskUIReloadRequestGlobal += HandleEntityComponentTaskUIReloadRequestGlobal;
@@ -99,7 +102,7 @@ namespace RTSEngine.UI
             if (e.ReloadAll)
                 Show();
             else
-                UpdateEntityComponentTasks(component);
+                FetchSingleEntityComponentTasks(component);
         }
 
         //lock the task panel and hide the tasks when player's building placement starts.
@@ -188,31 +191,53 @@ namespace RTSEngine.UI
 
             // Hide(); //hide currently active tasks
 
-            this.lastTaskCodes = componentTasks.Keys.ToList(); 
+            lastUnusedTaskCodes.Clear();
+            lastUnusedTaskCodes.AddRange(componentTasks.Keys); 
 
             foreach(var tracker in componentTasks.Values)
                 tracker.ResetComponents();
 
-            foreach (IEntity entity in selectionMgr.GetEntitiesList(EntityType.all, true, true))
-                UpdateAllEntityComponentTasks(entity);
+            IDictionary<string, IEnumerable<IEntity>> selectedEntities = selectionMgr.GetEntitiesDictionary(EntityType.all, localPlayerFaction: true);
 
-            foreach (string uncalledTaskCode in lastTaskCodes)
+            foreach(KeyValuePair<string, IEnumerable<IEntity>> selectedEntityType in selectedEntities)
+                FetchAllEntityComponentTasks(selectedEntityType.Value);
+
+            foreach (string uncalledTaskCode in lastUnusedTaskCodes)
                 DisableEntityComponentTask(uncalledTaskCode, onEmptyOnly: true);
 
-            this.lastTaskCodes.Clear();
+            this.lastUnusedTaskCodes.Clear();
         }
 
         #region IEntityComponent Task Handling
-        private void UpdateAllEntityComponentTasks (IEntity entity)
+
+        // Assumes 'entities' has at least one element and that all IEntity instances are of the same type (code)
+        private void FetchAllEntityComponentTasks (IEnumerable<IEntity> entities)
         {
-            foreach (IEntityComponent entityComponent in entity.EntityComponents.Values)
-                UpdateEntityComponentTasks(entityComponent);
+            IEntity refEntity = entities.First();
+            foreach (IEntityComponent refEntityComponent in refEntity.EntityComponents.Values)
+            {
+                if (!refEntityComponent.OnTaskUIRequest(out IEnumerable<EntityComponentTaskUIAttributes> attributes, out IEnumerable<string> disabledTaskCodes))
+                {
+                    disabledTaskCodes = disabledTaskCodes.Concat(attributes.Select(attr => attr.data.code));
+                    attributes = Enumerable.Empty<EntityComponentTaskUIAttributes>();
+                }
+
+                if (disabledTaskCodes != null)
+                    foreach (string code in disabledTaskCodes)
+                        DisableEntityComponentTask(code);
+
+                if (attributes != null)
+                {
+                    IEnumerable<IEntityComponent> nextEntityComponents = entities.Select(entity => entity.EntityComponents[refEntityComponent.Code]);
+                    foreach (EntityComponentTaskUIAttributes attr in attributes) //attempt to add them to the task panel
+                        AddEntityComponentTask(nextEntityComponents, attr);
+                }
+            }
         }
 
-        private void UpdateEntityComponentTasks (IEntityComponent entityComponent)
+        private void FetchSingleEntityComponentTasks (IEntityComponent component)
         {
-            //if no task is supposed to be displayed
-            if (!entityComponent.OnTaskUIRequest(out IEnumerable<EntityComponentTaskUIAttributes> attributes, out IEnumerable<string> disabledTaskCodes))
+            if (!component.OnTaskUIRequest(out IEnumerable<EntityComponentTaskUIAttributes> attributes, out IEnumerable<string> disabledTaskCodes))
             {
                 disabledTaskCodes = disabledTaskCodes.Concat(attributes.Select(attr => attr.data.code));
                 attributes = Enumerable.Empty<EntityComponentTaskUIAttributes>();
@@ -223,11 +248,16 @@ namespace RTSEngine.UI
                     DisableEntityComponentTask(code);
 
             if (attributes != null)
+            {
+                IEnumerable<IEntityComponent> nextEntityComponents = Enumerable.Repeat(component, 1);
                 foreach (EntityComponentTaskUIAttributes attr in attributes) //attempt to add them to the task panel
-                    AddEntityComponentTask(entityComponent, attr);
+                    AddEntityComponentTask(nextEntityComponents, attr);
+            }
         }
 
-        public void AddEntityComponentTask (IEntityComponent component, EntityComponentTaskUIAttributes attributes)
+
+        // Assumes 'components' are of the same type and that there is at least one element in the enumerable
+        public void AddEntityComponentTask (IEnumerable<IEntityComponent> components, EntityComponentTaskUIAttributes attributes)
         {
             if(!attributes.data.enabled)
             {
@@ -235,11 +265,13 @@ namespace RTSEngine.UI
                 return;
             }
 
+            IEntityComponent refComponent = components.First();
+
             switch(attributes.data.displayType) //depending on the display type of the task to add, check the fail conditions:
             {
                 case EntityComponentTaskUIData.DisplayType.heteroMultipleSelection:
 
-                    if (!component.Entity.Selection.IsSelected)
+                    if (!refComponent.Entity.Selection.IsSelected)
                     {
                         DisableEntityComponentTask(attributes.data.code);
                         return;
@@ -248,7 +280,7 @@ namespace RTSEngine.UI
 
                 case EntityComponentTaskUIData.DisplayType.singleSelection:
 
-                    if (!selectionMgr.IsSelectedOnly(component.Entity))
+                    if (!selectionMgr.IsSelectedOnly(refComponent.Entity))
                     {
                         DisableEntityComponentTask(attributes.data.code);
                         return;
@@ -257,7 +289,7 @@ namespace RTSEngine.UI
 
                 case EntityComponentTaskUIData.DisplayType.homoMultipleSelection:
 
-                    if (selectionMgr.GetEntitiesList(component.Entity.Type, exclusiveType: true, localPlayerFaction: true).Count() == 0)
+                    if (!selectionMgr.GetEntitiesList(refComponent.Entity.Type, exclusiveType: true, localPlayerFaction: true).Any())
                     {
                         DisableEntityComponentTask(attributes.data.code);
                         return;
@@ -281,11 +313,12 @@ namespace RTSEngine.UI
 
                 //add the new tracker to the dictionary:
                 componentTasks.Add(attributes.data.code, tracker);
+                tracker.ReloadTaskAttributes(attributes);
             }
 
-            tracker.ReloadTask(attributes, component);
+            tracker.AddTaskComponents(components);
 
-            lastTaskCodes.Remove(attributes.data.code);
+            lastUnusedTaskCodes.Remove(attributes.data.code);
         }
 
         /// <summary>

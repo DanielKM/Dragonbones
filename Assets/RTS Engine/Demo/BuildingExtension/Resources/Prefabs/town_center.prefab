@@ -1111,7 +1111,6 @@ MonoBehaviour:
   - healthRange:
       _min: 0
       _max: 500
-      test: 0
     showChildObjects:
     - {fileID: 6352637883043834854}
     - {fileID: 6352637882951067957}
@@ -1124,7 +1123,6 @@ MonoBehaviour:
   - healthRange:
       _min: 500
       _max: 1000
-      test: 0
     showChildObjects:
     - {fileID: 6352637883043834854}
     - {fileID: 6352637882951067957}
@@ -1137,7 +1135,6 @@ MonoBehaviour:
   - healthRange:
       _min: 1000
       _max: 1500
-      test: 0
     showChildObjects:
     - {fileID: 6352637883043834854}
     - {fileID: 6352637882951067957}
@@ -1150,7 +1147,6 @@ MonoBehaviour:
   - healthRange:
       _min: 1500
       _max: 2300
-      test: 0
     showChildObjects:
     - {fileID: 6352637883043834854}
     hideChildObjects:
@@ -1163,7 +1159,6 @@ MonoBehaviour:
   - healthRange:
       _min: 2300
       _max: 2500
-      test: 0
     showChildObjects: []
     hideChildObjects:
     - {fileID: 6352637883043834854}
@@ -1177,7 +1172,6 @@ MonoBehaviour:
   - healthRange:
       _min: 0
       _max: 2500
-      test: 0
     showChildObjects:
     - {fileID: 4426695081763964062}
     - {fileID: 1241339666335194}
@@ -1189,7 +1183,6 @@ MonoBehaviour:
     healthRange:
       _min: 0
       _max: 0
-      test: 0
     showChildObjects:
     - {fileID: 4426695081763964062}
     hideChildObjects:
@@ -2963,13 +2956,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   code: unit_creator
   isActive: 1
   creationTasks:
   - taskTitle: 'Create Unit: villager'
-    prefabObject: {fileID: 1913004789782250, guid: 8d0703b2c0bc30d44b3553a37c906203,
-      type: 3}
     taskUI: {fileID: 11400000, guid: 525078f2fbc9fe14a97c11bb0dc99c4e, type: 2}
     requiredResources:
     - type: {fileID: 11400000, guid: 7fad61ec7c519fc48bda4c4cab2cb727, type: 2}
@@ -2986,6 +2977,8 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 0}
       color: {r: 1, g: 0.29803923, b: 0.29803923, a: 1}
+    prefabObject: {fileID: 1913004789782250, guid: 8d0703b2c0bc30d44b3553a37c906203,
+      type: 3}
     limit: 0
     maxAmount: 10
   upgradeTargetCreationTasks: []
@@ -3042,13 +3035,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   code: upgrade_launcher
   isActive: 1
   upgradeTasks:
   - taskTitle: 'Upgrade: villager (movement_component -> movement_upgraded)'
-    prefabObject: {fileID: 1913004789782250, guid: 8d0703b2c0bc30d44b3553a37c906203,
-      type: 3}
     taskUI: {fileID: 11400000, guid: 9a65d07f49e4aa74fa1d15fb626bc712, type: 2}
     requiredResources:
     - type: {fileID: 11400000, guid: 7fad61ec7c519fc48bda4c4cab2cb727, type: 2}
@@ -3071,6 +3062,8 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 0}
       color: {r: 1, g: 0.29803923, b: 0.29803923, a: 1}
+    prefabObject: {fileID: 1913004789782250, guid: 8d0703b2c0bc30d44b3553a37c906203,
+      type: 3}
   entityTargetUpgradeTasks: []
   entityComponentTargetUpgradeTasks: []
 --- !u!114 &4583736192029397406

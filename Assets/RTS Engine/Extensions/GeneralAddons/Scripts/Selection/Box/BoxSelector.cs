@@ -9,6 +9,11 @@ using RTSEngine.Logging;
 using RTSEngine.BuildingExtension;
 using RTSEngine.Event;
 using RTSEngine.UI;
+using RTSEngine.Search;
+using RTSEngine.Terrain;
+using System.Collections.Generic;
+using RTSEngine.EntityComponent;
+using System.Linq;
 
 namespace RTSEngine.Selection.Box
 {
@@ -35,6 +40,13 @@ namespace RTSEngine.Selection.Box
         // Final mouse position recorded when the player stops drawing the selection box
         private Vector3 finalMousePosition;
 
+        private Vector2 lowerLeftCorner;
+        private Vector2 upperRightCorner;
+        private Rect screenRect;
+        private GameObject center;
+        private GameObject edge2;
+        private GameObject edge1;
+
         // Game services
         protected IGameManager gameMgr { private set; get; }
         protected IGameUIManager gameUIMgr { private set; get; } 
@@ -44,7 +56,10 @@ namespace RTSEngine.Selection.Box
         protected IGameLoggingService logger { private set; get; }
         protected IBuildingPlacement placementMgr { private set; get; }
         protected IGlobalEventPublisher globalEvent { private set; get; } 
-        protected IGameUIManager UIMgr { private set; get; } 
+        protected IGameUIManager UIMgr { private set; get; }
+        protected IGridSearchHandler gridSearch { private set; get; }
+        protected ITerrainManager terrainMgr { private set; get; }
+        protected IMainCameraController mainCameraCtrl { private set; get; } 
         #endregion
 
         #region Initializing/Terminating
@@ -59,7 +74,10 @@ namespace RTSEngine.Selection.Box
             this.logger = gameMgr.GetService<IGameLoggingService>();
             this.placementMgr = gameMgr.GetService<IBuildingPlacement>();
             this.globalEvent = gameMgr.GetService<IGlobalEventPublisher>(); 
-            this.UIMgr = gameMgr.GetService<IGameUIManager>(); 
+            this.UIMgr = gameMgr.GetService<IGameUIManager>();
+            this.gridSearch = gameMgr.GetService<IGridSearchHandler>();
+            this.terrainMgr = gameMgr.GetService<ITerrainManager>();
+            this.mainCameraCtrl = gameMgr.GetService<IMainCameraController>(); 
 
             if (!logger.RequireValid(canvas,
                 $"[{GetType().Name}] The 'Canvas' field must be assigned")
@@ -158,25 +176,99 @@ namespace RTSEngine.Selection.Box
             if (!mouseSelector.MultipleSelectionKeyDown)
                 selectionMgr.RemoveAll();
 
-            // Get the lower left and upper right corners coordinates
-            Vector2 lowerLeftCorner = new Vector2(Mathf.Min(finalMousePosition.x, initialMousePosition.x), Mathf.Min(finalMousePosition.y, initialMousePosition.y));
-            Vector2 upperRightCorner = new Vector2(Mathf.Max(finalMousePosition.x, initialMousePosition.x), Mathf.Max(finalMousePosition.y, initialMousePosition.y));
-
             if (!gameMgr.LocalFactionSlot.IsValid())
                 return;
 
-            foreach (IUnit unit in gameMgr.LocalFactionSlot.FactionMgr.Units)
-            {
-                Vector3 unitScreenPosition = mainCameraController.MainCamera.WorldToScreenPoint(unit.Selection.transform.position);
+            lowerLeftCorner = new Vector2(Mathf.Min(finalMousePosition.x, initialMousePosition.x), Mathf.Min(finalMousePosition.y, initialMousePosition.y));
+            upperRightCorner = new Vector2(Mathf.Max(finalMousePosition.x, initialMousePosition.x), Mathf.Max(finalMousePosition.y, initialMousePosition.y));
 
-                if (unit.IsInteractable &&
-                    // Make sure the unit screen position fits inside the current selection box
-                    unitScreenPosition.x >= lowerLeftCorner.x && unitScreenPosition.x <= upperRightCorner.x
-                    && unitScreenPosition.y >= lowerLeftCorner.y && unitScreenPosition.y <= upperRightCorner.y)
+            selectionMgr.Add(gameMgr.LocalFactionSlot.FactionMgr.Units.Where(
+                unit =>
                 {
-                    selectionMgr.Add(unit, SelectionType.multiple);
+                    Vector3 unitScreenPosition = mainCameraController.MainCamera.WorldToScreenPoint(unit.Selection.transform.position);
+
+                    // Make sure the unit screen position fits inside the current selection box
+                    return unitScreenPosition.x >= lowerLeftCorner.x && unitScreenPosition.x <= upperRightCorner.x
+                        && unitScreenPosition.y >= lowerLeftCorner.y && unitScreenPosition.y <= upperRightCorner.y;
                 }
-            }
+                ));
+
+            return;
+
+            // Get the lower left and upper right corners coordinates
+            Vector3 upperLeftCorner = new Vector2(Mathf.Min(finalMousePosition.x, initialMousePosition.x), Mathf.Max(finalMousePosition.y, initialMousePosition.y));
+            Vector3 lowerRightCorner = new Vector2(Mathf.Max(finalMousePosition.x, initialMousePosition.x), Mathf.Min(finalMousePosition.y, initialMousePosition.y));
+            Vector3 centerPos = lowerLeftCorner + upperRightCorner;
+            centerPos /= 2.0f;
+
+            screenRect = new Rect(
+                lowerLeftCorner, new Vector2(upperRightCorner.x - lowerLeftCorner.x, upperRightCorner.y - lowerLeftCorner.y));
+
+            bool terrainPointsValid = terrainMgr.ScreenPointToTerrainPoint(lowerLeftCorner, null, out Vector3 searchMinCornerTerrain);
+            terrainPointsValid = terrainMgr.ScreenPointToTerrainPoint(upperLeftCorner, null, out Vector3 upperLeftCornerPos);
+            terrainPointsValid = terrainMgr.ScreenPointToTerrainPoint(centerPos, null, out Vector3 searchCenterTerrain) && terrainPointsValid;
+            terrainPointsValid = terrainMgr.ScreenPointToTerrainPoint(upperRightCorner, null, out Vector3 searchMaxCornerTerrain) && terrainPointsValid;
+            terrainPointsValid = terrainMgr.ScreenPointToTerrainPoint(lowerRightCorner, null, out Vector3 lowerRightCornerPos) && terrainPointsValid;
+
+            searchCenterTerrain.y = 0.0f;
+            searchMinCornerTerrain.y = 0.0f;
+            searchMaxCornerTerrain.y = 0.0f;
+
+            float range = Mathf.Max(
+                Vector2.Distance(searchCenterTerrain, searchMinCornerTerrain),
+                Vector2.Distance(searchCenterTerrain, searchMaxCornerTerrain),
+                Vector2.Distance(searchCenterTerrain, upperLeftCornerPos),
+                Vector2.Distance(searchCenterTerrain, lowerRightCornerPos));
+            //range = Vector3.Distance(searchMinCornerTerrain, searchMaxCornerTerrain);
+            print(range);
+
+
+            if (center)
+                Destroy(center);
+            center = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            center.transform.position = searchCenterTerrain;
+            //center.transform.localScale = Vector3.one * range;
+            Color red = Color.red;
+            red.a = 0.2f;
+            center.GetComponent<Renderer>().material.color = red;
+
+            if (edge1)
+                Destroy(edge1);
+            if (edge2)
+                Destroy(edge2);
+            edge1 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            edge2 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            var edge3 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            var edge4 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
+            edge1.transform.position = searchMinCornerTerrain; 
+            edge2.transform.position = searchMaxCornerTerrain; 
+
+            gridSearch.Search(
+                searchCenterTerrain,
+                range,
+                -1,
+                IsTargetUnitValidForBoxSelection,
+                playerCommand: true,
+                out IEnumerable<IEntity> entitiesInRange); ;
+
+            selectionMgr.Add(entitiesInRange);
+        }
+
+        private ErrorMessage IsTargetUnitValidForBoxSelection(TargetData<IEntity> target, bool playerCommand)
+        {
+            if (!target.instance.IsInteractable
+                || target.instance.Type != EntityType.unit)
+                return ErrorMessage.invalid;
+
+            Vector3 unitScreenPosition = mainCameraController.MainCamera.WorldToScreenPoint(target.instance.Selection.transform.position);
+
+            // Make sure the unit screen position fits inside the current selection box
+            if (unitScreenPosition.x < lowerLeftCorner.x || unitScreenPosition.x > upperRightCorner.x
+                || unitScreenPosition.y < lowerLeftCorner.y || unitScreenPosition.y > upperRightCorner.y)
+                return ErrorMessage.positionOutOfSelectionBounds;
+
+            return ErrorMessage.none;
         }
 
         public void Disable()

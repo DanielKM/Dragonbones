@@ -318,7 +318,7 @@ namespace RTSEngine.EditorOnly.EntityComponent
     public class UnitMovementEditor : FactionEntityTargetComponentEditor<UnitMovement, IEntity>
     {
         private string[][] toolbars = new string[][] {
-            new string [] { "General", "Target Search/Picker", "Setting Target" },
+            new string [] { "General", "Setting Target" },
             new string [] { "Movement", "Rotation"}
         };
 

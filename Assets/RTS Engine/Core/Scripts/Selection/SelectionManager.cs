@@ -100,13 +100,11 @@ namespace RTSEngine.Selection
 
         public IDictionary<string, IEnumerable<IEntity>> GetEntitiesDictionary(EntityType requiredType, bool localPlayerFaction)
         {
-            Dictionary<string, List<IEntity>> entities = new Dictionary<string, List<IEntity>>();
-
             return selectionDic
-                .Where(pair =>
+                .Where(kvp =>
                 {
-                    return (!localPlayerFaction || pair.Value[0].IsLocalPlayerFaction())
-                        && pair.Value[0].IsEntityTypeMatch(requiredType);
+                    return (!localPlayerFaction || kvp.Value[0].IsLocalPlayerFaction())
+                        && kvp.Value[0].IsEntityTypeMatch(requiredType);
                 })
                 // Use the Linq.Select method when adding entities range to create a new IEnumerable instance and not tie this one with the one in the selection dictionary
                 .ToDictionary(pair => pair.Key, pair => pair.Value.Select(nextEntity => nextEntity));
@@ -116,16 +114,46 @@ namespace RTSEngine.Selection
         #region Selecting Entities
         public bool Add(IEnumerable<IEntity> entities)
         {
-            RemoveAll();
+            // ToList() to generate a separate collection to avoid the issue where the input collection is referencing a collection in this class
+            // Select each entity individually and launch the selection update event after all entities are selected
 
-            // ToList() to generate a separate collection to avoid the issue where the input collection is referencing a collection in this clas
-            // Select each unit individually
-            return entities
-                .ToList()
-                .All(entity => Add(entity, SelectionType.multiple));
+            var args = new EntitySelectionEventArgs(SelectionType.multiple);
+
+            IEntity refEntity = null;
+            foreach (IEntity entity in entities)
+                if (AddInternal(entity, SelectionType.multiple))
+                {
+                    entity.Selection.OnSelected(args);
+
+                    if (!refEntity.IsValid())
+                        refEntity = entity;
+                }
+
+            if(refEntity.IsValid())
+            {
+                globalEvent.RaiseEntitySelectedGlobal(refEntity, args);
+                return true;
+            }
+
+            return false;
         }
 
         public bool Add(IEntity entity, SelectionType type)
+        {
+            if (AddInternal(entity, type))
+            {
+                var args = new EntitySelectionEventArgs(type);
+
+                entity.Selection.OnSelected(args);
+
+                globalEvent.RaiseEntitySelectedGlobal(entity, args);
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool AddInternal(IEntity entity, SelectionType type)
         {
             if (!entity.IsValid())
                 return false;
@@ -199,10 +227,6 @@ namespace RTSEngine.Selection
                 if (Count == 1)
                     firstSelected = entity;
 
-                entity.Selection.OnSelected();
-
-                globalEvent.RaiseEntitySelectedGlobal(entity);
-
                 lastSelectedEntityType = entity.Type;
                 isCurrSelectionExclusive = exclusiveOnSuccess;
 
@@ -253,26 +277,22 @@ namespace RTSEngine.Selection
             IEnumerable<string> keys = selectionDic.Keys.ToList();
 
             Count = 0; //reset selection count
+            IEntity refEntity = null; // this would be valid if at least one entity was selected prior to the call of this method
 
             foreach (string code in keys)
-            {
-                List<IEntity> selectedList = selectionDic[code];
-                selectionDic.Remove(code);
-
-                while (selectedList.Count > 0)
+                foreach (IEntity entity in selectionDic[code])
                 {
-                    IEntity nextEntity = selectedList[0];
-                    selectedList.RemoveAt(0);
-
-                    nextEntity.Selection.OnDeselected();
-
-                    globalEvent.RaiseEntityDeselectedGlobal(nextEntity);
+                    entity.Selection.OnDeselected();
+                    if (!refEntity.IsValid())
+                        refEntity = entity;
                 }
-            }
 
             // Reset state
             selectionDic.Clear();
             firstSelected = null;
+
+            if (refEntity.IsValid())
+                globalEvent.RaiseEntityDeselectedGlobal(refEntity);
         }
         #endregion
     }

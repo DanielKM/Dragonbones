@@ -77,12 +77,12 @@ namespace RTSEngine.Event
         event CustomEventHandler<IEntity, ResourceEventArgs> UnitResourceDropOffCompleteGlobal;
         event CustomEventHandler<IEntity, ResourceEventArgs> UnitResourceDropOffStartGlobal;
         event CustomEventHandler<IUnit, UpgradeEventArgs<IEntity>> UnitUpgradedGlobal;
-        event CustomEventHandler<IEntity, EventArgs> UnitSelectedGlobal;
 
-        event CustomEventHandler<IEntity, EventArgs> EntitySelectedGlobal;
+        event CustomEventHandler<IEntity, EntitySelectionEventArgs> EntitySelectedGlobal;
         event CustomEventHandler<IEntity, EventArgs> EntityDeselectedGlobal;
-        event CustomEventHandler<IEntity, EventArgs> BuildingSelectedGlobal;
-        event CustomEventHandler<IEntity, EventArgs> ResourceSelectedGlobal;
+        event CustomEventHandler<IEntity, EntitySelectionEventArgs> BuildingSelectedGlobal;
+        event CustomEventHandler<IEntity, EntitySelectionEventArgs> ResourceSelectedGlobal;
+        event CustomEventHandler<IEntity, EntitySelectionEventArgs> UnitSelectedGlobal;
         event CustomEventHandler<IEntity, EventArgs> UnitDeselectedGlobal;
         event CustomEventHandler<IEntity, EventArgs> BuildingDeselectedGlobal;
         event CustomEventHandler<IEntity, EventArgs> ResourceDeselectedGlobal;
@@ -104,6 +104,8 @@ namespace RTSEngine.Event
         void RaiseBuildingPlacementStatusUpdatedGlobal(IBuilding sender);
         void RaiseBuildingPlacementStopGlobal(IBuilding sender);
         void RaiseBuildingUpgradedGlobal(IBuilding sender, UpgradeEventArgs<IEntity> e);
+        void RaiseSpellDeadGlobal(ISpell sender, DeadEventArgs e);
+        void RaiseSpellHealthUpdatedGlobal(ISpell sender, HealthUpdateEventArgs e);
         void RaiseEffectObjectCreatedGlobal(IEffectObject source);
         void RaiseEffectObjectDestroyedGlobal(IEffectObject source);
         void RaiseEntityComponentPendingTaskUIReloadRequestGlobal(IEntity sender, TaskUIReloadEventArgs e = null);
@@ -119,7 +121,7 @@ namespace RTSEngine.Event
         void RaiseEntityInstanceUpgradedGlobal(IEntity sender, UpgradeEventArgs<IEntity> e);
         void RaiseEntityMouseEnterGlobal(IEntity sender);
         void RaiseEntityMouseExitGlobal(IEntity sender);
-        void RaiseEntitySelectedGlobal(IEntity sender);
+        void RaiseEntitySelectedGlobal(IEntity sender, EntitySelectionEventArgs args);
         void RaiseEntityUpgradedGlobal(IEntity sender, UpgradeEventArgs<IEntity> e);
         void RaiseFactionEntityDeadGlobal(IFactionEntity sender, DeadEventArgs e);
         void RaiseFactionEntityHealthUpdatedGlobal(IFactionEntity sender, HealthUpdateEventArgs e);

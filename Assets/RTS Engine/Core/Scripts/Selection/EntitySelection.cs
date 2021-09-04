@@ -9,6 +9,20 @@ using RTSEngine.Event;
 using RTSEngine.Game;
 using RTSEngine.Logging;
 using RTSEngine.UI;
+using RTSEngine.Selection;
+
+namespace RTSEngine.Event
+{
+    public class EntitySelectionEventArgs : EventArgs
+    {
+        public SelectionType Type { private set; get; }
+
+        public EntitySelectionEventArgs(SelectionType type)
+        {
+            this.Type = type;
+        }
+    }
+}
 
 namespace RTSEngine.Selection
 {
@@ -48,13 +62,13 @@ namespace RTSEngine.Selection
         #endregion
 
         #region Raising Events
-        public event CustomEventHandler<IEntity, EventArgs> Selected;
+        public event CustomEventHandler<IEntity, EntitySelectionEventArgs> Selected;
         public event CustomEventHandler<IEntity, EventArgs> Deselected;
 
-        private void RaiseSelected ()
+        private void RaiseSelected (EntitySelectionEventArgs args)
         {
             var handler = Selected;
-            handler?.Invoke(Entity, EventArgs.Empty);
+            handler?.Invoke(Entity, args);
         }
         private void RaiseDeselected ()
         {
@@ -111,15 +125,13 @@ namespace RTSEngine.Selection
         #endregion
 
         #region Selection State Update
-        public void OnSelected()
+        public void OnSelected(EntitySelectionEventArgs args)
         {
-            Entity.OnPlayerClick();
-
             audioMgr.PlaySFX(selectionAudio.Fetch(), false);
             Entity.SelectionMarker?.Enable();
 
             IsSelected = true;
-            RaiseSelected();
+            RaiseSelected(args);
         }
 
         public void OnDeselected ()

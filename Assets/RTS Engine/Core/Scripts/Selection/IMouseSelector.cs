@@ -8,7 +8,7 @@ namespace RTSEngine.Selection
         bool MultipleSelectionKeyDown { get; }
         string EntitySelectionLayer { get; }
 
-        void SelectEntitisInRange(IEntity source);
+        void SelectEntitisInRange(IEntity source, bool playerCommand);
 
         void FlashSelection(IEntity entity, bool isFriendly);
     }

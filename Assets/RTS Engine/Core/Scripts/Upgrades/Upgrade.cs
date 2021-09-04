@@ -10,7 +10,7 @@ namespace RTSEngine.Upgrades
 {
     public abstract class Upgrade : MonoBehaviour, IMonoBehaviour
     {
-        [SerializeField, EnforceType(typeof(IEntity)), Tooltip("Source entity whose upgrade is handled by this component (required for entity component upgrades but optional for entity upgrades).")]
+        [SerializeField, EnforceType(new System.Type[] { typeof(IEntity), typeof(IFactionEntity) }), Tooltip("Source entity whose upgrade is handled by this component.")]
         private GameObject sourceEntity = null;
         public IFactionEntity SourceEntity => sourceEntity.IsValid() ? sourceEntity.GetComponent<IFactionEntity>() : null;
         public abstract string SourceCode { get; }

@@ -51,6 +51,8 @@ namespace RTSEngine.Entities
 
         GameObject Model { get; }
 
+        float Duration { get; }
+
         bool IsInteractable { get; }
         bool IsSearchable { get; }
 
@@ -71,8 +73,6 @@ namespace RTSEngine.Entities
         //a variable to check that an entity is interactable, can launch tasks, can set targets and is initiated.
         void SetIdle(IEntityTargetComponent exception = null, bool includeMovement = true);
         bool IsIdle { get; }
-
-        void OnPlayerClick();
 
         ErrorMessage SetFaction(IEntity source, int targetFactionID);
 

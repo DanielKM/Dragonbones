@@ -1,13 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
-using RTSEngine;
-using RTSEngine.Lobby.Utilities;
 
 namespace RTSEngine.EditorOnly
 {
-
     [CustomPropertyDrawer(typeof(IntRange)), CustomPropertyDrawer(typeof(FloatRange))]
     public class RangeDrawer : PropertyDrawer
     {

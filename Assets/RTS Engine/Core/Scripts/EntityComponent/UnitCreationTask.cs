@@ -20,6 +20,10 @@ namespace RTSEngine.EntityComponent
     [System.Serializable]
     public class UnitCreationTask : FactionEntityCreationTask<IUnit> 
     {
+        [Space(), SerializeField, EnforceType(typeof(IUnit)), Tooltip("Unit prefab to be created."), Header("Unit Creation Task Properties"),]
+        protected GameObject prefabObject = null;
+        public override GameObject PrefabObject => prefabObject;
+
         [SerializeField, Tooltip("Choose how to limit launching the unit creation task.")]
         private UnitCreationTaskLimit limit = UnitCreationTaskLimit.none;
 

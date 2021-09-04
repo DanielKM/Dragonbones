@@ -20,7 +20,7 @@ namespace RTSEngine.Lobby.Utilities
         [Tooltip("Description to display for the map in the UI menu.")]
         public string description;
 
-        [SerializeField, Tooltip("Minimum amount of factions allowed to play the map."), Min(1)]
+        [SerializeField, Tooltip("Minimum amount of factions allowed to play the map.")]
         public IntRange factionsAmount;
 
         [Tooltip("Types of factions available to select to play with in the map.")]

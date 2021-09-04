@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using RTSEngine.Entities;
 using RTSEngine.Game;
 using RTSEngine.BuildingExtension;
+using RTSEngine.SpellCastExtension;
 using RTSEngine.Cameras;
 using RTSEngine.Terrain;
 using RTSEngine.Task;
@@ -11,6 +12,10 @@ using RTSEngine.EntityComponent;
 using RTSEngine.UI;
 using RTSEngine.Controls;
 using RTSEngine.Logging;
+using RTSEngine.Search;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RTSEngine.Selection
 {
@@ -52,11 +57,13 @@ namespace RTSEngine.Selection
         protected IGameUIManager gameUIMgr { private set; get; } 
         protected ISelectionManager selectionMgr { private set; get; } 
         protected IBuildingPlacement placementMgr { private set; get; }
+        protected ISpellCastPlacement spellCastMgr { private set; get; }
         protected ITerrainManager terrainMgr { private set; get; }
         protected ITaskManager taskMgr { private set; get; }
         protected IMainCameraController mainCameraController { private set; get; }
         protected IGameControlsManager controls { private set; get; }
-        protected IGameLoggingService logger { private set; get; } 
+        protected IGameLoggingService logger { private set; get; }
+        protected IGridSearchHandler gridSearch { private set; get; } 
         #endregion
 
         #region Initializing/Terminating
@@ -66,12 +73,14 @@ namespace RTSEngine.Selection
 
             this.gameUIMgr = gameMgr.GetService<IGameUIManager>(); 
             this.placementMgr = gameMgr.GetService<IBuildingPlacement>();
+            this.spellCastMgr = gameMgr.GetService<ISpellCastPlacement>();
             this.selectionMgr = gameMgr.GetService<ISelectionManager>();
             this.terrainMgr = gameMgr.GetService<ITerrainManager>();
             this.taskMgr = gameMgr.GetService<ITaskManager>();
             this.mainCameraController = gameMgr.GetService<IMainCameraController>();
             this.controls = gameMgr.GetService<IGameControlsManager>();
-            this.logger = gameMgr.GetService<IGameLoggingService>(); 
+            this.logger = gameMgr.GetService<IGameLoggingService>();
+            this.gridSearch = gameMgr.GetService<IGridSearchHandler>(); 
 
             if (!logger.RequireValid(multipleSelectionKey,
               $"[{GetType().Name}] Field 'Multiple Selection Key' has not been assigned! Functionality will be disabled.",
@@ -95,6 +104,7 @@ namespace RTSEngine.Selection
         private void Update()
         {
             if (gameMgr.State != GameStateType.running 
+                || spellCastMgr.IsPlacingSpell
                 || placementMgr.IsPlacingBuilding
                 || !gameUIMgr.HasPriority(this)
                 || EventSystem.current.IsPointerOverGameObject())
@@ -159,19 +169,39 @@ namespace RTSEngine.Selection
         #endregion
 
         #region Handling Double Click Selection
-        public void SelectEntitisInRange(IEntity source)
+        private IEntity nextRangeSelectionSource = null;
+
+        private ErrorMessage IsTargetValidForRangeSelection(TargetData<IEntity> target, bool playerCommand)
         {
-            if (!enableDoubleClickSelect || source.IsFree)
+            if (!nextRangeSelectionSource.IsValid())
+                return ErrorMessage.invalid;
+            else if (target.instance.Code != nextRangeSelectionSource.Code)
+                return ErrorMessage.entityCodeMismatch;
+            else if (!nextRangeSelectionSource.IsSameFaction(target.instance))
+                return ErrorMessage.factionMismatch;
+
+            return ErrorMessage.none;
+        }
+
+        public void SelectEntitisInRange(IEntity source, bool playerCommand)
+        {
+            if (!enableDoubleClickSelect 
+                || !source.IsValid()
+                || source.IsFree)
                 return;
 
-            foreach (IFactionEntity entity in source.Slot.FactionMgr.FactionEntities)
-            {
-                if (entity.Code == source.Code
-                    && Vector3.Distance(entity.transform.position, source.transform.position) <= doubleClickSelectRange)
-                {
-                    selectionMgr.Add(entity, SelectionType.multiple);
-                }
-            }
+            nextRangeSelectionSource = source;
+
+            gridSearch.Search(
+                source.transform.position,
+                doubleClickSelectRange,
+                -1,
+                IsTargetValidForRangeSelection,
+                playerCommand,
+                out IEnumerable<IEntity> entitiesInRange);
+
+            selectionMgr.RemoveAll();
+            selectionMgr.Add(entitiesInRange);
         }
         #endregion
 

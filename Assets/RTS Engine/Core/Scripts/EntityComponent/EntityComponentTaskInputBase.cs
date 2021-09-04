@@ -20,12 +20,10 @@ namespace RTSEngine.EntityComponent
         public bool IsInitialized { private set; get; } = false;
         public bool IsEnabled { private set; get; } = false;
 
-        [Space(), SerializeField, Tooltip("Prefab that represents the task.")]
-        private GameObject prefabObject = null;
-        public GameObject PrefabObject => prefabObject;
-        public T Prefab => prefabObject.GetComponent<T>();
+        public abstract GameObject PrefabObject { get; }
+        public T Prefab => PrefabObject.GetComponent<T>();
 
-        [SerializeField, Tooltip("Defines the data used to display the task."), FormerlySerializedAs("asset")]
+        [SerializeField, Header("General Task Properties"), Tooltip("Defines the data used to display the task."), FormerlySerializedAs("asset")]
         private EntityComponentTaskUIAsset taskUI = null;
         public EntityComponentTaskUIData Data => taskUI.Data;
 
@@ -138,7 +136,7 @@ namespace RTSEngine.EntityComponent
         }
     }
 
-    public abstract class FactionMultiEntityCreationTask<T> : MultiEntityComponentTaskInputBase<T> where T : IFactionEntity
+    public abstract class FactionEntityCreationTask<T> : EntityComponentTaskInputBase<T> where T : IFactionEntity
     {
         public override ErrorMessage CanComplete()
         {

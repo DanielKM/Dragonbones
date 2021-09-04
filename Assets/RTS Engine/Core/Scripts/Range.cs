@@ -17,8 +17,6 @@ namespace RTSEngine
         private T _max;
         public T max => _max;
 
-        public int test;
-
         protected Range()
         {
             this._min = default;

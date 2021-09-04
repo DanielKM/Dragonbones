@@ -25,6 +25,7 @@
         // IEntity
         uninteractable,
         dead,
+        entityCodeMismatch,
 
         // Movement
         mvtDisabled,
@@ -111,6 +112,9 @@
 
         // Terrain
         terrainHeightCacheNotFound,
+
+        // Selection
+        positionOutOfSelectionBounds,
 
         // Game
         gameFrozen,

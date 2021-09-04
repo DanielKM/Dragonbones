@@ -609,10 +609,12 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
 
         public void OnStartLobbyInterrupted()
         {
-            // Only called via the server.
-            if (!multiplayerMgr.IsServerOnly)
-                return;
+            CmdHandleStartLobbyInterrupted();
+        }
 
+        [Command]
+        private void CmdHandleStartLobbyInterrupted()
+        {
             RpcHandleStartLobbyInterrupted();
         }
 
@@ -621,6 +623,10 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
         {
             // Allow players to edit their faction slots again.
             lobbyMgr.LocalFactionSlot.SetInteractable(true);
+
+            lobbyUIMgr.SetInteractable(lobbyMgr.LocalFactionSlot.Role == FactionSlotRole.host);
+
+            playerMessageUIHandler.Message.Display("Game start interrupted!");
         }
         #endregion
 

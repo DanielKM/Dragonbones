@@ -947,7 +947,7 @@ MonoBehaviour:
   serverBatchInterval: 0
   offlineScene: Assets/RTS Engine/Extensions/Multiplayer/Mirror/Scenes/MainMultiplayerMenu_Mirror.unity
   onlineScene: Assets/RTS Engine/Extensions/Multiplayer/Mirror/Scenes/MultiplayerLobbyMenu_Mirror.unity
-  transport: {fileID: 0}
+  transport: {fileID: 9123774531487818859}
   networkAddress: localhost
   maxConnections: 4
   disconnectInactiveConnections: 0
@@ -966,10 +966,15 @@ MonoBehaviour:
   _allPlayersReady: 0
   roomSlots: []
   clientIndex: 0
-  prevScene: Assets/RTS Engine/Demo/MainMenu/MainMenu.unity
+  prevScene: Assets/RTS Engine/Demo/Menu/MainMenu.unity
   startDelayTime: 2
   serverGameMgrPrefab: {fileID: 4220585362012017558, guid: 20293dccd616aaa4a890774876fa1194,
     type: 3}
+  sceneLoader:
+    loadAsync: 1
+    onSceneLoadStart:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &1988263520399944855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,7 +1165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -206.78998, y: -25.883057}
+  m_AnchoredPosition: {x: -206.78998, y: -37.053993}
   m_SizeDelta: {x: 801, y: -112.107994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2661610434482002902
@@ -2278,7 +2283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -206.78998, y: -25.883057}
+  m_AnchoredPosition: {x: -206.78998, y: -37.053993}
   m_SizeDelta: {x: 801, y: -112.107994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7984775405979807774
@@ -2359,7 +2364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -206.78998, y: -25.883057}
+  m_AnchoredPosition: {x: -206.78998, y: -37.053993}
   m_SizeDelta: {x: 801, y: -112.107994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8631441998761392633

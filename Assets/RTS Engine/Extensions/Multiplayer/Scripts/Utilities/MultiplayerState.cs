@@ -8,6 +8,7 @@
         lobby,
         startingLobby,
 
+        gameConfirmed,
         game
     }
 }

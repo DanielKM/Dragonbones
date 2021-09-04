@@ -206,8 +206,6 @@ namespace RTSEngine.Multiplayer.Mirror.Game
 
         public void OnAllClientsValidatedServer()
         {
-            Debug.LogError(multiplayerMgr.ServerGameMgr);
-
             // Only allow to go through if this has been called on the server instance
             if (!multiplayerMgr.ServerGameMgr.IsValid())
                 return;

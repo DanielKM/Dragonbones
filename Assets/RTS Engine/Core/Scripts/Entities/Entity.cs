@@ -62,6 +62,10 @@ namespace RTSEngine.Entities
         private GameObject model = null;
         public GameObject Model => model;
 
+        [SerializeField, Tooltip("Defines the duration that the entity is supposed to persist for")]
+        private float duration = 0f;
+        public float Duration { get { return duration; } protected set { duration = value; } }
+
         //double clicking on the unit allows to select all entities of the same type within a certain range
         private float doubleClickTimer;
 
@@ -186,7 +190,6 @@ namespace RTSEngine.Entities
 
             //initial settings for the double click
             doubleClickTimer = 0.0f;
-
         }
 
         protected void CompleteInit()
@@ -280,6 +283,7 @@ namespace RTSEngine.Entities
         {
             //subscribe to events:
             Health.EntityDead += HandleEntityDead;
+            Selection.Selected += HandleEntitySelected;
         }
 
         protected virtual void FetchComponents()
@@ -338,6 +342,8 @@ namespace RTSEngine.Entities
         {
             if(Health.IsValid())
                 Health.EntityDead -= HandleEntityDead;
+            if (Selection.IsValid())
+                Selection.Selected -= HandleEntitySelected;
         }
         #endregion
 
@@ -345,6 +351,30 @@ namespace RTSEngine.Entities
         private void HandleEntityDead(IEntity sender, DeadEventArgs e)
         {
             Disable(e.IsUpgrade, false);
+        }
+
+        private void HandleEntitySelected(IEntity sender, EntitySelectionEventArgs args)
+        {
+            SelectionMarker.StopFlash(); //in case the selection texture of the entity was flashing
+
+            if (args.Type != SelectionType.single)
+                return;
+
+            if(doubleClickTimer > 0.0f)
+            {
+                doubleClickTimer = 0.0f;
+
+                //if this is the second click (double click), select all entities of the same type within a certain range
+                mouseSelector.SelectEntitisInRange(this, playerCommand: true);
+
+                RaiseEntityDoubleClicked();
+
+                return;
+            }
+
+            //if the player doesn't have the multiple selection key down (not looking to select multiple entities one by one)
+            if (mouseSelector.MultipleSelectionKeyDown == false)
+                doubleClickTimer = 0.5f;
         }
         #endregion
 
@@ -357,21 +387,6 @@ namespace RTSEngine.Entities
 
         public void OnPlayerClick()
         {
-            SelectionMarker.StopFlash(); //in case the selection texture of the entity was flashing
-
-            if(doubleClickTimer > 0.0f)
-            {
-                //if this is the second click (double click), select all entities of the same type within a certain range
-                mouseSelector.SelectEntitisInRange(this);
-
-                RaiseEntityDoubleClicked();
-
-                return;
-            }
-
-            //if the player doesn't have the multiple selection key down (not looking to select multiple entities one by one)
-            if (mouseSelector.MultipleSelectionKeyDown == false)
-                doubleClickTimer = 0.5f;
         }
         #endregion
 

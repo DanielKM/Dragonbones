@@ -21,7 +21,16 @@ namespace RTSEngine.EditorOnly.Entities
                 return;
             }
 
+            string labelColor = property.objectReferenceValue != null
+                ? "green"
+                : "red";
+            label.text = customAttribute.EnforcedTypes.Any()
+                ? $"{label.text} (<color={labelColor}>{string.Join(", ", customAttribute.EnforcedTypes.Select(type => type.Name))}</color>)"
+                : label.text;
+
+            EditorStyles.label.richText = true;
             EditorGUI.PropertyField(position, property, label);
+            GUI.contentColor = Color.white;
 
             if (property.objectReferenceValue != null)
             {
@@ -49,6 +58,11 @@ namespace RTSEngine.EditorOnly.Entities
             }
 
             EditorGUI.EndProperty();
+        }
+
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            return base.GetPropertyHeight(property, label);
         }
     }
 }

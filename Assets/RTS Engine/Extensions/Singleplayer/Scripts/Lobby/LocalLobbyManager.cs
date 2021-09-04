@@ -2,12 +2,12 @@
 
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 using RTSEngine.Lobby;
 using RTSEngine.Determinism;
-using System.Collections.Generic;
 using RTSEngine.Game;
+using RTSEngine.Scene;
+using UnityEngine.SceneManagement;
 
 namespace RTSEngine.SinglePlayer.Lobby
 {
@@ -28,6 +28,9 @@ namespace RTSEngine.SinglePlayer.Lobby
 
         [SerializeField, Tooltip("Triggered when the player clicks on the 'Start Game' button when all game start conditions are met.")]
         private UnityEvent startLobbyEvent = new UnityEvent();
+
+        [SerializeField, Tooltip("Define properties for loading target scenes from this scene.")]
+        private SceneLoader sceneLoader = new SceneLoader();
         #endregion
 
         #region IGameBuilder
@@ -134,7 +137,7 @@ namespace RTSEngine.SinglePlayer.Lobby
         {
             yield return new WaitForSeconds(delayTime);
 
-            SceneManager.LoadScene(CurrentMap.sceneName);
+            sceneLoader.LoadScene(CurrentMap.sceneName, source: this);
         }
 
         protected override void OnStartLobbyInterrupt ()

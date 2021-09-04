@@ -15,7 +15,7 @@ MonoBehaviour:
   data:
     code: create_building_farm
     enabled: 1
-    displayType: 1
+    displayType: 2
     icon: {fileID: 21300000, guid: 3bdab9633cf502044bfe0f31278f5105, type: 3}
     panelCategory: 0
     forceSlot: 1

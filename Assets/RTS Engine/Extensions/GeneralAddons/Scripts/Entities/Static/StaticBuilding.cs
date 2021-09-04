@@ -74,6 +74,7 @@ namespace RTSEngine.Entities.Static
         public IFactionSlot Slot { private set; get; }
 
         public GameObject Model => null; 
+        public float Duration => 0.0f;
         public bool IsInteractable => false;
         public bool IsSearchable => true;
 
@@ -168,8 +169,6 @@ namespace RTSEngine.Entities.Static
         public ErrorMessage SetTargetFirstLocal(TargetData<IEntity> target, bool playerCommand) => ErrorMessage.undefined;
 
         public void SetIdle(IEntityTargetComponent exception = null, bool includeMovement = true) { }
-
-        public void OnPlayerClick() { }
 
         public ErrorMessage SetFaction(IEntity source, int targetFactionID) => ErrorMessage.undefined;
         public ErrorMessage SetFactionLocal(IEntity source, int targetFactionID) => ErrorMessage.undefined;

@@ -31,7 +31,7 @@ namespace RTSEngine.Event
             this.selectionMgr = this.gameMgr.GetService<ISelectionManager>();
 
             // Handling entity type specific selection events
-            selectedEvents = new Dictionary<EntityType, CustomEventHandler<IEntity, EventArgs>>
+            selectedEvents = new Dictionary<EntityType, CustomEventHandler<IEntity, EntitySelectionEventArgs>>
             {
                 {EntityType.unit, UnitSelectedGlobal },
                 {EntityType.building, BuildingSelectedGlobal },
@@ -48,19 +48,19 @@ namespace RTSEngine.Event
         #endregion
 
         #region Selection
-        public event CustomEventHandler<IEntity, EventArgs> EntitySelectedGlobal = delegate {};
-        private IReadOnlyDictionary<EntityType, CustomEventHandler<IEntity, EventArgs>> selectedEvents;
-		public event CustomEventHandler<IEntity, EventArgs> UnitSelectedGlobal = delegate {};
-		public event CustomEventHandler<IEntity, EventArgs> BuildingSelectedGlobal = delegate {};
-		public event CustomEventHandler<IEntity, EventArgs> ResourceSelectedGlobal = delegate {};
+        public event CustomEventHandler<IEntity, EntitySelectionEventArgs> EntitySelectedGlobal = delegate {};
+        private IReadOnlyDictionary<EntityType, CustomEventHandler<IEntity, EntitySelectionEventArgs>> selectedEvents;
+		public event CustomEventHandler<IEntity, EntitySelectionEventArgs> UnitSelectedGlobal = delegate {};
+		public event CustomEventHandler<IEntity, EntitySelectionEventArgs> BuildingSelectedGlobal = delegate {};
+		public event CustomEventHandler<IEntity, EntitySelectionEventArgs> ResourceSelectedGlobal = delegate {};
 
-        public void RaiseEntitySelectedGlobal(IEntity entity)
+        public void RaiseEntitySelectedGlobal(IEntity entity, EntitySelectionEventArgs args)
         {
             var handler = EntitySelectedGlobal;
-            handler?.Invoke(entity, EventArgs.Empty);
+            handler?.Invoke(entity, args);
 
             var specificHandler = selectedEvents[entity.Type];
-            specificHandler?.Invoke(entity, EventArgs.Empty);
+            specificHandler?.Invoke(entity, args);
         }
 
 		public event CustomEventHandler<IEntity, EventArgs> EntityDeselectedGlobal = delegate {};
@@ -289,6 +289,7 @@ namespace RTSEngine.Event
             handler?.Invoke(sender, e);
         }
 
+
         public event CustomEventHandler<IEntity, ResourceEventArgs> UnitResourceDropOffStartGlobal;
         public event CustomEventHandler<IEntity, ResourceEventArgs> UnitResourceDropOffCompleteGlobal;
         public void RaiseUnitResourceDropOffStartGlobal(IUnit sender, ResourceEventArgs e)
@@ -306,6 +307,21 @@ namespace RTSEngine.Event
         public void RaiseUnitUpgradedGlobal(IUnit sender, UpgradeEventArgs<IEntity> e)
         {
             CustomEventHandler<IUnit, UpgradeEventArgs<IEntity>> handler = UnitUpgradedGlobal;
+            handler?.Invoke(sender, e);
+        }
+        #endregion
+
+        #region ISpell
+        public event CustomEventHandler<ISpell, HealthUpdateEventArgs> SpellHealthUpdatedGlobal;
+        public event CustomEventHandler<ISpell, DeadEventArgs> SpellDeadGlobal;
+        public void RaiseSpellHealthUpdatedGlobal(ISpell sender, HealthUpdateEventArgs e)
+        {
+            var handler = SpellHealthUpdatedGlobal;
+            handler?.Invoke(sender, e);
+        }
+        public void RaiseSpellDeadGlobal(ISpell sender, DeadEventArgs e)
+        {
+            var handler = SpellDeadGlobal;
             handler?.Invoke(sender, e);
         }
         #endregion

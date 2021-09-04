@@ -42,4 +42,9 @@ namespace RTSEngine.Entities
     {
 
     }
+
+    public class InitSpellParameters : InitEntityParameters
+    {
+
+    }
 }

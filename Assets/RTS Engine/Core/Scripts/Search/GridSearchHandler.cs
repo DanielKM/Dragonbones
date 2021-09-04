@@ -174,33 +174,25 @@ namespace RTSEngine.Search
         #endregion
 
         #region Handling Search
-        /// <summary>
-        /// Search for entities inside a rect defined by a lower left and upper right corner (in terms of world position on the X and Z coordinates) that statisfy a filter.
-        /// </summary>
-        /// <typeparam name="T">Type of the search results that extends the Entity type.</typeparam>
-        /// <param name="lowerLeftCorner">World position on the X and Z coordinates representing the lower left corner of the search rect.</param>
-        /// <param name="upperRightCorner">World position on the X and Z coordinates representing the upper right corner of the search rect.</param>
-        /// <param name="filter">Function that allows to filter the search result. Only entities that satisfy the filter will be returned in the results list.</param>
-        /// <param name="resultList">The search results that satisfy the filter's conditions and are in the search rect will populate this list.</param>
-        /// <returns>ErrorMessage.none if the search was completed successfully, otherwise the failure's error code.</returns>
-        public ErrorMessage SearchRect<T>(Vector2 lowerLeftCorner, Vector2 upperRightCorner, System.Func<T, bool> filter, out List<T> resultList) where T : IEntity
+        public ErrorMessage SearchRect<T>(Rect rect, Func<T, bool> filter, out List<T> resultList) where T : IEntity
         {
             resultList = new List<T>();
             ErrorMessage errorMessage;
 
-            for(float x = lowerLeftCorner.x; x < upperRightCorner.x; x += cellSize)
-                for(float y = lowerLeftCorner.y; y < upperRightCorner.y; y += cellSize)
+            for(float x = rect.x; x < rect.x + rect.width + cellSize; x += cellSize)
+                for(float y = rect.y; y < rect.y + rect.height + cellSize; y += cellSize)
                 {
                     if((errorMessage = TryGetSearchCell(new Vector3(x, 0, y), out SearchCell nextCell)) != ErrorMessage.none)
                         return errorMessage;
 
                     foreach (IEntity entity in nextCell.Entities)
                     {
-                        if (entity == null)
+                        if (!entity.IsValid() 
+                            || !entity.IsSearchable
+                            || !(entity is T))
                             continue;
 
-                        if (entity.transform.position.x >= lowerLeftCorner.x && entity.transform.position.z >= lowerLeftCorner.y
-                            && entity.transform.position.x <= upperRightCorner.x && entity.transform.position.z <= upperRightCorner.y
+                        if(rect.Contains(new Vector2(entity.transform.position.x, entity.transform.position.z))
                             && filter((T)entity))
                             resultList.Add((T)entity);
                     }

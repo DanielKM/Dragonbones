@@ -134,7 +134,10 @@ namespace RTSEngine.EntityComponent
                 return;
 
             Controller.Init(gameMgr, this, TimeModifiedControllerData);
-            TargetPositionMarker = new UnitTargetPositionMarker(gameMgr, this); 
+            TargetPositionMarker = new UnitTargetPositionMarker(gameMgr, this);
+
+            // Movement component requires no movement
+            TargetFinder.Enabled = false;
 
             isMoving = false;
         }

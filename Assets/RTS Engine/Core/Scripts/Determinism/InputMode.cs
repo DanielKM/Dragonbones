@@ -8,6 +8,7 @@
         entity,
         factionEntity,
         building,
+        spell,
         resource,
         unit,
 

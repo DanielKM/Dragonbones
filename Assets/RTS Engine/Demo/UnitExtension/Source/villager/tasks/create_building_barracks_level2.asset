@@ -15,7 +15,7 @@ MonoBehaviour:
   data:
     code: create_building_barracks_level2
     enabled: 1
-    displayType: 1
+    displayType: 2
     icon: {fileID: 21300000, guid: 7f204d5cb77295248b751d9f36d990a9, type: 3}
     panelCategory: 2
     forceSlot: 1

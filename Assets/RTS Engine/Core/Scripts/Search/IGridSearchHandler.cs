@@ -6,6 +6,7 @@ using RTSEngine.Entities;
 using RTSEngine.Game;
 using RTSEngine.Terrain;
 using RTSEngine.Utilities;
+using System;
 
 namespace RTSEngine.Search
 {
@@ -23,5 +24,7 @@ namespace RTSEngine.Search
         ErrorMessage TryAddSearchObstacle(ISearchObstacle newObstacle);
 
         ErrorMessage IsPositionReserved(Vector3 testPosition, float radius, IEnumerable<TerrainAreaType> terrainAreas, bool playerCommand);
+
+        ErrorMessage SearchRect<T>(Rect rect, Func<T, bool> filter, out List<T> resultList) where T : IEntity;
     }
 }

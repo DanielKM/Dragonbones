@@ -3,12 +3,14 @@ using System.Collections.Generic;
 
 using Mirror;
 
-using RTSEngine.Determinism;
 using RTSEngine.Faction;
 using RTSEngine.Game;
 using RTSEngine.Lobby;
+using RTSEngine.Multiplayer.Event;
 using RTSEngine.Multiplayer.Lobby;
 using RTSEngine.Multiplayer.Utilities;
+using UnityEngine;
+using UnityEngine.Events;
 
 namespace RTSEngine.Multiplayer.Mirror.Lobby
 {
@@ -17,6 +19,9 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
         #region Attributes
         private IMultiplayerManager multiplayerMgr;
         public override bool IsStartingLobby => multiplayerMgr.State == MultiplayerState.startingLobby;
+
+        [SerializeField, Tooltip("Event triggered when the multiplayer game is confirmed to be starting. This is triggered right before the target map scene is loaded.")]
+        private UnityEvent onGameConfirmed;
         #endregion
 
         #region IGameBuilder
@@ -40,6 +45,21 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
                 return; 
 
             multiplayerMgr.OnLobbyLoaded(this);
+
+            multiplayerMgr.MultiplayerStateUpdated += HandleMultiplayerStateUpdated;
+        }
+
+        protected override void OnDestroyed()
+        {
+            multiplayerMgr.MultiplayerStateUpdated -= HandleMultiplayerStateUpdated;
+        }
+        #endregion
+
+        #region Handling Event: Multiplayer State Updated
+        private void HandleMultiplayerStateUpdated(IMultiplayerManager sender, MultiplayerStateEventArgs args)
+        {
+            if(args.State == MultiplayerState.gameConfirmed)
+                onGameConfirmed.Invoke();
         }
         #endregion
 

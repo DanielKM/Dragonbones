@@ -17,10 +17,10 @@ namespace RTSEngine.Selection
         bool CanSelect { get; }
         bool IsSelected { get; }
 
-        event CustomEventHandler<IEntity, EventArgs> Selected;
+        event CustomEventHandler<IEntity, EntitySelectionEventArgs> Selected;
         event CustomEventHandler<IEntity, EventArgs> Deselected;
 
-        void OnSelected();
+        void OnSelected(EntitySelectionEventArgs args);
         void OnDeselected();
 
         void OnAwaitingTaskAction(EntityComponentTaskUIAttributes taskAttributes);

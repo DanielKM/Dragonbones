@@ -44,9 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5753921ccbe21134dad27bb458d7cfb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabID:
-    x: 1
-    y: 0
   code: movement_upgraded
   isActive: 1
   priority: -1
@@ -64,7 +61,7 @@ MonoBehaviour:
       enabled: 0
       defaultValue: 2
   movableTerrainAreas:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 37d2dffab9a31a84c81d764228531ba7, type: 2}
   formation:
     lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
     type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}

@@ -36,29 +36,24 @@ namespace RTSEngine.UI
         /// <param name="panelCategory">Task panel category ID of the active task.</param>
         public EntityComponentTaskUITracker (ITaskUI<EntityComponentTaskUIAttributes> taskUI)
         {
-            ResetComponents();
+            entityComponents = new List<IEntityComponent>();
+            entityTargetComponents = new List<IEntityTargetComponent>();
 
             Task = taskUI;
         }
 
         public void ResetComponents()
         {
-            entityComponents = new List<IEntityComponent>();
-            entityTargetComponents = new List<IEntityTargetComponent>();
+            entityComponents.Clear();
+            entityTargetComponents.Clear(); 
         }
 
         /// <summary>
         /// Refreshes the tracked task.
         /// </summary>
         /// <param name="newAttributes">New attributes to assign to the tracked task.</param>
-        public void ReloadTask (EntityComponentTaskUIAttributes attributes, IEntityComponent component)
+        public void ReloadTaskAttributes (EntityComponentTaskUIAttributes attributes)
         {
-            if (!entityComponents.Contains(component))
-            {
-                entityComponents.Add(component);
-                entityTargetComponents.Add(component as IEntityTargetComponent);
-            }
-
             Task.Reload(new EntityComponentTaskUIAttributes
             {
                 data = attributes.data,
@@ -74,12 +69,32 @@ namespace RTSEngine.UI
         }
 
         /// <summary>
+        /// Adds a set of components to be trakced through the task.
+        /// </summary>
+        public void AddTaskComponents (IEnumerable<IEntityComponent> components)
+        {
+            entityComponents = entityComponents.Union(components).ToList();
+            entityTargetComponents = entityTargetComponents.Union(components.Select(component => component as IEntityTargetComponent)).ToList();
+        }
+
+        /// <summary>
+        /// Adds one component to be trakced through the task.
+        /// </summary>
+        public void AddTaskComponent (IEntityComponent component)
+        {
+            if (!entityComponents.Contains(component))
+            {
+                entityComponents.Add(component);
+                entityTargetComponents.Add(component as IEntityTargetComponent);
+            }
+        }
+
+        /// <summary>
         /// Disables tracking components and their active task.
         /// </summary>
         public void Disable ()
         {
-            entityComponents = null;
-            entityTargetComponents = null;
+            ResetComponents();
 
             Task?.Disable();
         }

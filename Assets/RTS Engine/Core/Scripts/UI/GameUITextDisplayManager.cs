@@ -157,6 +157,10 @@ namespace RTSEngine.UI
 
             return true;
         }
+
+        public virtual bool SpellCastTaskToText(SpellCastTask castTask, out string text)
+            => EntityComponentTaskInputToText(castTask, castTask?.Prefab, out text);
+
         #endregion
 
         #region Entities

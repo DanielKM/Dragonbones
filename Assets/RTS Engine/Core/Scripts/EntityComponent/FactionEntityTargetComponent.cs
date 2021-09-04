@@ -58,7 +58,7 @@ namespace RTSEngine.EntityComponent
 
 
         [SerializeField, Tooltip("Set the settings for allowing the entity to launch this component automatically.")]
-        private TargetEntityFinderData targetFinderData = new TargetEntityFinderData { enabled = true, idleOnly = true, range = 10.0f, reloadTime = 5.0f };
+        private TargetEntityFinderData targetFinderData = new TargetEntityFinderData { enabled = false, idleOnly = true, range = 10.0f, reloadTime = 5.0f };
         protected TargetEntityFinderData TargetFinderData => targetFinderData;
         protected TargetEntityFinder<T> TargetFinder { private set; get; } = null;
 

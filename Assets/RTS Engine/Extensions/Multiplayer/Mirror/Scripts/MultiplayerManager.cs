@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 using Mirror;
 
@@ -21,6 +20,7 @@ using RTSEngine.Multiplayer.Game;
 using RTSEngine.Multiplayer.Service;
 using RTSEngine.Multiplayer.Logging;
 using kcp2k;
+using RTSEngine.Scene;
 
 namespace RTSEngine.Multiplayer.Mirror
 {
@@ -81,6 +81,9 @@ namespace RTSEngine.Multiplayer.Mirror
                 }
             }
         }
+
+        [SerializeField, Tooltip("Define properties for loading target scenes from this scene.")]
+        private SceneLoader sceneLoader = new SceneLoader();
 
         // Other components
         public IMultiplayerManagerUI UIMgr { private set; get; }
@@ -179,7 +182,7 @@ namespace RTSEngine.Multiplayer.Mirror
             CurrentLobby = null;
 
             if (CurrentGameMgr.IsValid())
-                SceneManager.LoadScene(offlineScene);
+                sceneLoader.LoadScene(offlineScene, source: this);
 
             CurrentGameMgr = null;
             multiplayerFactionMgrs = null;
@@ -259,7 +262,7 @@ namespace RTSEngine.Multiplayer.Mirror
             if (CurrentLobby.IsValid() || CurrentGameMgr.IsValid())
                 return;
 
-            SceneManager.LoadScene(prevScene);
+            sceneLoader.LoadScene(prevScene, source: this);
 
             Destroy(this.gameObject);
         }
@@ -396,6 +399,8 @@ namespace RTSEngine.Multiplayer.Mirror
         {
             yield return new WaitForSeconds(delayTime);
 
+            RaiseMultiplayerStateUpdated(new MultiplayerStateEventArgs(state: MultiplayerState.gameConfirmed));
+
             ServerChangeScene(GameplayScene);
         }
 
@@ -407,8 +412,7 @@ namespace RTSEngine.Multiplayer.Mirror
             RaiseMultiplayerStateUpdated(new MultiplayerStateEventArgs(state: MultiplayerState.lobby));
             StopCoroutine(startLobbyDelayedCoroutine);
 
-            // Allows to notify the host client with the lobby 
-            CurrentLobby.StartLobbyInterrupt();
+            CurrentLobby.LocalFactionSlot.OnStartLobbyInterrupted();
 
             return true;
         }
