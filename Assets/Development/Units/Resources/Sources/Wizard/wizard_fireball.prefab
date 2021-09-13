@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4452627234291680}
-  - component: {fileID: 114592189441036048}
+  - component: {fileID: 7676530336306968542}
   - component: {fileID: 135886096175892746}
   - component: {fileID: 54423085990588588}
   - component: {fileID: 6436169311860374367}
@@ -36,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114592189441036048
+--- !u!114 &7676530336306968542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,22 +67,40 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        value: 0
+        inSlope: 1.9937304
+        outSlope: 1.9937304
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.50197077
+        value: 1.0007944
+        inSlope: 0.023014668
+        outSlope: 0.023014668
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.13597499
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        value: 0
+        inSlope: -3.4408834
+        outSlope: -3.4408834
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 5.9913197
+        value: -50.038464
+        inSlope: -10.025097
+        outSlope: -6.050475
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.19828783
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -95,21 +113,30 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        value: 0
+        inSlope: -0.007953985
+        outSlope: -0.007953985
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.05567187
+      - serializedVersion: 3
+        time: 5
+        value: -5
+        inSlope: -1.25
+        outSlope: -1.25
         tangentMode: 34
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -135,10 +162,11 @@ MonoBehaviour:
       enabled: 0
       defaultValue: 0
   triggerEffectsPostDelay: 1
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 3529137899093421190, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
   hitAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 5dd51bd9569460c44b8483c63f9ea795, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 0

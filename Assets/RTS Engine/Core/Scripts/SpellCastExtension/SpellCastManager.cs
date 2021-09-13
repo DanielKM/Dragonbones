@@ -27,6 +27,8 @@ namespace RTSEngine.SpellCastExtension
         // Borders
         // In order to draw borders and show which order has been set before the other, their objects have different sorting orders.
         public int LastBorderSortingOrder { private set; get; }
+        private List<ISpellRange> allSpellRanges = new List<ISpellRange>();
+        public IEnumerable<ISpellRange> AllSpellRanges => allSpellRanges;
         // Game services
         protected IGameManager gameMgr { private set; get; }
         protected IGlobalEventPublisher globalEvent { private set; get; }

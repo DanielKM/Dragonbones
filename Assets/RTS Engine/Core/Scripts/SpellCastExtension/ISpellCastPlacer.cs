@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using UnityEngine;
+using System.Collections.Generic;
 
 using RTSEngine.Entities;
 using RTSEngine.Terrain;
@@ -11,11 +12,13 @@ namespace RTSEngine.SpellCastExtension
 
         IEnumerable<TerrainAreaType> PlacableTerrainAreas { get; }
 
+        ISpellRange PlacementCenter { get; }
+
         bool CanPlace { get; }
-        bool CanPlaceOutsideBorder { get; }
+        bool CanPlaceOutsideRange { get; }
         bool Placed { get; }
 
-        void OnPlacementStart();
-        void OnPositionUpdate();
+        void OnPlacementStart(SpellCastPlacement spellCastPlacement);
+        void OnPositionUpdate(Vector3 newSpellCasterLocation, Vector3 newSpellCastLocation);
     }
 }

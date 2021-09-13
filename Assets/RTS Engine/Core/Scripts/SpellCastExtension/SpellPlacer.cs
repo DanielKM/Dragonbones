@@ -19,18 +19,23 @@ namespace RTSEngine.SpellCastExtension
     {
         #region Attributes
         public ISpell Spell { private set; get; }
-
+        public Vector3 spellCasterLocation;
+        public Vector3 spellCastLocation;
+        
         public bool CanPlace { private set; get; }
 
         [SerializeField, Tooltip("If populated then this defines the types of terrain areas where the rallypoint can be placed at. When empty, all terrain area types would be valid.")]
         private TerrainAreaType[] placableTerrainAreas = new TerrainAreaType[0];
         public IEnumerable<TerrainAreaType> PlacableTerrainAreas => placableTerrainAreas.ToList();
 
-        [SerializeField, Tooltip("Can the spell be placed outside the faction's territory (defined by the Border)?")]
-        private bool canPlaceOutsideBorder = false;
-        public bool CanPlaceOutsideBorder => canPlaceOutsideBorder;
+        [SerializeField, Tooltip("Can the spell be placed outside the range (defined by the range)?")]
+        private bool canPlaceOutsideRange = false;
+        public bool CanPlaceOutsideRange => canPlaceOutsideRange;
 
         public bool Placed { get; private set; } = false;
+
+        // The value of this field will updated during the placement of the spell until the spell is placed and the center is set in the spell component.
+        public ISpellRange PlacementCenter { private set; get; }
 
         // How many colliders is the spell overlapping with at any given time? It is the size of this list.
         private List<Collider> overlappedColliders;
@@ -103,17 +108,22 @@ namespace RTSEngine.SpellCastExtension
         #endregion
 
         #region Handling Placement Status
-        public void OnPlacementStart()
+        public void OnPlacementStart(SpellCastPlacement spellCastPlacement)
         {
             CanPlace = false;
 
             overlappedColliders = new List<Collider>();
 
             IsPlacementStarted = true;
+
+            spellCasterLocation = spellCastPlacement.spellCaster.transform.position;
+
+            spellCastLocation = spellCastPlacement.currentSpell.instance.transform.position;
         }
 
-        public void OnPositionUpdate()
+        public void OnPositionUpdate(Vector3 newSpellCasterLocation, Vector3 newSpellCastLocation)
         {
+            
             if (Placed
                 || !RTSHelper.HasAuthority(Spell))
                 return;
@@ -121,9 +131,11 @@ namespace RTSEngine.SpellCastExtension
             //if the spell is not in range of a spell center, not on the map or not around the entity that is has to be around within a certain range
             //--> not placable
             TogglePlacementStatus(
-                IsSpellOnMap()
-                && overlappedColliders.Count(collider => collider != null) <= 0
-                && (!Conditions.Any() || Conditions.All(condition => condition.CanPlaceSpell())) );
+                IsSpellInRange(newSpellCasterLocation, newSpellCastLocation)
+                // && IsSpellOnMap()
+                // && overlappedColliders.Count(collider => collider != null) <= 0
+                // && (!Conditions.Any() || Conditions.All(condition => condition.CanPlaceSpell())                )
+                );
         }
 
         private void TogglePlacementStatus (bool enable)
@@ -154,7 +166,7 @@ namespace RTSEngine.SpellCastExtension
 
             overlappedColliders.Add(other);
 
-            OnPositionUpdate();
+            OnPositionUpdate(spellCasterLocation, spellCastLocation);
         }
 
         private void OnTriggerExit(Collider other)
@@ -168,7 +180,30 @@ namespace RTSEngine.SpellCastExtension
 
             overlappedColliders.Remove(other);
 
-            OnPositionUpdate();
+            OnPositionUpdate(spellCasterLocation, spellCastLocation);
+        }
+
+        public bool IsSpellInRange(Vector3 position, Vector3 secondPosition)
+        {
+            bool inRange = false; //true if the building is inside its faction's territory
+
+            float dist = Vector3.Distance(position, secondPosition);
+            //check if the building is still inside this building center's territory
+
+            if (dist < 40) //still inside the center's territory
+                inRange = true; //building is in range
+            else
+            {
+                inRange = false; //building is not in range
+                PlacementCenter = null; //set the current center to null, so we can find another one
+            }
+
+            if (canPlaceOutsideRange)
+                inRange = true;
+            
+        
+            // Debug.Log(inRange);
+            return inRange; //return whether the building is in range a building center or not
         }
 
         public bool IsSpellOnMap()

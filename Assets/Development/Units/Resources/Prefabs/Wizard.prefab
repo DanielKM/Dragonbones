@@ -163,6 +163,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f7de8d8e2bdcdfc49a35243ed04c4142, type: 3}
   radius: 0.4
   model: {fileID: 994726999392584120}
+  duration: 0
   isMainEntity: 0
   isFactionLocked: 0
   initResources:
@@ -461,8 +462,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472317962180716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 0}
-  m_LocalScale: {x: 0.83750004, y: 0.75, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.83750004, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4972337864068538}
   m_RootOrder: 0
@@ -650,7 +651,12 @@ MonoBehaviour:
   creationTasks:
   - taskTitle: 
     taskUI: {fileID: 11400000, guid: aaae59250d2993743bb952bfa038db3a, type: 2}
-    requiredResources: []
+    requiredResources:
+    - type: {fileID: 11400000, guid: fe734588cd6b947439ae532d4a72a670, type: 2}
+      value:
+        amount: 100
+        capacity: 0
+      nonConsumable: 0
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 21300000, guid: 9eb6045416b0cd143ab25d3067cfebc2, type: 3}
@@ -917,6 +923,7 @@ MonoBehaviour:
     data:
       unit: 20
       building: 20
+      spell: 10
       custom: []
     areaAttackEnabled: 0
     areaAttackData: []

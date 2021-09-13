@@ -312,12 +312,39 @@ namespace RTSEngine.Event
         #endregion
 
         #region ISpell
+        public event CustomEventHandler<ISpell, EventArgs> SpellPlacementStartGlobal;
+        public event CustomEventHandler<ISpell, EventArgs> SpellPlacementStopGlobal;
         public event CustomEventHandler<ISpell, HealthUpdateEventArgs> SpellHealthUpdatedGlobal;
-        public event CustomEventHandler<ISpell, DeadEventArgs> SpellDeadGlobal;
+        public event CustomEventHandler<ISpell, EventArgs> SpellPlacedGlobal;
+        public void RaiseSpellPlacementStartGlobal(ISpell sender)
+        {
+            CustomEventHandler<ISpell, EventArgs> handler = SpellPlacementStartGlobal;
+            handler?.Invoke(sender, EventArgs.Empty);
+        }
+        
+        public void RaiseSpellPlacementStopGlobal(ISpell sender)
+        {
+            CustomEventHandler<ISpell, EventArgs> handler = SpellPlacementStopGlobal;
+            handler?.Invoke(sender, EventArgs.Empty);
+        }
+
         public void RaiseSpellHealthUpdatedGlobal(ISpell sender, HealthUpdateEventArgs e)
         {
             var handler = SpellHealthUpdatedGlobal;
             handler?.Invoke(sender, e);
+        }
+        public void RaiseSpellPlacedGlobal(ISpell sender)
+        {
+            CustomEventHandler<ISpell, EventArgs> handler = SpellPlacedGlobal;
+            handler?.Invoke(sender, EventArgs.Empty);
+        }
+
+        public event CustomEventHandler<ISpell, EventArgs> SpellBuiltGlobal;
+        public event CustomEventHandler<ISpell, DeadEventArgs> SpellDeadGlobal;
+        public void RaiseSpellBuiltGlobal(ISpell sender)
+        {
+            CustomEventHandler<ISpell, EventArgs> handler = SpellBuiltGlobal;
+            handler?.Invoke(sender, EventArgs.Empty);
         }
         public void RaiseSpellDeadGlobal(ISpell sender, DeadEventArgs e)
         {
@@ -354,7 +381,6 @@ namespace RTSEngine.Event
             CustomEventHandler<IBuilding, EventArgs> handler = BuildingPlacementStopGlobal;
             handler?.Invoke(sender, EventArgs.Empty);
         }
-
 
         public void RaiseBuildingPlacementStatusUpdatedGlobal(IBuilding sender)
         {

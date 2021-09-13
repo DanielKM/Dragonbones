@@ -24,9 +24,10 @@ namespace RTSEngine.SpellCastExtension
             public SpellCastTask creationTask;
             public ISpell instance;
         }
-        private SpellCastPlacementData currentSpell;
+        public SpellCastPlacementData currentSpell;
 
         public bool IsPlacingSpell => currentSpell.instance.IsValid();
+        public SpellCaster spellCaster;
 
         [SerializeField, Tooltip("This value is added to the spellcast'S position on the Y axis.")]
         private float spellCastPositionYOffset = 0.01f; 
@@ -125,9 +126,12 @@ namespace RTSEngine.SpellCastExtension
             // Right mouse button stops spell placement
             if (Input.GetMouseButtonUp(1))
             {
+                // FIX
                 Stop(); 
                 return;
             }
+
+            //ADD CHECK HERE
 
             MoveSpell();
 
@@ -135,7 +139,7 @@ namespace RTSEngine.SpellCastExtension
 
             // Left mouse button allows to place the spell
             if (Input.GetMouseButtonUp(0)
-                // && currentSpell.instance.PlacerComponent.CanPlace
+                && currentSpell.instance.PlacerComponent.CanPlace
                 && !EventSystem.current.IsPointerOverGameObject()
                 )
             {
@@ -174,7 +178,7 @@ namespace RTSEngine.SpellCastExtension
                     currentSpell.instance.transform.position = nextSpellPos;
 
                     // Check if the spell can be placed in this new position
-                    currentSpell.instance.PlacerComponent.OnPositionUpdate();
+                    currentSpell.instance.PlacerComponent.OnPositionUpdate(spellCaster.transform.position, nextSpellPos);
                 }
 
             }
@@ -235,6 +239,7 @@ namespace RTSEngine.SpellCastExtension
             if (holdAndSpawnEnabled == true && controls.Get(holdAndSpawnKey))
                 StartPlacement(
                     currentSpell.creationTask,
+                    spellCaster,
                     new SpellCastPlacementOptions 
                     {
                         setInitialRotation = perserveSpellRotation,
@@ -244,9 +249,10 @@ namespace RTSEngine.SpellCastExtension
             return true;
         }
 
-        public bool StartPlacement(SpellCastTask creationTask, SpellCastPlacementOptions options = default)
+        public bool StartPlacement(SpellCastTask creationTask, SpellCaster currentSpellCaster, SpellCastPlacementOptions options = default)
         {
             ErrorMessage errorMsg;
+            spellCaster = currentSpellCaster;
             //if the spell can not be placed, do not continue and display reason to player with UI message
             if ((errorMsg = creationTask.CanStart()) != ErrorMessage.none)
             {
@@ -291,8 +297,8 @@ namespace RTSEngine.SpellCastExtension
                 currentSpell.instance.transform.position = nextSpellPos;
             }
 
-            currentSpell.instance.PlacerComponent.OnPlacementStart();
-            // globalEvent.RaiseSpellPlacementStartGlobal(currentSpell.instance);
+            currentSpell.instance.PlacerComponent.OnPlacementStart(this);
+            globalEvent.RaiseSpellPlacementStartGlobal(currentSpell.instance);
 
             return true;
         }
@@ -302,12 +308,14 @@ namespace RTSEngine.SpellCastExtension
             if (!IsPlacingSpell)
                 return false;
 
-            // globalEvent.RaiseSpellPlacementStopGlobal(currentSpell.instance);
+            globalEvent.RaiseSpellPlacementStopGlobal(currentSpell.instance);
 
             currentSpell.creationTask.OnCancel();
 
-            // if (currentSpell.instance.IsValid())
-            //     currentSpell.instance.Health.DestroyLocal(false, null);
+            if (currentSpell.instance.IsValid())
+                currentSpell.instance.Health.DestroyLocal(false, null);
+
+            Destroy(currentSpell.instance.gameObject);
 
             currentSpell.instance = null;
 

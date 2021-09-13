@@ -23,12 +23,12 @@ namespace RTSEngine.Entities
 
         public ISpellCastPlacer PlacerComponent { private set; get; }
 
-        public new IBuildingHealth Health { private set; get; }
+        public new ISpellHealth Health { private set; get; }
         #endregion
 
         #region Raising Events
         public event CustomEventHandler<ISpell, EventArgs> SpellCastComplete;
-        private void RaiseBuildingBuilt()
+        private void RaiseSpellCast()
         {
             var handler = SpellCastComplete;
             handler?.Invoke(this, EventArgs.Empty);
@@ -57,7 +57,7 @@ namespace RTSEngine.Entities
                 $"[{GetType().Name} - {Code}] Spell object must have a component that extends {typeof(ISpellCastPlacer).Name} interface attached to it!"))
                 return;
 
-            Health = transform.GetComponentInChildren<IBuildingHealth>();
+            Health = transform.GetComponentInChildren<ISpellHealth>();
 
             base.FetchComponents();
         }
@@ -67,7 +67,7 @@ namespace RTSEngine.Entities
             base.SubToEvents();
 
             //subscribe to events
-            // Health.EntityHealthUpdated += HandleBuildingHealthUpdated;
+            Health.EntityHealthUpdated += HandleSpellHealthUpdated;
         }
 
         public void InitPlacementInstance (IGameManager gameMgr, InitSpellParameters initParams)
@@ -85,7 +85,7 @@ namespace RTSEngine.Entities
             base.Disable(isUpgrade, isFactionUpdate);
 
             // if(!isFactionUpdate)
-            //     Health.EntityHealthUpdated -= HandleBuildingHealthUpdated; //just in case the building is destroyed before it is fully constructed.
+                Health.EntityHealthUpdated -= HandleSpellHealthUpdated; //just in case the spell is destroyed before it is fully constructed.
 
             OnDisabled();
         }
@@ -94,13 +94,13 @@ namespace RTSEngine.Entities
         #endregion
 
         #region Handling Events: Spell Health
-        private void HandleBuildingHealthUpdated(IEntity sender, HealthUpdateEventArgs e)
+        private void HandleSpellHealthUpdated(IEntity sender, HealthUpdateEventArgs e)
         {
             if(Health.HasMaxHealth)
             {
                 CompleteConstruction();
 
-                Health.EntityHealthUpdated -= HandleBuildingHealthUpdated;
+                Health.EntityHealthUpdated -= HandleSpellHealthUpdated;
             }
         }
         #endregion
@@ -108,11 +108,11 @@ namespace RTSEngine.Entities
         #region Updating Spell State: Placed, ConstructionComplete
         private void Place(bool playerCommand)
         {
-            // Hide the selection marker since it was used to display whether the building can be placed or not.
+            // Hide the selection marker since it was used to display whether the spell can be placed or not.
             SelectionMarker?.Disable(); 
 
             CompleteInit();
-            // globalEvent.RaiseBuildingPlacedGlobal(this);
+            globalEvent.RaiseSpellPlacedGlobal(this);
 
             if (IsFree) //free builidng? job is done here
                 return;
@@ -138,8 +138,8 @@ namespace RTSEngine.Entities
 
             resourceMgr.UpdateResource(FactionID, InitResources, add:true);
 
-            RaiseBuildingBuilt();
-            // globalEvent.RaiseBuildingBuiltGlobal(this);
+            RaiseSpellCast();
+            globalEvent.RaiseSpellBuiltGlobal(this);
             OnConstructionComplete();
         }
 

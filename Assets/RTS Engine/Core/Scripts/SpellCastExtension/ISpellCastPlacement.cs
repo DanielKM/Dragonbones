@@ -10,7 +10,7 @@ namespace RTSEngine.SpellCastExtension
         float SpellCastPositionYOffset { get; }
         float TerrainMaxDistance { get; }
 
-        bool StartPlacement(SpellCastTask creationTask, SpellCastPlacementOptions options = default);
+        bool StartPlacement(SpellCastTask creationTask, SpellCaster spellCaster, SpellCastPlacementOptions options = default);
         bool Stop();
     }
 }

@@ -15,7 +15,7 @@ namespace RTSEngine.Entities
 
         ISpellCastPlacer PlacerComponent { get; }
 
-        new IBuildingHealth Health { get; }
+        new ISpellHealth Health { get; }
 
         event CustomEventHandler<ISpell, EventArgs> SpellCastComplete;
 

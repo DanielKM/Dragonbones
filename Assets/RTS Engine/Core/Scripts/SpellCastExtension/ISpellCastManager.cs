@@ -9,6 +9,7 @@ namespace RTSEngine.SpellCastExtension
 {
     public interface ISpellCastManager : IPreRunGameService
     {
+        IEnumerable<ISpellRange> AllSpellRanges { get; }
         int LastBorderSortingOrder { get; }
 
         Color FreeSpellColor { get; }

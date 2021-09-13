@@ -9,8 +9,10 @@ namespace RTSEngine.Attack
     {
         [Tooltip("Default damage value to deal units that do not have a custom damage enabled.")]
         public int unit;
-        [Tooltip("Default damage value to deal buildings that do not have a cstuom damage enabled.")]
+        [Tooltip("Default damage value to deal buildings that do not have a custom damage enabled.")]
         public int building;
+        [Tooltip("Default damage value to deal spells that do not have a custom damage enabled.")]
+        public int spell;
 
         [Tooltip("Define custom damage values for unit and building types.")]
         public CustomDamageData[] custom;
@@ -21,9 +23,17 @@ namespace RTSEngine.Attack
                 if (cd.code.Contains(target))
                     return cd.damage;
 
-            return target.Type == EntityType.unit
-                ? unit
-                : building;
+            if(target.Type == EntityType.unit)
+            {
+                return unit;
+            }
+            else if(target.Type == EntityType.building)
+            {
+                return building;
+            } else 
+            {
+                return spell;
+            }
         }
     }
 }

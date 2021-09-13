@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4936124586461056}
-  - component: {fileID: 65520274737995846}
   - component: {fileID: 54806380340354138}
   - component: {fileID: 7839277228139964594}
-  - component: {fileID: 114300062013273994}
+  - component: {fileID: 8287115109696514616}
+  - component: {fileID: 4257300013517472659}
   m_Layer: 0
   m_Name: selection_collider
   m_TagString: Untagged
@@ -34,19 +34,6 @@ Transform:
   m_Father: {fileID: 4721859516458986}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65520274737995846
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642999549974668}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &54806380340354138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -75,7 +62,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd695ae341358449b7f1750e0dec6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114300062013273994
+--- !u!135 &8287115109696514616
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642999549974668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4257300013517472659
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,14 +89,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectionColliders:
   - {fileID: 7839277228139964594}
-  isActive: 1
+  isActive: 0
   selectOwnerOnly: 0
   selectionAudio:
     fetchType: 0
     items: []
     cooldown:
-      enabled: 0
-      defaultValue: 1
+      enabled: 1
+      defaultValue: 2
 --- !u!1 &1824499806366500
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: -6053439192789226511}
   - component: {fileID: 8401903764112327571}
   - component: {fileID: 2419000992669331914}
+  - component: {fileID: 6238213733431361443}
   m_Layer: 12
   m_Name: DomeShield
   m_TagString: Untagged
@@ -264,8 +265,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 1b69a4e29d07b354c8aef74b3bb6095f, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
@@ -372,7 +373,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 9eb6045416b0cd143ab25d3067cfebc2, type: 3}
   radius: 8
   model: {fileID: 4473942778474559143}
-  duration: 5
+  duration: 2
   isMainEntity: 0
   isFactionLocked: 0
   initResources: []
@@ -443,6 +444,19 @@ MonoBehaviour:
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &6238213733431361443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943697157073760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f2581afdbaa0347bdd171261ae2703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsToDestroy: 10
 --- !u!1 &1334552187669521333
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placableTerrainAreas: []
-  canPlaceOutsideBorder: 1
+  canPlaceOutsideRange: 0
 --- !u!135 &9096431126572306914
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -255,7 +255,7 @@ namespace RTSEngine.EntityComponent
             foreach (SpellCastTask creationTask in creationTasks)
                 if (creationTask.Data.code == taskAttributes.data.code)
                 {
-                    placementMgr.StartPlacement(creationTask);
+                    placementMgr.StartPlacement(creationTask, this);
                     return true;
                 }
 

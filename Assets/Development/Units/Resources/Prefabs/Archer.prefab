@@ -162,6 +162,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f396a651e720fc144afe98de6234c0c2, type: 3}
   radius: 0.4
   model: {fileID: 7286691753969888452}
+  duration: 0
   isMainEntity: 0
   isFactionLocked: 1
   initResources:
@@ -430,8 +431,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472317962180716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.406, z: 0}
-  m_LocalScale: {x: 0.83750004, y: 0.47406217, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.83750004, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4972337864068538}
   m_RootOrder: 0

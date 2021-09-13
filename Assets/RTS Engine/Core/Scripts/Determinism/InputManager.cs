@@ -503,6 +503,10 @@ namespace RTSEngine.Determinism
                     sourceHealth = (sourceEntity as IResource).Health;
                     break;
 
+                case EntityType.spell:
+                    sourceHealth = (sourceEntity as ISpell).Health;
+                    break;
+
                 default:
                     logger.LogError($"[{GetType().Name} - {InputMode.health}] Invalid source entity type of ID: {input.intValues.Item1}!");
                     return;
