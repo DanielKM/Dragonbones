@@ -618,7 +618,7 @@ MonoBehaviour:
   priority: 0
   requireIdleEntity: 0
   targetFinderData:
-    enabled: 0
+    enabled: 1
     reloadTime: 5
     range: 10
     idleOnly: 0
