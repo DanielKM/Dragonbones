@@ -315,7 +315,19 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   hitAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 051fcf38fe789484092898d73fb0a9c2, type: 3}
+    - {fileID: 8300000, guid: 6a3e45b8d5613d14d9a46133e67d1bb7, type: 3}
+    - {fileID: 8300000, guid: d4dad478a2e55a84ebcaa3e73cbbd453, type: 3}
+    - {fileID: 8300000, guid: f9a5fe35af5ad6c4b9375f80a27d9a71, type: 3}
+    - {fileID: 8300000, guid: 9f740459a5983e940aa36028bb8d0ca2, type: 3}
+    - {fileID: 8300000, guid: 9f68dd9f023d6704cb60d9d2ae8aeedd, type: 3}
+    - {fileID: 8300000, guid: 9b6c6a35e1d98404eb9f1e4842fee18b, type: 3}
+    - {fileID: 8300000, guid: f8de5ee714660f64d8cbeb2777b82fd5, type: 3}
+    - {fileID: 8300000, guid: 980c481b31bcb904c9465ca5fe510a0e, type: 3}
+    - {fileID: 8300000, guid: 051a4bfab11426149bc42953fe9abc97, type: 3}
+    - {fileID: 8300000, guid: 7219a7c07edf4584cadc572e2d0d0092, type: 3}
+    - {fileID: 8300000, guid: 221683c53355204488e8fd36b525d886, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -615,8 +627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 1
+    x: 1
+    y: 0
   code: movement_component
   isActive: 1
   priority: 0
@@ -636,11 +648,19 @@ MonoBehaviour:
       defaultValue: 2
   movableTerrainAreas: []
   formation:
-    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
-    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
     properties:
-      floatProperties: []
-      intProperties: []
+      floatProperties:
+      - name: vertical-spacing
+        value: 1
+      - name: horizontal-spacing
+        value: 0.3
+      - name: spacing
+        value: 1
+      intProperties:
+      - name: amountPerRow
+        value: 8
   speed:
     value: 5
   acceleration:
@@ -864,7 +884,7 @@ MonoBehaviour:
   attackCompleteAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: 1adea1bafe8666847970516e10667ef2, type: 3}
+    - {fileID: 8300000, guid: a726e50fd1b8e5d4d9224d6415722fe9, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 2

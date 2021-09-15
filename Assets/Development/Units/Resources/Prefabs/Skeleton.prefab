@@ -317,7 +317,8 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   hitAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: e8efd79df237282419ce357531ad10dd, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -636,8 +637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 1
+    x: 1
+    y: 0
   code: movement_component
   isActive: 1
   priority: 0
@@ -657,11 +658,19 @@ MonoBehaviour:
       defaultValue: 2
   movableTerrainAreas: []
   formation:
-    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
-    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
     properties:
-      floatProperties: []
-      intProperties: []
+      floatProperties:
+      - name: vertical-spacing
+        value: 1
+      - name: horizontal-spacing
+        value: 0.3
+      - name: spacing
+        value: 1
+      intProperties:
+      - name: amountPerRow
+        value: 8
   speed:
     value: 3.5
   acceleration:
@@ -886,7 +895,11 @@ MonoBehaviour:
   attackCompleteAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: 2fd003376bece8d4caeea462f15edec6, type: 3}
+    - {fileID: 8300000, guid: 1aa3f30de98a97c4f8eba55b2953dee4, type: 3}
+    - {fileID: 8300000, guid: 1aa3f30de98a97c4f8eba55b2953dee4, type: 3}
+    - {fileID: 8300000, guid: 58b0984056c92014da170680de945d2d, type: 3}
+    - {fileID: 8300000, guid: e1c41b428e3f0074b93b1ea567c5e622, type: 3}
+    - {fileID: 8300000, guid: 9b1365a377566f24884ea1a317b1d5dc, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 2

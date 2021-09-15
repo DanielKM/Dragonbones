@@ -316,7 +316,17 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   hitAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 5666400475002be4f9af48bb66536771, type: 3}
+    - {fileID: 8300000, guid: 7e1b307156779254690a9333c49e3773, type: 3}
+    - {fileID: 8300000, guid: 8be0690036fa97d448d8f5d96c9a3f5b, type: 3}
+    - {fileID: 8300000, guid: 90c2dc6b40f928d4097419e5bd4c1d4a, type: 3}
+    - {fileID: 8300000, guid: e18da735ed91bed4a8ec624f3be639c0, type: 3}
+    - {fileID: 8300000, guid: 259b18db211c1a247b5591fa530c4e7f, type: 3}
+    - {fileID: 8300000, guid: 5d5491d171322834f8ae6da5e0e25600, type: 3}
+    - {fileID: 8300000, guid: b86364a0568c07344a572f0d23dc04b2, type: 3}
+    - {fileID: 8300000, guid: 51eb97b2a4bf20b4fb5e8195b1333daa, type: 3}
+    - {fileID: 8300000, guid: 643d4e1688a259e4bbc8e49da0e4eea4, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -635,8 +645,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 1
+    x: 1
+    y: 0
   code: movement_component
   isActive: 1
   priority: 0
@@ -656,11 +666,19 @@ MonoBehaviour:
       defaultValue: 2
   movableTerrainAreas: []
   formation:
-    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
-    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
     properties:
-      floatProperties: []
-      intProperties: []
+      floatProperties:
+      - name: vertical-spacing
+        value: 1
+      - name: horizontal-spacing
+        value: 0.3
+      - name: spacing
+        value: 1
+      intProperties:
+      - name: amountPerRow
+        value: 8
   speed:
     value: 2
   acceleration:
@@ -887,7 +905,15 @@ MonoBehaviour:
   attackCompleteAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: 2fd003376bece8d4caeea462f15edec6, type: 3}
+    - {fileID: 8300000, guid: a726e50fd1b8e5d4d9224d6415722fe9, type: 3}
+    - {fileID: 8300000, guid: 665a0fcb03c104c46a59aa4149375012, type: 3}
+    - {fileID: 8300000, guid: cad2aaa93bcb9004191f3721c4f558fd, type: 3}
+    - {fileID: 8300000, guid: 89837be0511f17547bb0a8ca2cf8a6aa, type: 3}
+    - {fileID: 8300000, guid: ab4bab60b8427eb4098e017fa576b8fa, type: 3}
+    - {fileID: 8300000, guid: 7b2bc68343ab57e4fbdbda301cce263f, type: 3}
+    - {fileID: 8300000, guid: 083744b5eb24f2e42a6b9bbcc826dcf8, type: 3}
+    - {fileID: 8300000, guid: f198059ab8198e34c829b016caeb2282, type: 3}
+    - {fileID: 8300000, guid: 37359eddffeda564eb6486b9dbd45f8b, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 2

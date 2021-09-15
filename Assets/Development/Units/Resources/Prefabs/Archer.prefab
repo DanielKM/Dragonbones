@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
+    y: 0
   maxHealth: 100
   initialHealth: 100
   canIncrease: 1
@@ -207,7 +207,11 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   hitAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 08de8984099da0b4e8f92bfc7064f058, type: 3}
+    - {fileID: 8300000, guid: 8e0daeb9b50fd1d4f8c510fc52c040a3, type: 3}
+    - {fileID: 8300000, guid: 1ede1b974d7c006458fe577808ce8a87, type: 3}
+    - {fileID: 8300000, guid: c2e376efe1bc4c9439dc8287d7883976, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -431,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472317962180716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.83750004, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4972337864068538}
@@ -448,8 +452,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.87, y: 2, z: 0.38}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.87, y: 1.5, z: 0.38}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!54 &54052690143607876
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -670,8 +674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 1
+    x: 1
+    y: 0
   code: movement_component
   isActive: 1
   priority: 0
@@ -698,12 +702,12 @@ MonoBehaviour:
       - name: vertical-spacing
         value: 1
       - name: horizontal-spacing
-        value: 1
+        value: 0.3
       - name: spacing
-        value: 0
+        value: 1
       intProperties:
       - name: amountPerRow
-        value: 4
+        value: 8
   speed:
     value: 3
   acceleration:
@@ -908,7 +912,10 @@ MonoBehaviour:
     color: {r: 1, g: 0, b: 0, a: 1}
   attackCompleteAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: c7b33f35bc2d61b4a8a76700f6463b4d, type: 3}
+    - {fileID: 8300000, guid: fac51a3037988a5448a6c74e5590352e, type: 3}
+    - {fileID: 8300000, guid: 11663e959b0c784448784bb9abf59423, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 0

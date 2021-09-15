@@ -316,7 +316,8 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   hitAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: e8efd79df237282419ce357531ad10dd, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -635,8 +636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 1
+    x: 1
+    y: 0
   code: movement_component
   isActive: 1
   priority: 0
@@ -656,11 +657,19 @@ MonoBehaviour:
       defaultValue: 2
   movableTerrainAreas: []
   formation:
-    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
-    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
     properties:
-      floatProperties: []
-      intProperties: []
+      floatProperties:
+      - name: vertical-spacing
+        value: 1
+      - name: horizontal-spacing
+        value: 0.3
+      - name: spacing
+        value: 1
+      intProperties:
+      - name: amountPerRow
+        value: 8
   speed:
     value: 2.5
   acceleration:
@@ -885,7 +894,16 @@ MonoBehaviour:
   attackCompleteAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: 2fd003376bece8d4caeea462f15edec6, type: 3}
+    - {fileID: 8300000, guid: a726e50fd1b8e5d4d9224d6415722fe9, type: 3}
+    - {fileID: 8300000, guid: a726e50fd1b8e5d4d9224d6415722fe9, type: 3}
+    - {fileID: 8300000, guid: 665a0fcb03c104c46a59aa4149375012, type: 3}
+    - {fileID: 8300000, guid: cad2aaa93bcb9004191f3721c4f558fd, type: 3}
+    - {fileID: 8300000, guid: 89837be0511f17547bb0a8ca2cf8a6aa, type: 3}
+    - {fileID: 8300000, guid: ab4bab60b8427eb4098e017fa576b8fa, type: 3}
+    - {fileID: 8300000, guid: 7b2bc68343ab57e4fbdbda301cce263f, type: 3}
+    - {fileID: 8300000, guid: 083744b5eb24f2e42a6b9bbcc826dcf8, type: 3}
+    - {fileID: 8300000, guid: f198059ab8198e34c829b016caeb2282, type: 3}
+    - {fileID: 8300000, guid: 37359eddffeda564eb6486b9dbd45f8b, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 2

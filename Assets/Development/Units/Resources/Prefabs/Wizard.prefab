@@ -128,7 +128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241045417843294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.5, y: 0.050000012, z: 95.725}
+  m_LocalPosition: {x: 14.5, y: 0, z: 95.725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4890756331011814}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
+    y: 0
   maxHealth: 100
   initialHealth: 100
   canIncrease: 1
@@ -218,7 +218,11 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   hitAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 8e0daeb9b50fd1d4f8c510fc52c040a3, type: 3}
+    - {fileID: 8300000, guid: 1ede1b974d7c006458fe577808ce8a87, type: 3}
+    - {fileID: 8300000, guid: c2e376efe1bc4c9439dc8287d7883976, type: 3}
+    - {fileID: 8300000, guid: 08de8984099da0b4e8f92bfc7064f058, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -462,8 +466,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472317962180716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.83750004, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4972337864068538}
   m_RootOrder: 0
@@ -479,8 +483,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.87, y: 2, z: 0.38}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.87, y: 1.5, z: 0.38}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!54 &54052690143607876
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -758,8 +762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 1
+    x: 1
+    y: 0
   code: movement_component
   isActive: 1
   priority: 0
@@ -779,11 +783,19 @@ MonoBehaviour:
       defaultValue: 2
   movableTerrainAreas: []
   formation:
-    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
-    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
     properties:
-      floatProperties: []
-      intProperties: []
+      floatProperties:
+      - name: vertical-spacing
+        value: 1
+      - name: horizontal-spacing
+        value: 0.3
+      - name: spacing
+        value: 1
+      intProperties:
+      - name: amountPerRow
+        value: 8
   speed:
     value: 3
   acceleration:
