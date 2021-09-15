@@ -94,7 +94,7 @@ MonoBehaviour:
   selectionAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: 084fc8485a9c5a1498618c124f88a758, type: 3}
+    - {fileID: 8300000, guid: 4dbf16763bf7c374bb073a62be161f5e, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 1
@@ -150,7 +150,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -262,6 +261,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 8370efda251c2c449a84eb3a03b04d2a, type: 3}
   radius: 0.3
   model: {fileID: 1014710365574637457}
+  duration: 0
   isMainEntity: 0
   isFactionLocked: 0
   initResources:
@@ -522,12 +522,10 @@ MonoBehaviour:
   sourceEntity: {fileID: 1943697157073760}
   sourceInstanceOnly: 0
   updateSpawnedInstances: 1
-  upgradeEffect: {fileID: 5759691463754869283, guid: eef6860fe5f7edf4495683186d907db2,
-    type: 3}
+  upgradeEffect: {fileID: 5759691463754869283, guid: eef6860fe5f7edf4495683186d907db2, type: 3}
   triggerUpgrades: []
   sourceComponentCode: heavy_infantry_basic_attack
-  upgradeTarget: {fileID: 667197928241164540, guid: 75c0348f7716836418087873b77e1d92,
-    type: 3}
+  upgradeTarget: {fileID: 667197928241164540, guid: 75c0348f7716836418087873b77e1d92, type: 3}
 --- !u!1 &1334552187669521333
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
+    y: 0
   code: movement_component
   isActive: 1
   priority: 0
@@ -652,7 +650,7 @@ MonoBehaviour:
   orderAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: ec20d9739bc7e5c45b7f828c9df01488, type: 3}
+    - {fileID: 8300000, guid: d408ae5575a5c774fa0d602fed3077d7, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -677,13 +675,23 @@ MonoBehaviour:
     value: 250
   mvtAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 0bc66974c41ff8c4fa15f46d21ad3548, type: 3}
+    - {fileID: 8300000, guid: 53e2adf2ac488ef46bb2b4074de9e363, type: 3}
+    - {fileID: 8300000, guid: a03a96c5d1e99b4409ddd79098abd9ab, type: 3}
+    - {fileID: 8300000, guid: 7187dc81f98b8be4eb97bfc4dd9a5abf, type: 3}
+    - {fileID: 8300000, guid: e3cfcb32689b274419ac73380ea96888, type: 3}
+    - {fileID: 8300000, guid: 314d37dfb74502a4094b835d0e0d6c23, type: 3}
+    - {fileID: 8300000, guid: f0f794c67e9233d468a38d165590d253, type: 3}
+    - {fileID: 8300000, guid: 1a7741daba5446e46a40f8074aae75dc, type: 3}
+    - {fileID: 8300000, guid: 1f0199a4c6005ec4abbb302f71bc036d, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 1
   invalidMvtPathAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: a4685759248eb8a41ad2a7a8f56ef7af, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 1
@@ -773,8 +781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 0
+    x: 1
+    y: 2
   code: heavy_infantry_basic_attack
   isActive: 1
   priority: 0
@@ -788,7 +796,7 @@ MonoBehaviour:
   orderAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: 275896620fcd4c34d9d07af50a5179ed, type: 3}
+    - {fileID: 8300000, guid: bfbcc72aa06030241892cdfe8793018c, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -838,6 +846,7 @@ MonoBehaviour:
     data:
       unit: 15
       building: 15
+      spell: 10
       custom: []
     areaAttackEnabled: 0
     areaAttackData: []
@@ -877,7 +886,7 @@ MonoBehaviour:
   attackCompleteAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: a6e800bb525546c458d6e5cd9072627e, type: 3}
+    - {fileID: 8300000, guid: bfbcc72aa06030241892cdfe8793018c, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 2
@@ -894,15 +903,12 @@ MonoBehaviour:
     unitStoppingDistance:
       _min: 0
       _max: 1.5
-      test: 0
     buildingStoppingDistance:
       _min: 0
       _max: 1.5
-      test: 0
     noTargetStoppingDistance:
       _min: 5
       _max: 10
-      test: 0
     enforceMinStoppingDistance: 0
     minStoppingDistance: 0.5
     updateMvtDistance: 2
@@ -925,63 +931,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4721859516458986}
     m_Modifications:
-    - target: {fileID: 1137340246058539085, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058539085, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_Name
       value: Footman
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-        type: 3}
+    - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -989,25 +983,21 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
 --- !u!1 &1014710365574637457 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1137340246058539085, guid: 1a022ca3e54eae6418cb98811e635fdb,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 1137340246058539085, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
   m_PrefabInstance: {fileID: 134084747271389148}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1014710365574675441 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
   m_PrefabInstance: {fileID: 134084747271389148}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1014710365565146151 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 1137340246065835003, guid: 1a022ca3e54eae6418cb98811e635fdb,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 1137340246065835003, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
   m_PrefabInstance: {fileID: 134084747271389148}
   m_PrefabAsset: {fileID: 0}
 --- !u!137 &1014710365560974057 stripped
 SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1137340246070105397, guid: 1a022ca3e54eae6418cb98811e635fdb,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 1137340246070105397, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
   m_PrefabInstance: {fileID: 134084747271389148}
   m_PrefabAsset: {fileID: 0}

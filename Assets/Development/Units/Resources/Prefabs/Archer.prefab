@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
+    y: 2
   maxHealth: 100
   initialHealth: 100
   canIncrease: 1
@@ -496,7 +496,8 @@ MonoBehaviour:
   selectOwnerOnly: 0
   selectionAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: ce93da45b4c784a41a261eb37048bf6e, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 0
@@ -669,7 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 1
+    x: 0
     y: 1
   code: movement_component
   isActive: 1
@@ -683,7 +684,8 @@ MonoBehaviour:
   setTargetTaskUI: {fileID: 11400000, guid: 061c8973e3c577f4ea6c9b563d77bf00, type: 2}
   orderAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: fcf47b553e5fbeb4c83e5e7bf3ca0325, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 2
@@ -716,13 +718,24 @@ MonoBehaviour:
     value: 2
   mvtAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 3d132da7af60f1145a3deb6a8bc42a08, type: 3}
+    - {fileID: 8300000, guid: 9ea11a2d13d536e4e8441a0f5895995c, type: 3}
+    - {fileID: 8300000, guid: 203ac8b6f07070e4f93f1c1a6fff06c3, type: 3}
+    - {fileID: 8300000, guid: ac6649006dbee9e4685752e124111da7, type: 3}
+    - {fileID: 8300000, guid: f42914d98b070f741b2feee96a2988ee, type: 3}
+    - {fileID: 8300000, guid: feb62160ad1f8334ab037017b843d162, type: 3}
+    - {fileID: 8300000, guid: 001f691d110d55648871a03f446ffa08, type: 3}
+    - {fileID: 8300000, guid: 6478d7fb30f301b4fa8f74d5d1dad094, type: 3}
+    - {fileID: 8300000, guid: f1547ad8fbfa4f24d83e5a445aee860d, type: 3}
+    - {fileID: 8300000, guid: 47832b56ccba5bc408b1d5aac1871746, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 0
   invalidMvtPathAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: ebb3ae4b720044a43afbbfa236fcbe79, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 0
@@ -782,8 +795,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 1
+    x: 1
+    y: 2
   code: archer_level1_basic_attack
   isActive: 1
   priority: 0
@@ -797,7 +810,7 @@ MonoBehaviour:
   orderAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: 60ba6e957fcf8b646a9ec8820c5242c8, type: 3}
+    - {fileID: 8300000, guid: ce00ce6c6db575f4cb1ac4fc3f6a60d8, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -856,6 +869,7 @@ MonoBehaviour:
     data:
       unit: 10
       building: 10
+      spell: 10
       custom: []
     areaAttackEnabled: 0
     areaAttackData: []

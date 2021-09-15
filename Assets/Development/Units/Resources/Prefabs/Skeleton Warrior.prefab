@@ -93,7 +93,8 @@ MonoBehaviour:
   selectOwnerOnly: 0
   selectionAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: d833832308ce88546bf6c0232b49f165, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 1
@@ -634,8 +635,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 1
-    y: 0
+    x: 0
+    y: 1
   code: movement_component
   isActive: 1
   priority: 0
@@ -649,7 +650,7 @@ MonoBehaviour:
   orderAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: 715099beff963ff46907e15019e39c2f, type: 3}
+    - {fileID: 8300000, guid: 0a68ff167528da44f97a470e11280027, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -674,13 +675,22 @@ MonoBehaviour:
     value: 250
   mvtAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: d15f7338d693f0343843a6b9096d27f6, type: 3}
+    - {fileID: 8300000, guid: b993df4a93c1d304ab19d8b2eb88c9a5, type: 3}
+    - {fileID: 8300000, guid: 5c9bdbce37b06a24fa6ea793bcfd1907, type: 3}
+    - {fileID: 8300000, guid: 0909de896e9029541b92ae05fe15e4b6, type: 3}
+    - {fileID: 8300000, guid: 6ad0cf00f050bee41a2dee098475dc78, type: 3}
+    - {fileID: 8300000, guid: 7ca5a9710db4327439c9f8cb8204615e, type: 3}
+    - {fileID: 8300000, guid: 14ae706fef2303e4cb71112dbd5d250b, type: 3}
+    - {fileID: 8300000, guid: b995bc1775ea83b4b8f861763e9a1424, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 1
   invalidMvtPathAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 2818f28c403274a49877d07929be0182, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 1
@@ -770,8 +780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 0
+    x: 1
+    y: 2
   code: light_infantry_basic_attack
   isActive: 1
   priority: 0
@@ -785,7 +795,7 @@ MonoBehaviour:
   orderAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: 275896620fcd4c34d9d07af50a5179ed, type: 3}
+    - {fileID: 8300000, guid: 2fd003376bece8d4caeea462f15edec6, type: 3}
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -835,6 +845,7 @@ MonoBehaviour:
     data:
       unit: 10
       building: 10
+      spell: 10
       custom: []
     areaAttackEnabled: 0
     areaAttackData: []
@@ -874,7 +885,7 @@ MonoBehaviour:
   attackCompleteAudio:
     fetchType: 0
     items:
-    - {fileID: 8300000, guid: a6e800bb525546c458d6e5cd9072627e, type: 3}
+    - {fileID: 8300000, guid: 2fd003376bece8d4caeea462f15edec6, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 2

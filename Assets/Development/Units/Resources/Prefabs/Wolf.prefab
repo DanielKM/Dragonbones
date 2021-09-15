@@ -149,7 +149,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -261,6 +260,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 9b6f697f4e99df7499c01b1aa65f54c7, type: 3}
   radius: 0.3
   model: {fileID: 23757112753621337}
+  duration: 0
   isMainEntity: 0
   isFactionLocked: 0
   initResources: []
@@ -596,8 +596,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 1
-    y: 0
+    x: 0
+    y: 1
   code: movement_component
   isActive: 1
   priority: 0
@@ -610,8 +610,7 @@ MonoBehaviour:
   setTargetTaskUI: {fileID: 11400000, guid: 061c8973e3c577f4ea6c9b563d77bf00, type: 2}
   orderAudio:
     fetchType: 0
-    items:
-    - {fileID: 8300000, guid: 715099beff963ff46907e15019e39c2f, type: 3}
+    items: []
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -636,7 +635,13 @@ MonoBehaviour:
     value: 250
   mvtAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 2ee7a4274d261bf43bb411f2eae2561c, type: 3}
+    - {fileID: 8300000, guid: 50ad27f2e46a7074e9864dbad1e7eade, type: 3}
+    - {fileID: 8300000, guid: c758d50866c38364395e6497487c1af3, type: 3}
+    - {fileID: 8300000, guid: 88836c252240bf148b51f31eaa40423b, type: 3}
+    - {fileID: 8300000, guid: 7b0242fe2eb831e4cbf3bada890a9dcd, type: 3}
+    - {fileID: 8300000, guid: 5110f81119d96ea47b2e9a45875c1156, type: 3}
     cooldown:
       enabled: 0
       defaultValue: 1
@@ -732,8 +737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 0
+    x: 1
+    y: 2
   code: light_infantry_basic_attack
   isActive: 1
   priority: 0
@@ -746,8 +751,7 @@ MonoBehaviour:
   setTargetTaskUI: {fileID: 11400000, guid: 1acf9aaa95010f543a53822d6a4be155, type: 2}
   orderAudio:
     fetchType: 0
-    items:
-    - {fileID: 8300000, guid: 275896620fcd4c34d9d07af50a5179ed, type: 3}
+    items: []
     cooldown:
       enabled: 1
       defaultValue: 2
@@ -796,6 +800,7 @@ MonoBehaviour:
     data:
       unit: 5
       building: 5
+      spell: 10
       custom: []
     areaAttackEnabled: 0
     areaAttackData: []
@@ -834,8 +839,7 @@ MonoBehaviour:
     color: {r: 1, g: 0, b: 0, a: 1}
   attackCompleteAudio:
     fetchType: 0
-    items:
-    - {fileID: 8300000, guid: a6e800bb525546c458d6e5cd9072627e, type: 3}
+    items: []
     cooldown:
       enabled: 0
       defaultValue: 2
@@ -852,15 +856,12 @@ MonoBehaviour:
     unitStoppingDistance:
       _min: 0
       _max: 1.5
-      test: 0
     buildingStoppingDistance:
       _min: 0
       _max: 1.5
-      test: 0
     noTargetStoppingDistance:
       _min: 5
       _max: 10
-      test: 0
     enforceMinStoppingDistance: 0
     minStoppingDistance: 0.5
     updateMvtDistance: 2
@@ -935,19 +936,16 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 5701a584e276bba438e4a5f5f02780a4, type: 3}
 --- !u!1 &23757112753621337 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1817446995028838, guid: 5701a584e276bba438e4a5f5f02780a4,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 1817446995028838, guid: 5701a584e276bba438e4a5f5f02780a4, type: 3}
   m_PrefabInstance: {fileID: 23100750038622783}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &18971703152540233 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4913353921665142, guid: 5701a584e276bba438e4a5f5f02780a4,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 4913353921665142, guid: 5701a584e276bba438e4a5f5f02780a4, type: 3}
   m_PrefabInstance: {fileID: 23100750038622783}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &73174650990156549 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 95109918701140282, guid: 5701a584e276bba438e4a5f5f02780a4,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 95109918701140282, guid: 5701a584e276bba438e4a5f5f02780a4, type: 3}
   m_PrefabInstance: {fileID: 23100750038622783}
   m_PrefabAsset: {fileID: 0}
