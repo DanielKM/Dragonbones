@@ -30892,6 +30892,17 @@ MonoBehaviour:
       - {fileID: 760451036}
       - {fileID: 1352225472}
       typeSpecific: []
+  - data:
+      role: 2
+      name: New Faction
+      color: {r: 0, g: 0.39692053, b: 0.7830189, a: 1}
+      type: {fileID: 11400000, guid: e521a1482c459704a96d4e302ae578c6, type: 2}
+      npcType: {fileID: 0}
+      isLocalPlayer: 1
+    initialCamLookAtPosition: {fileID: 966782774}
+    defaultFactionEntities:
+      allTypes: []
+      typeSpecific: []
   randomFactionSlots: 1
 --- !u!1 &1612227951
 GameObject:

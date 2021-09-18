@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.17f1 (a4537701e4ab) revision 10769271'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19043.1165; Version 2009; 64bit' Language: 'en' Physical Memory: 16335 MB
+OS: 'Windows 10 Home; OS build 19043.1237; Version 2009; 64bit' Language: 'en' Physical Memory: 16335 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ C:/Users/danie/Desktop/Coding/Unity Projects/Dragonbones
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63511
+53922
 Successfully changed project path to: C:/Users/danie/Desktop/Coding/Unity Projects/Dragonbones
 C:/Users/danie/Desktop/Coding/Unity Projects/Dragonbones
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 333.57 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 405.60 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.17f1 (a4537701e4ab)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Resources/UnitySubsystems
@@ -35,152 +35,155 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56784
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56088
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002586 seconds.
+Registered in 0.002744 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 344.91 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 440.23 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.509 seconds
+- Completed reload, in  1.647 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1509ms)
-		BeginReloadAssembly (56ms)
+	ReloadAssembly (1648ms)
+		BeginReloadAssembly (58ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (718ms)
-			LoadAssemblies (53ms)
+		EndReloadAssembly (827ms)
+			LoadAssemblies (55ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (142ms)
+			SetupTypeCache (153ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (28ms)
-			SetupLoadedEditorAssemblies (479ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (570ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (345ms)
+				RefreshPlugins (440ms)
 				BeforeProcessingInitializeOnLoad (13ms)
-				ProcessInitializeOnLoadAttributes (84ms)
-				ProcessInitializeOnLoadMethodAttributes (32ms)
+				ProcessInitializeOnLoadAttributes (83ms)
+				ProcessInitializeOnLoadMethodAttributes (29ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.013431 seconds.
+Registered in 0.014768 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 368.21 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 457.71 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Find all reader and writers took 103 milliseconds
+Find all reader and writers took 110 milliseconds
 Script Module: UnityEngine.UI.dll
-Weave behaviours and messages took66 milliseconds
-Find all reader and writers took 82 milliseconds
+Weave behaviours and messages took71 milliseconds
+Find all reader and writers took 87 milliseconds
 Script Module: Unity.RenderPipelines.Core.Runtime.dll
-Weave behaviours and messages took49 milliseconds
-Find all reader and writers took 81 milliseconds
+Weave behaviours and messages took53 milliseconds
+Find all reader and writers took 89 milliseconds
 Script Module: UnityEngine.TestRunner.dll
-Weave behaviours and messages took21 milliseconds
+Weave behaviours and messages took23 milliseconds
 Find all reader and writers took 83 milliseconds
 Script Module: Unity.Mathematics.dll
-Weave behaviours and messages took156 milliseconds
-Find all reader and writers took 70 milliseconds
+Weave behaviours and messages took162 milliseconds
+Find all reader and writers took 78 milliseconds
 Script Module: SimpleWebTransport.dll
 Weave behaviours and messages took5 milliseconds
-Find all reader and writers took 93 milliseconds
+Find all reader and writers took 118 milliseconds
 Script Module: Unity.RenderPipelines.Universal.Runtime.dll
-Weave behaviours and messages took51 milliseconds
+Weave behaviours and messages took49 milliseconds
+Find all reader and writers took 93 milliseconds
+Script Module: GeNa.Scripts.Runtime.dll
+Weave behaviours and messages took28 milliseconds
 Find all reader and writers took 110 milliseconds
 Script Module: Unity.TextMeshPro.dll
-Weave behaviours and messages took68 milliseconds
-Find all reader and writers took 83 milliseconds
+Weave behaviours and messages took70 milliseconds
+Find all reader and writers took 88 milliseconds
 Script Module: Unity.Timeline.dll
-Weave behaviours and messages took22 milliseconds
-Find all reader and writers took 77 milliseconds
+Weave behaviours and messages took21 milliseconds
+Find all reader and writers took 73 milliseconds
 Script Module: Telepathy.dll
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 86 milliseconds
+Script Module: Mirror.Cloud.dll
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 101 milliseconds
+Script Module: Assembly-CSharp-firstpass.dll
 Weave behaviours and messages took3 milliseconds
 Find all reader and writers took 84 milliseconds
-Script Module: Mirror.Cloud.dll
-Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 84 milliseconds
-Script Module: Assembly-CSharp-firstpass.dll
-Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 79 milliseconds
 Script Module: kcp2k.dll
 Weave behaviours and messages took3 milliseconds
-Find all reader and writers took 89 milliseconds
+Find all reader and writers took 94 milliseconds
 Script Module: Mirror.Examples.Cloud.GUI.dll
 Weave behaviours and messages took3 milliseconds
-Find all reader and writers took 81 milliseconds
+Find all reader and writers took 97 milliseconds
 Script Module: Unity.RenderPipelines.Core.ShaderLibrary.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 75 milliseconds
+Find all reader and writers took 81 milliseconds
 Script Module: Unity.RenderPipeline.Universal.ShaderLibrary.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 75 milliseconds
+Find all reader and writers took 83 milliseconds
 Script Module: Unity.RenderPipelines.Universal.Shaders.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 72 milliseconds
+Find all reader and writers took 79 milliseconds
 Script Module: Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 97 milliseconds
+Find all reader and writers took 107 milliseconds
 Script Module: UnityEditor.TestRunner.dll
-Weave behaviours and messages took39 milliseconds
-Find all reader and writers took 83 milliseconds
+Weave behaviours and messages took41 milliseconds
+Find all reader and writers took 84 milliseconds
 Script Module: Mirror.CompilerSymbols.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 92 milliseconds
+Find all reader and writers took 121 milliseconds
 Script Module: UnityEditor.UI.dll
-Weave behaviours and messages took12 milliseconds
-Find all reader and writers took 86 milliseconds
+Weave behaviours and messages took11 milliseconds
+Find all reader and writers took 80 milliseconds
 Script Module: Unity.ShaderGraph.Utilities.dll
-Weave behaviours and messages took0 milliseconds
+Weave behaviours and messages took2 milliseconds
 Mono: successfully reloaded assembly
-- Completed reload, in  7.689 seconds
+- Completed reload, in  9.468 seconds
 Domain Reload Profiling:
-	ReloadAssembly (7690ms)
-		BeginReloadAssembly (172ms)
+	ReloadAssembly (9469ms)
+		BeginReloadAssembly (154ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (20ms)
-		EndReloadAssembly (7445ms)
-			LoadAssemblies (108ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (9242ms)
+			LoadAssemblies (112ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (381ms)
+			SetupTypeCache (412ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (65ms)
-			SetupLoadedEditorAssemblies (6758ms)
+			RebuildScriptCaches (85ms)
+			SetupLoadedEditorAssemblies (8493ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (368ms)
-				BeforeProcessingInitializeOnLoad (95ms)
-				ProcessInitializeOnLoadAttributes (320ms)
-				ProcessInitializeOnLoadMethodAttributes (5958ms)
-				AfterProcessingInitializeOnLoad (12ms)
-				EditorAssembliesLoaded (1ms)
+				RefreshPlugins (458ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (1217ms)
+				ProcessInitializeOnLoadMethodAttributes (6706ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 5.72 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 4.08 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3562 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 185.9 MB.
-System memory in use after: 186.1 MB.
+Unloading 4110 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 323.9 MB.
+System memory in use after: 324.1 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 4021.
-Total: 4.625100 ms (FindLiveObjects: 0.401900 ms CreateObjectMapping: 0.087400 ms MarkObjects: 4.028100 ms  DeleteObjects: 0.106300 ms)
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 4602.
+Total: 6.017700 ms (FindLiveObjects: 0.444300 ms CreateObjectMapping: 0.100300 ms MarkObjects: 5.332900 ms  DeleteObjects: 0.138200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -194,257 +197,8 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Arrow Fly 1_1.wav
-  artifactKey: Guid(349e352e3f2b35e4cb5d5aea62ab5986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Arrow Fly 1_1.wav using Guid(349e352e3f2b35e4cb5d5aea62ab5986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b3eaa5b9bb98e201bc2a338a1af2e6f') in 0.149148 seconds 
-  Import took 0.157720 seconds .
+  path: Assets/Development/Scenes/GaiaTrial2.unity
+  artifactKey: Guid(4cb1203772e416b40a02b3509824ab75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Scenes/GaiaTrial2.unity using Guid(4cb1203772e416b40a02b3509824ab75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '511398ce27b36171e54389fa476f59b8') in 0.020599 seconds 
+  Import took 0.030327 seconds .
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000232 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Bow Draw 2_1.wav
-  artifactKey: Guid(fac51a3037988a5448a6c74e5590352e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Bow Draw 2_1.wav using Guid(fac51a3037988a5448a6c74e5590352e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5899288ae4d77d45a0c7572f74374cb7') in 0.021964 seconds 
-  Import took 0.028827 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000208 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Blunt Weapon 1_1.wav
-  artifactKey: Guid(e8efd79df237282419ce357531ad10dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Blunt Weapon 1_1.wav using Guid(e8efd79df237282419ce357531ad10dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '554d6b44c1cdd316f6008e53a6cd353a') in 0.018304 seconds 
-  Import took 0.025562 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Metal Weapon Hit Metal 1_1.wav
-  artifactKey: Guid(f198059ab8198e34c829b016caeb2282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Metal Weapon Hit Metal 1_1.wav using Guid(f198059ab8198e34c829b016caeb2282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbbbfdccc427da2bbc1113408567a3b4') in 0.021261 seconds 
-  Import took 0.028583 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000333 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Metal Weapon Hit Metal 2_1.wav
-  artifactKey: Guid(37359eddffeda564eb6486b9dbd45f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Metal Weapon Hit Metal 2_1.wav using Guid(37359eddffeda564eb6486b9dbd45f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13a9e4a227d784a6b518ff549ebfa0bd') in 0.022305 seconds 
-  Import took 0.031549 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.446034 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Stab 1_1.wav
-  artifactKey: Guid(8e0daeb9b50fd1d4f8c510fc52c040a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Stab 1_1.wav using Guid(8e0daeb9b50fd1d4f8c510fc52c040a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cef5eb8a2e39cf6cee4fc2b85e2fde68') in 0.015159 seconds 
-  Import took 0.021979 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.541957 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Shield Metal 1_1.wav
-  artifactKey: Guid(5666400475002be4f9af48bb66536771) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Shield Metal 1_1.wav using Guid(5666400475002be4f9af48bb66536771) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62fac8893586a8c47bdec387e954aa15') in 0.014393 seconds 
-  Import took 0.021142 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 45.596970 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Arrow Fly 3_2.wav
-  artifactKey: Guid(9d8c365095977fc4b8435ed847c4b8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Arrow Fly 3_2.wav using Guid(9d8c365095977fc4b8435ed847c4b8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57d8c7ee7a4e3badf3a8a022287fb0f5') in 0.014622 seconds 
-  Import took 0.021468 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.900929 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Metal Hit 1_1.wav
-  artifactKey: Guid(a726e50fd1b8e5d4d9224d6415722fe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Metal Hit 1_1.wav using Guid(a726e50fd1b8e5d4d9224d6415722fe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d020d4444712786f16fb152c9d3b4fc') in 0.016309 seconds 
-  Import took 0.023022 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.924370 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Metal Hit 1_4.wav
-  artifactKey: Guid(89837be0511f17547bb0a8ca2cf8a6aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Metal Hit 1_4.wav using Guid(89837be0511f17547bb0a8ca2cf8a6aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecc8a51f7ba95ae6cfacaf2ee537f4c1') in 0.015530 seconds 
-  Import took 0.022978 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.354434 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Metal Hit 1_6.wav
-  artifactKey: Guid(7b2bc68343ab57e4fbdbda301cce263f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Metal Hit 1_6.wav using Guid(7b2bc68343ab57e4fbdbda301cce263f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4e9c9499df51b0998d6f0f201ea0486') in 0.014477 seconds 
-  Import took 0.021055 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.031340 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Metal Hit 1_7.wav
-  artifactKey: Guid(083744b5eb24f2e42a6b9bbcc826dcf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Metal Hit 1_7.wav using Guid(083744b5eb24f2e42a6b9bbcc826dcf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '443ce99dec5ac358be0c2f02925b5ad9') in 0.014771 seconds 
-  Import took 0.021302 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.925845 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Shield Metal 7_4.wav
-  artifactKey: Guid(e18da735ed91bed4a8ec624f3be639c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Shield Metal 7_4.wav using Guid(e18da735ed91bed4a8ec624f3be639c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a036720e5499ba17d67891179a46fbb3') in 0.015486 seconds 
-  Import took 0.022264 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.983143 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Shield Metal 8_4.wav
-  artifactKey: Guid(643d4e1688a259e4bbc8e49da0e4eea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Shield Metal 8_4.wav using Guid(643d4e1688a259e4bbc8e49da0e4eea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a84979369248d954802a80be7f02cbe') in 0.014379 seconds 
-  Import took 0.021033 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.640378 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Shield Metal 7_1.wav
-  artifactKey: Guid(7e1b307156779254690a9333c49e3773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Shield Metal 7_1.wav using Guid(7e1b307156779254690a9333c49e3773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a44aa41640ad0b1e4c8079cd2e3a97d2') in 0.016599 seconds 
-  Import took 0.023254 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.999619 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Weapon Draw Wood 01.wav
-  artifactKey: Guid(9b38350e503e064468774b9d46ca7a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Weapon Draw Wood 01.wav using Guid(9b38350e503e064468774b9d46ca7a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b2fffcdad2c019417e3d25320d514a8') in 0.017683 seconds 
-  Import took 0.025718 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.879735 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Staff Hit 4_4.wav
-  artifactKey: Guid(a6445322901a7a346bd082d3db185645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Staff Hit 4_4.wav using Guid(a6445322901a7a346bd082d3db185645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3424bc0a4b3a8b06a4c5468e2c5cb6b0') in 0.016509 seconds 
-  Import took 0.024786 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.070054 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Stab 24_2.wav
-  artifactKey: Guid(9c92a9835e42bc446bac8f5f8b704a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Stab 24_2.wav using Guid(9c92a9835e42bc446bac8f5f8b704a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c7b3d19f387b7c058b3c29285fce0a8') in 0.014645 seconds 
-  Import took 0.021824 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 82.385789 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Shield Wood 6_2.wav
-  artifactKey: Guid(d4dad478a2e55a84ebcaa3e73cbbd453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Shield Wood 6_2.wav using Guid(d4dad478a2e55a84ebcaa3e73cbbd453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc7f7efb63c4b147031815ec11f09c8f') in 0.015320 seconds 
-  Import took 0.022575 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.154537 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/General Spell/Buff Attack 4.wav
-  artifactKey: Guid(f96433a0aedeb2246a51edf0f580cbb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/General Spell/Buff Attack 4.wav using Guid(f96433a0aedeb2246a51edf0f580cbb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd413bf536df4d7acc462c8745a9fb448') in 0.015220 seconds 
-  Import took 0.021996 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.605498 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/General Spell/Buff Defense 03.wav
-  artifactKey: Guid(470afd54093c59242af6eb2dbb4a0026) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/General Spell/Buff Defense 03.wav using Guid(470afd54093c59242af6eb2dbb4a0026) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62b68c402db0090c4657fe1282890717') in 0.015171 seconds 
-  Import took 0.021923 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.318260 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Punch 1_2.wav
-  artifactKey: Guid(58b0984056c92014da170680de945d2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Punch 1_2.wav using Guid(58b0984056c92014da170680de945d2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1ca7e2adf4a1652e550f33371bac0f2') in 0.016240 seconds 
-  Import took 0.023617 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.621278 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Punch 1_1.wav
-  artifactKey: Guid(1aa3f30de98a97c4f8eba55b2953dee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Punch 1_1.wav using Guid(1aa3f30de98a97c4f8eba55b2953dee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c99714976a5d72252923fb8c807ae30') in 0.016824 seconds 
-  Import took 0.023945 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.013254 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 4.86 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.376 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1376ms)
-		BeginReloadAssembly (135ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (48ms)
-		EndReloadAssembly (1160ms)
-			LoadAssemblies (115ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (394ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (56ms)
-			SetupLoadedEditorAssemblies (447ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (5ms)
-				BeforeProcessingInitializeOnLoad (112ms)
-				ProcessInitializeOnLoadAttributes (301ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 4.28 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3440 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 180.4 MB.
-System memory in use after: 180.7 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4032.
-Total: 4.876800 ms (FindLiveObjects: 0.491400 ms CreateObjectMapping: 0.096200 ms MarkObjects: 4.242800 ms  DeleteObjects: 0.045300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 252.450689 seconds.
-  path: Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Weapon Draw Wood 02.wav
-  artifactKey: Guid(16abe785d50549344ba3efaca5fb96b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Fantasy Sounds Bundle/Exclusive Sounds/Medieval Combat Sounds/Weapon Draw Wood 02.wav using Guid(16abe785d50549344ba3efaca5fb96b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66f148ac2cf8e1d749e2e6746b7155d4') in 0.059863 seconds 
-  Import took 0.067659 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.629578 seconds.
-  path: Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Bow Draw 1_1.wav
-  artifactKey: Guid(c7b33f35bc2d61b4a8a76700f6463b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Imports/Magic Spells Sound Effects V2.0/Medieval Combat Sounds BONUS/Bow Draw 1_1.wav using Guid(c7b33f35bc2d61b4a8a76700f6463b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c9972c5c8f4ec22f15f9691bc696c40') in 0.014804 seconds 
-  Import took 0.021404 seconds .
-
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file

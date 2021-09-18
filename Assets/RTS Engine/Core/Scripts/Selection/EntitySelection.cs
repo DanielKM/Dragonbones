@@ -51,10 +51,6 @@ namespace RTSEngine.Selection
         [SerializeField, Tooltip("Audio clip to play when the entity is selected.")]
         protected AudioClipFetcher selectionAudio = new AudioClipFetcher();
 
-#if RTSENGINE_FOW
-        public HideInFogRTS HideInFog { private set; get; }
-#endif
-
         // Game services
         protected ISelectionManager selectionMgr { private set; get; }
         protected IGameAudioManager audioMgr { private set; get; }
@@ -92,15 +88,6 @@ namespace RTSEngine.Selection
 
             foreach (EntitySelectionCollider collider in selectionColliders)
                 collider.OnEntityPostInit(gameMgr, Entity);
-
-#if RTSENGINE_FOW
-            if (gameMgr.FoWMgr)
-            {
-                HideInFog = GetComponent<HideInFogRTS>();
-                Assert.IsNotNull(HideInFog,
-                    $"[EntitySelection - {entity.Code}] A component of type {typeof(HideInFogRTS).Name} must be attached to the entity!");
-            }
-#endif
 
             IsSelected = false;
 

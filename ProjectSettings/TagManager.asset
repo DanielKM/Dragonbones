@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PW - Building
+  - PW - Prop
+  - PW - Nature
+  - Synty Medium Farm
+  - Synty Small Farm
+  - Synty Tree
   layers:
   - Default
   - TransparentFX
@@ -30,10 +36,10 @@ TagManager:
   - AirUnitTargetPos
   - AirTerrain
   - EntitySelection
-  - 
-  - 
-  - 
-  - 
+  - PW_VFX
+  - PW_Object_Small
+  - PW_Object_Medium
+  - PW_Object_Large
   - 
   - 
   - 
