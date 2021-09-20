@@ -1166,22 +1166,22 @@ MonoBehaviour:
   IsSnowing: 0
   DoesAtmosphereNeedUpdate: 0
   CurrentSettings:
-    m_fogColor: {r: 0.8753141, g: 0.9886324, b: 0.9896832, a: 1}
-    m_fogDensity: 0.00024326668
-    m_fogStart: 0.00042859188
-    m_fogEnd: 2875
-    m_sunColor: {r: 1, g: 0.9058824, b: 0.8000001, a: 1}
-    m_sunIntensity: 2.4556901
+    m_fogColor: {r: 0.13266668, g: 0.15793651, b: 0.199, a: 1}
+    m_fogDensity: 0.0020832648
+    m_fogStart: 0.003660711
+    m_fogEnd: 900
+    m_sunColor: {r: 0.47450984, g: 0.7490196, b: 1, a: 1}
+    m_sunIntensity: 1.0158429
     m_snowHeight: 58.235294
-    m_skyAmbient: {r: 0.537093, g: 0.5752477, b: 0.72199243, a: 0.7449855}
-    m_equatorAmbient: {r: 0.53101104, g: 0.63379526, b: 0.6841214, a: 0.7449855}
-    m_groundAmbient: {r: 0.5244411, g: 0.42816848, b: 0.39114052, a: 0.7449855}
+    m_skyAmbient: {r: 0.41245386, g: 0.49914798, b: 0.6699091, a: 0.6250473}
+    m_equatorAmbient: {r: 0.38881, g: 0.42821643, b: 0.50440216, a: 0.6250473}
+    m_groundAmbient: {r: 0.12500946, g: 0.12500946, b: 0.12500946, a: 0.6250473}
     m_intensityAmbient: 1
-    m_skyboxExposure: 1.901085
-    m_skyboxTint: {r: 0.6951009, g: 0.6951009, b: 0.6951009, a: 1}
-    m_skyboxAtmosphereThickness: 0.9101002
+    m_skyboxExposure: 0.34653413
+    m_skyboxTint: {r: 0.5098039, g: 0.5098039, b: 0.5098039, a: 1}
+    m_skyboxAtmosphereThickness: 0.25
     m_skyboxFogHeight: 0.01
-    m_skyboxFogGradient: 0.90019745
+    m_skyboxFogGradient: 0.9
     m_cloudDomeBrightness: 1.9249192
     m_startCloudDomeBrightness: 1.4258661
     m_cloudDensity: 0.29388428
@@ -5879,13 +5879,13 @@ MonoBehaviour:
   m_snowingHeight: 35
   m_snowFadeHeight: 50
   m_snowDuration: 0
-  m_snowWaitTime: 347.61456
+  m_snowWaitTime: 371.31122
   m_snowSampleStrength: 0
   m_enableRain: 1
   m_rainIntensity: 0
   m_rainSampleStrength: 0
   m_rainDuration: 0
-  m_rainWaitTime: 315.23135
+  m_rainWaitTime: 167.37756
   m_thunderLightColor: {r: 0, g: 0.6313726, b: 1, a: 1}
   m_thunderLightIntensity: 2
   m_thunderAudioSources:
@@ -6006,8 +6006,8 @@ MonoBehaviour:
   GaiaAudioManager: {fileID: 2004345230}
   m_thunderObject: {fileID: 785462183}
   m_thunderComponent: {fileID: 785462185}
-  IsSnowingFinished: 0
-  IsRainingFinished: 0
+  IsSnowingFinished: 1
+  IsRainingFinished: 1
   SkyboxShaderValid: 0
   CloudSystemValid: 1
   WaterSystemValid: 0
@@ -6778,6 +6778,8 @@ MonoBehaviour:
     status: 0
     lastSpawnTimeStamp: -3.4028235e+38
     spawner: {fileID: 1017056822}
+  m_postProcessProfile: {fileID: 0}
+  m_ppVSpawnMode: 0
   m_autoSpawnRequested: 0
   m_drawPreview: 0
   m_biomePreviewDirty: 0
@@ -9981,6 +9983,8 @@ GameObject:
   - component: {fileID: 229447583}
   - component: {fileID: 229447586}
   - component: {fileID: 229447587}
+  - component: {fileID: 229447588}
+  - component: {fileID: 229447589}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10140,7 +10144,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 509812503
+    m_Bits: 1046683415
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -10174,7 +10178,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -10207,6 +10211,89 @@ AudioReverbFilter:
   m_LFReference: 250
   m_ReflectionsDelay: 0
   m_ReverbPreset: 16
+--- !u!114 &229447588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229447581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 229447582}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 536870912
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: FoW.FogOfWarPPSv2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_AfterStackBundles: []
+--- !u!114 &229447589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229447581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec0af1344bf2204db5c3b78db3954fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  fogFarPlane: 1
+  outsideFogStrength: 1
+  pointFiltering: 0
+  fogColor: {r: 0, g: 0, b: 0, a: 1}
+  fogColorTexture: {fileID: 0}
+  fogTextureScreenSpace: 0
+  fogColorTextureScale: 1
+  fogColorTextureHeight: 0
 --- !u!1001 &231651851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12352,6 +12439,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4020749186074708381, guid: d970f9a6175c2ff4cb354da159adde4e, type: 3}
   m_PrefabInstance: {fileID: 340981317}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &341514832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 341514834}
+  - component: {fileID: 341514833}
+  - component: {fileID: 341514835}
+  m_Layer: 0
+  m_Name: System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &341514833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341514832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 12f338eceac7e894abdea984918832b9, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!4 &341514834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341514832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.873014, y: 24.55786, z: 92.877045}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341514835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341514832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f67ba8e9d41eb84fb82199a9931c742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &345636933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12712,6 +12860,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1.25
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 19774c7b570298d45a79f1009fae78d7
     m_directToCamera: 1
     m_postProcessingProfileGUIDURP: f730ec2a2de88db4b80f44d5c13539b0
@@ -13988,6 +14137,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: f0d3288284853394ea58e38e5dd7f195
     m_directToCamera: 0
     m_postProcessingProfileGUIDURP: 04ac2e73977d2264ca4cf6fffa78d9d7
@@ -17883,6 +18033,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1.15
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: f00c6215d794e3b4fa7c9224ffe53339
     m_directToCamera: 0
     m_postProcessingProfileGUIDURP: ebf6808a9760bd04b956d636ac2feb62
@@ -21778,6 +21929,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 1d8a7fb1b5c317b4ca0499e227820e25
     m_directToCamera: 0
     m_postProcessingProfileGUIDURP: 905a3a1a6e290f84ca6a624430636454
@@ -23054,6 +23206,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 069b4a41406d63c40b2a3c4bec000bbe
     m_directToCamera: 0
     m_postProcessingProfileGUIDURP: 3bdacee8fc897c94ba6e385e79e95ba6
@@ -26949,6 +27102,7 @@ MonoBehaviour:
     m_userCustomProfile: 0
     m_profileRename: 
     m_postProcessExposure: 1
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: ef34dc04f7da6784d84249ab870770a0
     m_directToCamera: 0
     m_postProcessingProfileGUIDURP: fa9aefa98126463418fea44ea0fc1660
@@ -31849,6 +32003,7 @@ MonoBehaviour:
     m_userCustomProfile: 1
     m_profileRename: 
     m_postProcessExposure: 1
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: ef34dc04f7da6784d84249ab870770a0
     m_directToCamera: 0
     m_postProcessingProfileGUIDURP: fa9aefa98126463418fea44ea0fc1660
@@ -36880,7 +37035,7 @@ MonoBehaviour:
     - 0
     m_textureResolution: 512
   m_waterEditSettings: 1
-  m_selectedWaterProfileValuesIndex: 5
+  m_selectedWaterProfileValuesIndex: 1
   m_autoRefresh: 1
   m_ignoreSceneConditions: 1
   m_refreshRate: 0.5
@@ -36899,6 +37054,7 @@ MonoBehaviour:
   - m_typeOfWater: Deep Blue Ocean
     m_profileRename: 
     m_userCustomProfile: 0
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 621882b688d3a034a8377536e9c0ef66
     m_directToCamera: 0
     m_postProcessingProfileGUIDURP: eab86dbbf9117fb4f9a54b786b342118
@@ -37067,6 +37223,7 @@ MonoBehaviour:
   - m_typeOfWater: Clear Blue Ocean
     m_profileRename: 
     m_userCustomProfile: 0
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 621882b688d3a034a8377536e9c0ef66
     m_directToCamera: 1
     m_postProcessingProfileGUIDURP: eab86dbbf9117fb4f9a54b786b342118
@@ -37235,6 +37392,7 @@ MonoBehaviour:
   - m_typeOfWater: Standard Lake
     m_profileRename: 
     m_userCustomProfile: 0
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 621882b688d3a034a8377536e9c0ef66
     m_directToCamera: 1
     m_postProcessingProfileGUIDURP: eab86dbbf9117fb4f9a54b786b342118
@@ -37403,6 +37561,7 @@ MonoBehaviour:
   - m_typeOfWater: Standard Clear Lake
     m_profileRename: 
     m_userCustomProfile: 0
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 621882b688d3a034a8377536e9c0ef66
     m_directToCamera: 1
     m_postProcessingProfileGUIDURP: eab86dbbf9117fb4f9a54b786b342118
@@ -37571,6 +37730,7 @@ MonoBehaviour:
   - m_typeOfWater: Low Poly
     m_profileRename: 
     m_userCustomProfile: 0
+    m_postProcessProfileBuiltIn: {fileID: 0}
     m_postProcessingProfileGUIDBuiltIn: 621882b688d3a034a8377536e9c0ef66
     m_directToCamera: 1
     m_postProcessingProfileGUIDURP: eab86dbbf9117fb4f9a54b786b342118
@@ -40154,7 +40314,7 @@ MonoBehaviour:
   m_moonLightExists: 1
 --- !u!4 &468029966
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 10
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -61812,6 +61972,7 @@ GameObject:
   - component: {fileID: 1281910885}
   - component: {fileID: 1281910886}
   - component: {fileID: 1281910888}
+  - component: {fileID: 1281910889}
   m_Layer: 0
   m_Name: MinimapCam
   m_TagString: Untagged
@@ -61921,6 +62082,27 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1281910889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281910884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec0af1344bf2204db5c3b78db3954fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  fogFarPlane: 1
+  outsideFogStrength: 1
+  pointFiltering: 0
+  fogColor: {r: 0, g: 0, b: 0, a: 1}
+  fogColorTexture: {fileID: 0}
+  fogTextureScreenSpace: 0
+  fogColorTextureScale: 1
+  fogColorTextureHeight: 0
 --- !u!1 &1283916726
 GameObject:
   m_ObjectHideFlags: 0
@@ -83618,11 +83800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2583254743543292303, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.39791623
+      value: 0.37279645
       objectReference: {fileID: 0}
     - target: {fileID: 2583254743543292303, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9174218
+      value: 0.9279132
       objectReference: {fileID: 0}
     - target: {fileID: 3450761047440964101, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: GameCam
@@ -83706,19 +83888,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4405647036942663379, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9998756
+      value: -0.9978297
       objectReference: {fileID: 0}
     - target: {fileID: 4405647036942663379, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.015773455
+      value: -0.065848134
       objectReference: {fileID: 0}
     - target: {fileID: 4722316819745371261, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.5091439
+      value: -0.55522877
       objectReference: {fileID: 0}
     - target: {fileID: 4722316819745371261, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8606815
+      value: 0.83169776
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
@@ -86816,6 +86998,7 @@ Transform:
   - {fileID: 1063314408}
   - {fileID: 1114892806}
   - {fileID: 442874009}
+  - {fileID: 1986526919}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100067,6 +100250,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4020749186074708381, guid: 39c1b8ed60baef248af41033fb6fca4d, type: 3}
   m_PrefabInstance: {fileID: 1171760196}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1986526918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1986526919}
+  - component: {fileID: 1986526920}
+  - component: {fileID: 1986526921}
+  m_Layer: 0
+  m_Name: FoWManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1986526919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986526918}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1609781662}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1986526920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986526918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6fec0d0c4161ac44b701192e743dde2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  mapResolution: {x: 150, y: 150}
+  mapSize: 300
+  mapOffset: {x: 150, y: 150}
+  plane: 2
+  physics: 2
+  pointFiltering: 0
+  blurAmount: 0
+  blurIterations: 0
+  blurType: 0
+  updateUnits: 1
+  updateAutomatically: 1
+  outputToTexture: 1
+  partialFogAmount: 0.5
+  fadeInDuration: 0.1
+  fadeOutDuration: 0.1
+  renderType: 0
+  multithreaded: 0
+  threads: 2
+  maxMillisecondsPerFrame: 5
+--- !u!114 &1986526921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986526918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd9b00c5a4d40647b1db20ca369002c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fogOfWarCameras:
+  - {fileID: 229447589}
+  - {fileID: 1281910889}
 --- !u!1001 &1989364008
 PrefabInstance:
   m_ObjectHideFlags: 0
