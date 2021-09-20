@@ -307,7 +307,7 @@ MonoBehaviour:
   code: unit_creator
   isActive: 1
   creationTasks:
-  - taskTitle: 'Create Unit: human_worker_deceased'
+  - taskTitle: 'Create Unit: hmn_basic_worker'
     taskUI: {fileID: 11400000, guid: 4948adc59ed0d254999dd63d008311b3, type: 2}
     requiredResources:
     - type: {fileID: 11400000, guid: c984e7e231aa27f47a03b9c5099ffa44, type: 2}
@@ -324,7 +324,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 157203b1b7a0b09448728c4a5f5d9bde, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 1105200719667803415, guid: a2f8b7a805a698241b84c86590acdf8e, type: 3}
+    prefabObject: {fileID: 956629100448098485, guid: 3b4d23b36874ff940a6a17c34d9b504d, type: 3}
     limit: 0
     maxAmount: 0
   - taskTitle: 'Create Unit: human_artisan'
@@ -356,7 +356,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 3237f2a6d0faad746be2dbd470e45e97, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 7168786717453400073, guid: 7a17ec06ffc750b41ad6c56c854b6be6, type: 3}
+    prefabObject: {fileID: 4614496629049796205, guid: 528af5145f79493479b8c6dbffe80274, type: 3}
     limit: 0
     maxAmount: 0
   upgradeTargetCreationTasks: []
@@ -392,7 +392,6 @@ MonoBehaviour:
     cooldown:
       enabled: 0
       defaultValue: 1
-  spawnTransform: {fileID: 1347962120205205857}
   gotoTransform: {fileID: 7082004536492552000}
   forcedTerrainAreas: []
   maxDistanceEnabled: 0
@@ -644,7 +643,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 2b01243f107507a4397e39c402700f09, type: 3}
   radius: 8
   model: {fileID: 5807695126602629569}
-  duration: 0
   isMainEntity: 0
   isFactionLocked: 0
   initResources:

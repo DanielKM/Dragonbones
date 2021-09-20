@@ -191,7 +191,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 157203b1b7a0b09448728c4a5f5d9bde, type: 3}
   radius: 0.7
   model: {fileID: 1389141913301114438}
-  duration: 0
   isMainEntity: 0
   isFactionLocked: 1
   initResources:
@@ -543,7 +542,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 2b01243f107507a4397e39c402700f09, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 5681861929274110148, guid: e6e447cc243cf5948b2507f08cfd8ca0, type: 3}
+    prefabObject: {fileID: 6913867608966268584, guid: ce5d672e8368f4644ad639144f1e9d38, type: 3}
   - taskTitle: 'Place Building: human_house'
     taskUI: {fileID: 11400000, guid: d724cf6dc39bf684f854f90585f35165, type: 2}
     requiredResources:
@@ -561,7 +560,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: cb21dea52289cae44b1613b7d7eb6bea, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 5681861929274110148, guid: 732d41fc91526a94bba41b0cfd296569, type: 3}
+    prefabObject: {fileID: 446867575252344325, guid: f600d50738ae65249947e3823f735b0b, type: 3}
   - taskTitle: 'Place Building: barrack_level1'
     taskUI: {fileID: 11400000, guid: fd1e6260970937443944df9b1991c0fd, type: 2}
     requiredResources:
@@ -585,7 +584,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 567bb37deee47784995717ba9eea08b9, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 1757281130161208, guid: 3eb2c20080a7fec4dac2031ee35cbf78, type: 3}
+    prefabObject: {fileID: 1132920644257826299, guid: a41199a0b3e81fa4784d099bac219e0a, type: 3}
   - taskTitle: 'Place Building: human_blacksmith'
     taskUI: {fileID: 11400000, guid: 3b3866ca605073241867a6fbea86a50c, type: 2}
     requiredResources:
@@ -614,7 +613,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: e4a004569e36d434ea391b85b8a7fb99, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 5681861929274110148, guid: 0cbc8ce9843fc75409042ddb25777c16, type: 3}
+    prefabObject: {fileID: 6463345216991180070, guid: c97d879f53b853a46bc87a1d65991537, type: 3}
   - taskTitle: 'Place Building: human_lumber_yard'
     taskUI: {fileID: 11400000, guid: 41e7b478f2ca28a4b884845b6625cefa, type: 2}
     requiredResources:
@@ -638,7 +637,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 5dd783c92ed384248ba8604db8e18e78, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 5681861929274110148, guid: 7352eba6ba10505458ef276147d94d73, type: 3}
+    prefabObject: {fileID: 5670577791757629932, guid: 3ebf83a316da1834f8965ee33e0a856a, type: 3}
   - taskTitle: 'Place Building: human_watch_tower'
     taskUI: {fileID: 11400000, guid: 15a9c7a80181f744bb2086dc5899bdab, type: 2}
     requiredResources:
@@ -656,7 +655,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 353ea47516759eb4587d5c0453befab4, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 5681861929274110148, guid: 4964e3b8ca4df5a42b47b521687f70a2, type: 3}
+    prefabObject: {fileID: 5981382025827330164, guid: cd5886f43e25ed74380f8e0d34d2eea4, type: 3}
   - taskTitle: 'Place Building: human_stockpile'
     taskUI: {fileID: 11400000, guid: 8741f4bdf28e4474792987373b4b6e11, type: 2}
     requiredResources:
@@ -674,7 +673,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 353ea47516759eb4587d5c0453befab4, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 5681861929274110148, guid: ee4838ad7b1333b4586dc862a91a3319, type: 3}
+    prefabObject: {fileID: 5956017917451032606, guid: 51d20b7c27f351d489640eba776b1357, type: 3}
   - taskTitle: 'Place Building: human_stables'
     taskUI: {fileID: 11400000, guid: 88328bcd66d478e49924378083c49a47, type: 2}
     requiredResources:
@@ -692,7 +691,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 353ea47516759eb4587d5c0453befab4, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 5681861929274110148, guid: a6eae5314e7986d4a9a973afa429e0cb, type: 3}
+    prefabObject: {fileID: 2058053633018452800, guid: 05071473a5f06574b9fe029e0b1997d3, type: 3}
   upgradeTargetCreationTasks: []
   constructionAudio:
     fetchType: 0
