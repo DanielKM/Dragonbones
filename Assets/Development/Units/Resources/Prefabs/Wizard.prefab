@@ -546,7 +546,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6649959170105035874}
   - component: {fileID: 4672648168475066346}
-  - component: {fileID: 8633186877288355285}
   m_Layer: 12
   m_Name: unit_components
   m_TagString: Untagged
@@ -601,66 +600,6 @@ MonoBehaviour:
       defaultValue: 2
   ejectionTaskUI: {fileID: 11400000, guid: a845524f06d96d441b27ee40198cefe8, type: 2}
   allowDifferentFactions: 1
---- !u!114 &8633186877288355285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378632004222499383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d1ae16f0f73fb84f92a8d5fe1c7548d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 0
-  code: spellcaster_code
-  isActive: 1
-  priority: 0
-  requireIdleEntity: 1
-  targetFinderData:
-    enabled: 0
-    reloadTime: 5
-    range: 10
-    idleOnly: 1
-  setTargetTaskUI: {fileID: 0}
-  orderAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
-  progressEnabledAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
-  progressOverrideController:
-    fetchType: 0
-    items: []
-  progressDuration: 1
-  progressMaxDistance: 1
-  inProgressObject: {fileID: 0}
-  sourceEffect: {fileID: 0}
-  targetEffect: {fileID: 0}
-  healthPerProgress: 5
-  targetPicker:
-    type: 0
-    options:
-      codes: []
-      categories: []
-  restrictBuildingPlacementOnly: 1
-  creationTasks: []
-  upgradeTargetCreationTasks: []
-  constructionAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
 --- !u!1 &3609813624080016470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1048,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1281829314538168007, guid: 8002f815a2e2df14ab1303c70e901b0e, type: 3}
   m_PrefabInstance: {fileID: 2018740834483323679}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &994726999401984526 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1281829314528817425, guid: 8002f815a2e2df14ab1303c70e901b0e, type: 3}
+  m_PrefabInstance: {fileID: 2018740834483323679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1568498295666615891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 702683536606881100, guid: 8002f815a2e2df14ab1303c70e901b0e, type: 3}
@@ -1117,10 +1061,5 @@ Transform:
 --- !u!137 &994726999397862622 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1281829314533117889, guid: 8002f815a2e2df14ab1303c70e901b0e, type: 3}
-  m_PrefabInstance: {fileID: 2018740834483323679}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &994726999401984526 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1281829314528817425, guid: 8002f815a2e2df14ab1303c70e901b0e, type: 3}
   m_PrefabInstance: {fileID: 2018740834483323679}
   m_PrefabAsset: {fileID: 0}
