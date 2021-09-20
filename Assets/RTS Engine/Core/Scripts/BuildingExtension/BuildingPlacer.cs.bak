@@ -178,7 +178,6 @@ namespace RTSEngine.BuildingExtension
         public bool IsBuildingInBorder()
         {
             bool inRange = false; //true if the building is inside its faction's territory
-
             if (PlacementCenter.IsValid()) //if the building is already linked to a building center
             {
                 //check if the building is still inside this building center's territory

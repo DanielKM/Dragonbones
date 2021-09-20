@@ -12,7 +12,6 @@ using RTSEngine.Game;
 using RTSEngine.Logging;
 using RTSEngine.UnitExtension;
 using RTSEngine.BuildingExtension;
-using RTSEngine.SpellCastExtension;
 using RTSEngine.Attack;
 using RTSEngine.ResourceExtension;
 using RTSEngine.Health;
@@ -42,7 +41,6 @@ namespace RTSEngine.Determinism
         protected IGameLoggingService logger { private set; get; }
         protected IUnitManager unitMgr {private set; get;}
         protected IBuildingManager buildingMgr {private set; get;}
-        protected ISpellCastManager spellMgr {private set; get;}
         protected IResourceManager resourceMgr {private set; get;}
         protected IMovementManager mvtMgr {private set; get;}
         protected IAttackManager attackMgr {private set; get;}
@@ -57,7 +55,6 @@ namespace RTSEngine.Determinism
             this.logger = gameMgr.GetService<IGameLoggingService>();
             this.unitMgr = gameMgr.GetService<IUnitManager>();
             this.buildingMgr = gameMgr.GetService<IBuildingManager>();
-            this.spellMgr = gameMgr.GetService<ISpellCastManager>();
             this.resourceMgr = gameMgr.GetService<IResourceManager>();
             this.mvtMgr = gameMgr.GetService<IMovementManager>();
             this.attackMgr = gameMgr.GetService<IAttackManager>();
@@ -303,17 +300,6 @@ namespace RTSEngine.Determinism
 
 
                     break;
-                case InputMode.spell:
-
-                    var spellParams = JsonUtility.FromJson<InitSpellParameters>(input.code);
-
-                    spellMgr.CreatePlacedSpellLocal(
-                        prefab as ISpell,
-                        input.sourcePosition,
-                        Quaternion.Euler(input.opPosition),
-                        spellParams);
-
-                    break;
                 case InputMode.building:
 
                     var buildingParams = JsonUtility.FromJson<InitBuildingParameters>(input.code);
@@ -501,10 +487,6 @@ namespace RTSEngine.Determinism
 
                 case EntityType.resource:
                     sourceHealth = (sourceEntity as IResource).Health;
-                    break;
-
-                case EntityType.spell:
-                    sourceHealth = (sourceEntity as ISpell).Health;
                     break;
 
                 default:

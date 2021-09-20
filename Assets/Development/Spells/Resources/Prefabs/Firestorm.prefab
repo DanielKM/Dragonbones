@@ -190,10 +190,7 @@ GameObject:
   - component: {fileID: 4721859516458986}
   - component: {fileID: 95081316256782490}
   - component: {fileID: 82275021606038412}
-  - component: {fileID: -6053439192789226511}
   - component: {fileID: 8401903764112327571}
-  - component: {fileID: 2419000992669331914}
-  - component: {fileID: 6238213733431361443}
   - component: {fileID: 3004717573159298111}
   m_Layer: 12
   m_Name: Firestorm
@@ -338,34 +335,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &-6053439192789226511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943697157073760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e95d1c02c319b649b759c03721d9cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 0
-  _name: Firestorm
-  code: firestorm
-  category: spell_category
-  description: A ring of fire that burns all. Fire has no friend.
-  icon: {fileID: 21300000, guid: 3194feaceffd1e942a356567ac523d46, type: 3}
-  radius: 8
-  model: {fileID: 1747208491716196760}
-  duration: 2
-  isMainEntity: 0
-  isFactionLocked: 0
-  initResources: []
-  disableResources: []
-  coloredRenderers: []
 --- !u!208 &8401903764112327571
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -382,69 +351,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.5, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &2419000992669331914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943697157073760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 731b96c9f0ffc3843a89d730b8a702bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 0
-  maxHealth: 1000
-  initialHealth: 1000
-  canIncrease: 1
-  canDecrease: 1
-  canBeAttacked: 1
-  hoverHealthBarY: 4
-  hitEffect: {fileID: 0}
-  hitAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
-  destroyObject: 1
-  destroyObjectDelay: 3
-  destroyAward: []
-  destructionAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
-  destructionEffect: {fileID: 0}
-  states: []
-  constructionStates: []
-  constructionCompleteState:
-    healthRange:
-      _min: 0
-      _max: 100
-    showChildObjects: []
-    hideChildObjects: []
-    triggerEvent:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &6238213733431361443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943697157073760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f2581afdbaa0347bdd171261ae2703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroy: 0
-  secondsToDestroy: 10
 --- !u!114 &3004717573159298111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +380,6 @@ GameObject:
   - component: {fileID: 4583819139455392835}
   - component: {fileID: 828976239871591669}
   - component: {fileID: 8353069045770111554}
-  - component: {fileID: 3539954194360695143}
   m_Layer: 12
   m_Name: unit_components
   m_TagString: Untagged
@@ -598,163 +503,6 @@ MonoBehaviour:
     cooldown:
       enabled: 1
       defaultValue: 2
---- !u!114 &3539954194360695143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334552187669521333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afc4a3cfe581faf48af81d57df6ce75f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 0
-  code: comp_code
-  isActive: 1
-  priority: 0
-  requireIdleEntity: 0
-  targetFinderData:
-    enabled: 1
-    reloadTime: 5
-    range: 10
-    idleOnly: 0
-  setTargetTaskUI: {fileID: 0}
-  orderAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
-  progressEnabledAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
-  progressOverrideController:
-    fetchType: 0
-    items: []
-  progressDuration: 1
-  progressMaxDistance: 1
-  inProgressObject: {fileID: 0}
-  sourceEffect: {fileID: 0}
-  targetEffect: {fileID: 0}
-  isLocked: 0
-  revert: 1
-  engageOptions:
-    engageOnAssign: 1
-    engageWhenAttacked: 1
-    engageOnce: 0
-    engageFriendly: 0
-    autoIgnoreAngleLOS: 0
-    autoIgnoreObstacleLOS: 0
-  targetPicker:
-    type: 0
-    options:
-      codes: []
-      categories: []
-    engageUnits: 1
-    engageBuildings: 1
-  requireTarget: 0
-  reloadDuration: 3
-  delayTriggerEnabled: 0
-  cooldown:
-    enabled: 0
-    defaultValue: 1
-  launcher:
-    useAttackObjects: 1
-    launchType: 1
-    sources: []
-  damage:
-    enabled: 1
-    data:
-      unit: 20
-      building: 20
-      spell: 20
-      custom: []
-    areaAttackEnabled: 1
-    areaAttackData:
-    - range: 100
-      data:
-        unit: 20
-        building: 20
-        spell: 20
-        custom: []
-    dotEnabled: 1
-    dotData:
-      infinite: 0
-      duration: 1
-      cycleDuration: 1
-    effect: {fileID: 0}
-    resetDamageDealt: 0
-    damageDealtEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  weapon:
-    rotateInRangeOnly: 0
-    freezeRotationX: 0
-    freezeRotationY: 0
-    freezeRotationZ: 0
-    smoothRotation: 1
-    rotationDamping: 2
-    forceIdleRotation: 1
-    idleAngles: {x: 0, y: 0, z: 0}
-  lineOfSight:
-    enabled: 1
-    useWeaponObject: 0
-    angle: 40
-    obstacleLayerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    ignoreRotationX: 0
-    ignoreRotationY: 0
-    ignoreRotationZ: 0
-  switchTaskUI: {fileID: 0}
-  switchAttackCooldownUIData:
-    icon: {fileID: 0}
-    color: {r: 1, g: 0, b: 0, a: 1}
-  attackCompleteAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
-  attackRangeEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  targetLockedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  completeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  formation:
-    unitStoppingDistance:
-      _min: 2
-      _max: 6
-    buildingStoppingDistance:
-      _min: 5
-      _max: 10
-    noTargetStoppingDistance:
-      _min: 5
-      _max: 10
-    enforceMinStoppingDistance: 0
-    minStoppingDistance: 0.5
-    updateMvtDistance: 2
-    movementFormation:
-      lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
-      type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
-      properties:
-        floatProperties:
-        - name: spacing
-          value: 0
-        intProperties: []
-  moveOnAttack: 0
-  followDistance: 15
 --- !u!1 &4075026000402823566
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +574,6 @@ GameObject:
   - component: {fileID: 601215610792962173}
   - component: {fileID: 3287280430060362390}
   - component: {fileID: 8975000966961652011}
-  - component: {fileID: 780327555267331982}
   - component: {fileID: 9096431126572306914}
   m_Layer: 0
   m_Name: spell_extension
@@ -878,22 +625,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &780327555267331982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6429664837504760078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e4d3de46709f5419f2b061847a3d86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellCasterLocation: {x: 0, y: 0, z: 0}
-  spellCastLocation: {x: 0, y: 0, z: 0}
-  placableTerrainAreas: []
-  canPlaceOutsideRange: 0
 --- !u!135 &9096431126572306914
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1041,11 +772,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7082525810440381757, guid: 21de86489fb22dd4b924279f135353b6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 21de86489fb22dd4b924279f135353b6, type: 3}
---- !u!1 &1747208491716196760 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7082525810440381746, guid: 21de86489fb22dd4b924279f135353b6, type: 3}
-  m_PrefabInstance: {fileID: 8824094759873125546}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1747208491716196758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7082525810440381756, guid: 21de86489fb22dd4b924279f135353b6, type: 3}

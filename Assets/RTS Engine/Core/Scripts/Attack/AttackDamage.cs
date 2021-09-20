@@ -20,7 +20,7 @@ namespace RTSEngine.Attack
         private bool enabled = true;
 
         [SerializeField, Tooltip("Data that defines the damage to deal in a regular attack.")]
-        private DamageData data = new DamageData { unit = 10, building = 10, spell = 10, custom = new CustomDamageData[0] };
+        private DamageData data = new DamageData { unit = 10, building = 10, custom = new CustomDamageData[0] };
         public DamageData Data => data;
 
         [SerializeField, Tooltip("Enable or disable area of attack damage.")]

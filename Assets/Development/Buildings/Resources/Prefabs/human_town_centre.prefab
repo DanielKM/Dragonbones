@@ -385,7 +385,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 157203b1b7a0b09448728c4a5f5d9bde, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 1105200719667803415, guid: a2f8b7a805a698241b84c86590acdf8e, type: 3}
+    prefabObject: {fileID: 1265140803299196104, guid: 291fef459fcb257458b4c4fee72fe75e, type: 3}
     limit: 0
     maxAmount: 0
   - taskTitle: 'Create Unit: human_artisan'

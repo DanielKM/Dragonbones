@@ -204,10 +204,7 @@ GameObject:
   - component: {fileID: 4721859516458986}
   - component: {fileID: 95081316256782490}
   - component: {fileID: 82275021606038412}
-  - component: {fileID: -6053439192789226511}
   - component: {fileID: 8401903764112327571}
-  - component: {fileID: 2419000992669331914}
-  - component: {fileID: 6238213733431361443}
   m_Layer: 12
   m_Name: DomeShield
   m_TagString: Untagged
@@ -351,34 +348,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &-6053439192789226511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943697157073760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e95d1c02c319b649b759c03721d9cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 0
-  _name: Dome Shield
-  code: dome_shield
-  category: spell_category
-  description: entity_description
-  icon: {fileID: 21300000, guid: 9eb6045416b0cd143ab25d3067cfebc2, type: 3}
-  radius: 8
-  model: {fileID: 4473942778474559143}
-  duration: 2
-  isMainEntity: 0
-  isFactionLocked: 0
-  initResources: []
-  disableResources: []
-  coloredRenderers: []
 --- !u!208 &8401903764112327571
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -395,68 +364,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.5, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &2419000992669331914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943697157073760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 731b96c9f0ffc3843a89d730b8a702bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 0
-  maxHealth: 1000
-  initialHealth: 1000
-  canIncrease: 1
-  canDecrease: 1
-  canBeAttacked: 1
-  hoverHealthBarY: 4
-  hitEffect: {fileID: 0}
-  hitAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
-  destroyObject: 1
-  destroyObjectDelay: 3
-  destroyAward: []
-  destructionAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValue: 2
-  destructionEffect: {fileID: 0}
-  states: []
-  constructionStates: []
-  constructionCompleteState:
-    healthRange:
-      _min: 0
-      _max: 100
-    showChildObjects: []
-    hideChildObjects: []
-    triggerEvent:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &6238213733431361443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943697157073760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f2581afdbaa0347bdd171261ae2703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  secondsToDestroy: 10
 --- !u!1 &1334552187669521333
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +499,6 @@ GameObject:
   - component: {fileID: 601215610792962173}
   - component: {fileID: 3287280430060362390}
   - component: {fileID: 8975000966961652011}
-  - component: {fileID: 780327555267331982}
   - component: {fileID: 9096431126572306914}
   m_Layer: 0
   m_Name: spell_extension
@@ -644,22 +550,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &780327555267331982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6429664837504760078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e4d3de46709f5419f2b061847a3d86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellCasterLocation: {x: 0, y: 0, z: 0}
-  spellCastLocation: {x: 0, y: 0, z: 0}
-  placableTerrainAreas: []
-  canPlaceOutsideRange: 0
 --- !u!135 &9096431126572306914
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -730,11 +620,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5c13169ed29c5a48aef3ec7eeb7fa65, type: 3}
---- !u!1 &4473942778474559143 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4307097324858636695, guid: a5c13169ed29c5a48aef3ec7eeb7fa65, type: 3}
-  m_PrefabInstance: {fileID: 419751150932037424}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4967481742278411889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4693677845009123649, guid: a5c13169ed29c5a48aef3ec7eeb7fa65, type: 3}
