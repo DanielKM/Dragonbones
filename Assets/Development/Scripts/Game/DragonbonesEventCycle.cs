@@ -21,7 +21,7 @@ public class DragonbonesEventCycle : MonoBehaviour
     public TimeSpan currentTime;
     public int days;
     public int speed;
-    public int dayLength = 86400;
+    public int dayLength = 24;
 
     [Header("Event Settings")]
     public float lastEventTime = 0;
@@ -40,39 +40,18 @@ public class DragonbonesEventCycle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // gaiaGlobal.GaiaTimeOfDayValue.m_todHour = 18;
-        // gaiaGlobal.SetTimeOfDayTimeScale(3);
-        ChangeTime();
-        // UpdateSun();
+        ChangeTimeScale();
         CreateEvent();
     }
 
-    // void ChangeTOD(){
-        // gaiaGlobal.GaiaTimeOfDayValue.m_todHour = 18;
-        // gaiaGlobal.GaiaTimeOfDayValue.m_todMinutes = 33;
-        // gaiaGlobal.GaiaTimeOfDayValue
-    // }
-
-    public void ChangeTime() {
-        int spellPower = speed;
-        if(instability > 0) 
-        {
-            spellPower = instability * speed;
-        }
-        time += Time.deltaTime * spellPower;
-
-        if(time > dayLength) 
-        {
-            days += 1;
-            time = 0;
-        }
-
-        currentTime = TimeSpan.FromSeconds (time);
+    public void ChangeTimeScale() 
+    {
+        Gaia.GaiaGlobal.Instance.GaiaTimeOfDayValue.m_todDayTimeScale = instability * 2;
     }
     
     public void CreateEvent()
     {
-        if(time >= nextEventTime && days == nextEventDay) {
+        if(time == nextEventTime) {
             string chosenEvent = ChooseEvent();
             // GameEvents chosenEvent = GameEvents.MeteorShower;
             lastEventTime = time;
@@ -82,33 +61,22 @@ public class DragonbonesEventCycle : MonoBehaviour
         }
     }
 
+    private void InitiateEvent(string chosenEvent)
+    {
+        Debug.Log(chosenEvent);
+    }
+
     public void SetNextEventTime()
     {
         System.Random rnd = new System.Random();
-        float selectedTime = (dayLength * eventDelayDays) + rnd.Next(0, dayLength);
+        int selectedHour = rnd.Next(0, dayLength);
 
-        if(selectedTime > dayLength) 
-        { 
-            selectedTime = selectedTime/4; 
-        }
-
-        if(time >= nextEventTime) {
-            nextEventDay = days + 1;
-        }
-
-        nextEventTime = selectedTime;
+        nextEventTime = selectedHour;
     }
 
     public string ChooseEvent()
     {
-        string events = "Firestorm";
-        
-        return events;
-    }
-
-    public void InitiateEvent(string events)
-    {
-        Debug.Log(events);
+        return "Firestorm";
     }
 
     IEnumerator Instability()
@@ -116,7 +84,6 @@ public class DragonbonesEventCycle : MonoBehaviour
         if(instability > 0) { instability -= 5; }
         if(instability < 0) { instability = 0; }
         yield return new WaitForSeconds(1);
-        Debug.Log("Instability: " + instability);
         StartCoroutine(Instability());
     }
 }

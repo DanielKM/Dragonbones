@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Development/Scenes/SUN_WORK_PLZ.unity
+    guid: 740ba9c1ce871364db6f1c9ba11654d4
+  - enabled: 1
     path: Assets/Development/Scenes/GaiaTrial2.unity
     guid: 4cb1203772e416b40a02b3509824ab75
   - enabled: 1
