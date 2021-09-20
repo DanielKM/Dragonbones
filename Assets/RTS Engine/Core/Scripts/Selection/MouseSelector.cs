@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 using RTSEngine.Entities;
 using RTSEngine.Game;
 using RTSEngine.BuildingExtension;
-using RTSEngine.SpellCastExtension;
 using RTSEngine.Cameras;
 using RTSEngine.Terrain;
 using RTSEngine.Task;
@@ -57,7 +56,6 @@ namespace RTSEngine.Selection
         protected IGameUIManager gameUIMgr { private set; get; } 
         protected ISelectionManager selectionMgr { private set; get; } 
         protected IBuildingPlacement placementMgr { private set; get; }
-        protected ISpellCastPlacement spellCastMgr { private set; get; }
         protected ITerrainManager terrainMgr { private set; get; }
         protected ITaskManager taskMgr { private set; get; }
         protected IMainCameraController mainCameraController { private set; get; }
@@ -73,7 +71,6 @@ namespace RTSEngine.Selection
 
             this.gameUIMgr = gameMgr.GetService<IGameUIManager>(); 
             this.placementMgr = gameMgr.GetService<IBuildingPlacement>();
-            this.spellCastMgr = gameMgr.GetService<ISpellCastPlacement>();
             this.selectionMgr = gameMgr.GetService<ISelectionManager>();
             this.terrainMgr = gameMgr.GetService<ITerrainManager>();
             this.taskMgr = gameMgr.GetService<ITaskManager>();
@@ -104,7 +101,6 @@ namespace RTSEngine.Selection
         private void Update()
         {
             if (gameMgr.State != GameStateType.running 
-                || spellCastMgr.IsPlacingSpell
                 || placementMgr.IsPlacingBuilding
                 || !gameUIMgr.HasPriority(this)
                 || EventSystem.current.IsPointerOverGameObject())

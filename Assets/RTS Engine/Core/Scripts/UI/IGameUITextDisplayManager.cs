@@ -14,7 +14,6 @@ namespace RTSEngine.UI
         bool BuildingCreationTaskToString(BuildingCreationTask creationTask, out string text);
         bool EntityComponentTaskInputToText(IEntityComponentTaskInput taskInput, IEntity targetPrefab, out string text);
         bool EntityComponentTaskToText(EntityComponentTaskUIData taskData, out string text);
-        bool SpellCastTaskToText(SpellCastTask taskData, out string text);
 
         bool EntityDescriptionToText(IEntity entity, out string text);
         bool EntityNameToText(IEntity entity, out string text);

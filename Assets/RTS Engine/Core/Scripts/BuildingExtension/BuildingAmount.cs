@@ -1,9 +1,9 @@
 ﻿using RTSEngine.Entities;
 
-namespace RTSEngine.SpellCastExtension
+namespace RTSEngine.BuildingExtension
 {
     [System.Serializable]
-    public struct SpellAmount
+    public struct BuildingAmount
     {
         public string name;
 

@@ -104,12 +104,6 @@ namespace RTSEngine.Event
         void RaiseBuildingPlacementStatusUpdatedGlobal(IBuilding sender);
         void RaiseBuildingPlacementStopGlobal(IBuilding sender);
         void RaiseBuildingUpgradedGlobal(IBuilding sender, UpgradeEventArgs<IEntity> e);
-        void RaiseSpellBuiltGlobal(ISpell sender);
-        void RaiseSpellDeadGlobal(ISpell sender, DeadEventArgs e);
-        void RaiseSpellHealthUpdatedGlobal(ISpell sender, HealthUpdateEventArgs e);
-        void RaiseSpellPlacedGlobal(ISpell sender);
-        void RaiseSpellPlacementStopGlobal(ISpell sender);
-        void RaiseSpellPlacementStartGlobal(ISpell sender);
         void RaiseEffectObjectCreatedGlobal(IEffectObject source);
         void RaiseEffectObjectDestroyedGlobal(IEffectObject source);
         void RaiseEntityComponentPendingTaskUIReloadRequestGlobal(IEntity sender, TaskUIReloadEventArgs e = null);
