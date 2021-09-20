@@ -1166,22 +1166,22 @@ MonoBehaviour:
   IsSnowing: 0
   DoesAtmosphereNeedUpdate: 0
   CurrentSettings:
-    m_fogColor: {r: 0.8753141, g: 0.9886324, b: 0.9896832, a: 1}
-    m_fogDensity: 0.00024326668
-    m_fogStart: 0.00042859188
-    m_fogEnd: 2875
-    m_sunColor: {r: 1, g: 0.9058824, b: 0.8000001, a: 1}
-    m_sunIntensity: 2.4556901
+    m_fogColor: {r: 0.13266668, g: 0.15793651, b: 0.199, a: 1}
+    m_fogDensity: 0.0020832648
+    m_fogStart: 0.003660711
+    m_fogEnd: 900
+    m_sunColor: {r: 0.47450984, g: 0.7490196, b: 1, a: 1}
+    m_sunIntensity: 1.0158429
     m_snowHeight: 58.235294
-    m_skyAmbient: {r: 0.537093, g: 0.5752477, b: 0.72199243, a: 0.7449855}
-    m_equatorAmbient: {r: 0.53101104, g: 0.63379526, b: 0.6841214, a: 0.7449855}
-    m_groundAmbient: {r: 0.5244411, g: 0.42816848, b: 0.39114052, a: 0.7449855}
+    m_skyAmbient: {r: 0.41245386, g: 0.49914798, b: 0.6699091, a: 0.6250473}
+    m_equatorAmbient: {r: 0.38881, g: 0.42821643, b: 0.50440216, a: 0.6250473}
+    m_groundAmbient: {r: 0.12500946, g: 0.12500946, b: 0.12500946, a: 0.6250473}
     m_intensityAmbient: 1
-    m_skyboxExposure: 1.901085
-    m_skyboxTint: {r: 0.6951009, g: 0.6951009, b: 0.6951009, a: 1}
-    m_skyboxAtmosphereThickness: 0.9101002
+    m_skyboxExposure: 0.34653413
+    m_skyboxTint: {r: 0.5098039, g: 0.5098039, b: 0.5098039, a: 1}
+    m_skyboxAtmosphereThickness: 0.25
     m_skyboxFogHeight: 0.01
-    m_skyboxFogGradient: 0.90019745
+    m_skyboxFogGradient: 0.9
     m_cloudDomeBrightness: 1.9249192
     m_startCloudDomeBrightness: 1.4258661
     m_cloudDensity: 0.29388428
@@ -5879,13 +5879,13 @@ MonoBehaviour:
   m_snowingHeight: 35
   m_snowFadeHeight: 50
   m_snowDuration: 0
-  m_snowWaitTime: 347.61456
+  m_snowWaitTime: 463.28778
   m_snowSampleStrength: 0
   m_enableRain: 1
   m_rainIntensity: 0
   m_rainSampleStrength: 0
   m_rainDuration: 0
-  m_rainWaitTime: 315.23135
+  m_rainWaitTime: 331.17993
   m_thunderLightColor: {r: 0, g: 0.6313726, b: 1, a: 1}
   m_thunderLightIntensity: 2
   m_thunderAudioSources:
@@ -6006,8 +6006,8 @@ MonoBehaviour:
   GaiaAudioManager: {fileID: 2004345230}
   m_thunderObject: {fileID: 785462183}
   m_thunderComponent: {fileID: 785462185}
-  IsSnowingFinished: 0
-  IsRainingFinished: 0
+  IsSnowingFinished: 1
+  IsRainingFinished: 1
   SkyboxShaderValid: 0
   CloudSystemValid: 1
   WaterSystemValid: 0
@@ -83618,11 +83618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2583254743543292303, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.39791623
+      value: 0.36814758
       objectReference: {fileID: 0}
     - target: {fileID: 2583254743543292303, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9174218
+      value: 0.92976743
       objectReference: {fileID: 0}
     - target: {fileID: 3450761047440964101, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: GameCam
@@ -83666,15 +83666,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3450761047440964106, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 102.67398
       objectReference: {fileID: 0}
     - target: {fileID: 3450761047440964106, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 18.539375
       objectReference: {fileID: 0}
     - target: {fileID: 3450761047440964106, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 135.90709
       objectReference: {fileID: 0}
     - target: {fileID: 3450761047440964106, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -83706,19 +83706,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4405647036942663379, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9998756
+      value: -0.9967284
       objectReference: {fileID: 0}
     - target: {fileID: 4405647036942663379, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.015773455
+      value: -0.08082335
       objectReference: {fileID: 0}
     - target: {fileID: 4722316819745371261, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.5091439
+      value: -0.5635271
       objectReference: {fileID: 0}
     - target: {fileID: 4722316819745371261, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8606815
+      value: 0.82609767
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 623cda9eabbc4544d93a7171d8720bd8, type: 3}
