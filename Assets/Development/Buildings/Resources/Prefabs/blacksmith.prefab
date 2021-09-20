@@ -273,7 +273,7 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: aaa3fd0a673d5ea4a8ab1f7c8a8ca650, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 0.49019608}
     prefabObject: {fileID: 1943697157073760, guid: 48ad0a7ea1b136c4fa7cd03837ff6efc, type: 3}
-  - taskTitle: 'Upgrade: human_swordsman (light_infantry_basic_attack -> light_infantry_basic_attack)'
+  - taskTitle: 'Upgrade: human_swordsman_new (movement_component -> light_infantry_basic_attack)'
     taskUI: {fileID: 11400000, guid: 10ecc09c50eabbf4686ada4852ee3ef2, type: 2}
     requiredResources:
     - type: {fileID: 11400000, guid: c984e7e231aa27f47a03b9c5099ffa44, type: 2}
@@ -290,7 +290,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: e91fc63fcd9bb1c4abf7ffdc0848a328, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 0.49019608}
-    prefabObject: {fileID: 1943697157073760, guid: cdddddb9fee5d974a900c39dd18ebb82, type: 3}
+    prefabObject: {fileID: 1943697157073760, guid: fcf11572b9e1d534b93c51a6858d27ae, type: 3}
   entityTargetUpgradeTasks: []
   entityComponentTargetUpgradeTasks: []
 --- !u!1 &5681861929274110148

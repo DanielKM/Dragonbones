@@ -255,7 +255,7 @@ MonoBehaviour:
     x: 0
     y: 0
   _name: Footman
-  code: human_swordsman_new
+  code: human_swordsman
   category: fighter_foot_category
   description: Lightly armoured swordsman capable of doing moderate damage in melee.
   icon: {fileID: 21300000, guid: 861eb302e19926d43abad9df9278bcf4, type: 3}
@@ -534,7 +534,7 @@ MonoBehaviour:
   updateSpawnedInstances: 1
   upgradeEffect: {fileID: 5759691463754869283, guid: eef6860fe5f7edf4495683186d907db2, type: 3}
   triggerUpgrades: []
-  sourceComponentCode: movement_component
+  sourceComponentCode: light_infantry_basic_attack
   upgradeTarget: {fileID: 667197928241164540, guid: 641794fba6c12d64084848cd49d96ab5, type: 3}
 --- !u!1 &1334552187669521333
 GameObject:
