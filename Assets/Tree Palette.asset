@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c477de684ee10c4082f9fddf19a75ce, type: 3}
+  m_Name: Tree Palette
+  m_EditorClassIdentifier: 
+  m_paletteEntryIDCount: -2147483646
+  m_paletteEntries:
+  - m_name: wood_alive_large_tree
+    m_id: -2147483647
+    m_guid: d970f9a6175c2ff4cb354da159adde4e
+    m_object: {fileID: 3702072146953502692, guid: d970f9a6175c2ff4cb354da159adde4e, type: 3}
+  - m_name: wood_alive_deciduous_tree
+    m_id: -2147483646
+    m_guid: 85d075bdcad41a34795575d905fefa18
+    m_object: {fileID: 3702072146953502692, guid: 85d075bdcad41a34795575d905fefa18, type: 3}

@@ -298,7 +298,7 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: ff0eccfb6baa248449adec6590afd280, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
     prefabObject: {fileID: 1757281130161208, guid: 4cfb1b32fca9460488695a289fac400f, type: 3}
-  - taskTitle: 'Place Building: wizard_tower'
+  - taskTitle: 'Place Building: human_wizard_tower'
     taskUI: {fileID: 11400000, guid: 115e7150947f3d34a8dd0329aa52703f, type: 2}
     requiredResources:
     - type: {fileID: 11400000, guid: c984e7e231aa27f47a03b9c5099ffa44, type: 2}
@@ -332,7 +332,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 3f303cf61d734d048abfcb7493f6e53c, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 1757281130161208, guid: 070dc016ba189a848a8e0c92caffeb6c, type: 3}
+    prefabObject: {fileID: 1757281130161208, guid: 8edfa8d861fe8484eb3cab865ba703b2, type: 3}
   upgradeTargetCreationTasks: []
   constructionAudio:
     fetchType: 0

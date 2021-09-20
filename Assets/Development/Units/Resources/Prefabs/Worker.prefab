@@ -227,8 +227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabID:
-    x: 0
-    y: 0
+    x: 1
+    y: 1
   code: worker_builder_component
   isActive: 1
   priority: 0
@@ -291,7 +291,7 @@ MonoBehaviour:
     missingRequirementData:
       icon: {fileID: 21300000, guid: 2b01243f107507a4397e39c402700f09, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 5681861929274110148, guid: f3ea2916256219a4cb5630ea12a5b0ac, type: 3}
+    prefabObject: {fileID: 5681861929274110148, guid: e6e447cc243cf5948b2507f08cfd8ca0, type: 3}
   - taskTitle: 'Place Building: human_house'
     taskUI: {fileID: 11400000, guid: d724cf6dc39bf684f854f90585f35165, type: 2}
     requiredResources:
@@ -400,17 +400,47 @@ MonoBehaviour:
         amount: 200
         capacity: 0
       nonConsumable: 0
-    factionEntityRequirements:
-    - name: Barrack
-      codes:
-        codes:
-        - barrack_level1
-        categories: []
-      amount: 1
+    factionEntityRequirements: []
     missingRequirementData:
-      icon: {fileID: 0}
+      icon: {fileID: 21300000, guid: 353ea47516759eb4587d5c0453befab4, type: 3}
       color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 5681861929274110148, guid: 9d96bb5cf313aec4ea2b560f50ed289f, type: 3}
+    prefabObject: {fileID: 5681861929274110148, guid: 4964e3b8ca4df5a42b47b521687f70a2, type: 3}
+  - taskTitle: 'Place Building: human_stockpile'
+    taskUI: {fileID: 11400000, guid: 8741f4bdf28e4474792987373b4b6e11, type: 2}
+    requiredResources:
+    - type: {fileID: 11400000, guid: c984e7e231aa27f47a03b9c5099ffa44, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: b49040b772bf6f743aa1c2d0e7594530, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 21300000, guid: 353ea47516759eb4587d5c0453befab4, type: 3}
+      color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+    prefabObject: {fileID: 5681861929274110148, guid: d81098fa5ad419b4d9db2ab1fb802731, type: 3}
+  - taskTitle: 'Place Building: human_stables'
+    taskUI: {fileID: 11400000, guid: 88328bcd66d478e49924378083c49a47, type: 2}
+    requiredResources:
+    - type: {fileID: 11400000, guid: c984e7e231aa27f47a03b9c5099ffa44, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: b49040b772bf6f743aa1c2d0e7594530, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 21300000, guid: 353ea47516759eb4587d5c0453befab4, type: 3}
+      color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+    prefabObject: {fileID: 5681861929274110148, guid: 22ae060d5202bb74da94ffbdd43829b1, type: 3}
   upgradeTargetCreationTasks: []
   constructionAudio:
     fetchType: 0
@@ -731,7 +761,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5, z: 1}
+  m_Size: {x: 0.7, y: 1.5, z: 0.7}
   m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!114 &5215542514107223834
 MonoBehaviour:
@@ -801,9 +831,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
+    y: 0
   _name: Worker
-  code: human_worker
+  code: human_worker_old
   category: builder_category, harvester_category
   description: A citizen of Andar, the worker is responsible for town upkeep, resource
     gathering, and construction.

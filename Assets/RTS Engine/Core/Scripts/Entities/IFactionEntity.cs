@@ -5,9 +5,6 @@ using RTSEngine.Health;
 using RTSEngine.ResourceExtension;
 using RTSEngine.Faction;
 using RTSEngine.Event;
-#if RTSENGINE_FOW
-using FoW;
-#endif
 
 namespace RTSEngine.Entities
 {
@@ -27,8 +24,5 @@ namespace RTSEngine.Entities
         IDropOffTarget DropOffTarget { get; }
         IUnitCarrier UnitCarrier { get; }
 
-#if RTSENGINE_FOW
-        FogOfWarUnit FoWUnit { get; }
-#endif
     }
 }
