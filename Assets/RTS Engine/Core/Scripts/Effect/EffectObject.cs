@@ -76,9 +76,9 @@ namespace RTSEngine.Effect
 
         private void OnDestroy()
         {
-            // effectObjPool.Despawn(this, destroyed: true);
+            effectObjPool.Despawn(this, destroyed: true);
 
-            // globalEvent.RaiseEffectObjectDestroyedGlobal(this);
+            globalEvent.RaiseEffectObjectDestroyedGlobal(this);
         }
         #endregion
 

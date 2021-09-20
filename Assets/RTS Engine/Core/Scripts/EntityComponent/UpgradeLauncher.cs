@@ -93,11 +93,11 @@ namespace RTSEngine.EntityComponent
                 upgradeTasks = entityUpgradeTasks
                     .Concat(entityComponentUpgradeTasks)
                     .ToList();
-            }
 
-            // Initialize upgrade tasks
-            foreach (var task in upgradeTasks)
-                task.Init(this, gameMgr);
+                // Initialize upgrade tasks
+                foreach (var task in upgradeTasks)
+                    task.Init(this, gameMgr);
+            }
 
             globalEvent.EntityUpgradedGlobal += HandleEntityUpgradedGlobal;
             globalEvent.EntityComponentUpgradedGlobal += HandleEntityComponentUpgradedGlobal;

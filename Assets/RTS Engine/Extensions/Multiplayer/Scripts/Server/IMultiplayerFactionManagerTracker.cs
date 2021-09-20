@@ -21,9 +21,9 @@ namespace RTSEngine.Multiplayer.Server
         void Disable();
 
         bool AddInput(IEnumerable<MultiplayerInputWrapper> newInput, int turnID);
-        IEnumerable<MultiplayerInputWrapper> GetRelayInput(int turnID);
-        void OnRelayedInputReceived(int turnID);
 
-        void Update();
+        IEnumerable<MultiplayerInputWrapper> GetRelayInput(int turnID);
+
+        void OnRelayedInputReceived(int turnID, float lastRTT);
     }
 }

@@ -49,6 +49,8 @@ MonoBehaviour:
   turnHandler:
     turnTimeRange:
       _min: 0.1
-      _max: 0.5
-      test: 0
-    defaultTurnTime: 0.2
+      _max: 0.9
+    periodicTurnTimeUpdateEnabled: 1
+    turnTimeUpdatePeriod: 20
+    turnTimeUpdateOption: 1
+    turnTimeOffset: 0.1

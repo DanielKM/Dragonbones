@@ -10,6 +10,9 @@ using RTSEngine.Game;
 using RTSEngine.Logging;
 using RTSEngine.UI;
 using RTSEngine.Selection;
+#if RTSENGINE_FOW
+using FoW;
+#endif
 
 namespace RTSEngine.Event
 {
@@ -50,6 +53,10 @@ namespace RTSEngine.Selection
 
         [SerializeField, Tooltip("Audio clip to play when the entity is selected.")]
         protected AudioClipFetcher selectionAudio = new AudioClipFetcher();
+
+// #if RTSENGINE_FOW
+//         public HideInFogRTS HideInFog { private set; get; }
+// #endif
 
         // Game services
         protected ISelectionManager selectionMgr { private set; get; }

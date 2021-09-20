@@ -5,7 +5,6 @@ using RTSEngine.Utilities;
 
 namespace RTSEngine.EditorOnly.EntityComponent
 {
-
     [CustomEditor(typeof(UpgradeLauncher))]
     public class UpgradeLauncherEditor : PendingTaskEntityComponentDrawer<UpgradeLauncher>
     {
@@ -48,6 +47,9 @@ namespace RTSEngine.EditorOnly.EntityComponent
 
         public override void OnInspectorGUI()
         {
+            EditorGUILayout.LabelField($"Entity Component (Source: IFactionEntity)", EditorStyles.boldLabel);
+            EditorGUILayout.Space();
+
             OnInspectorGUI(toolbars);
         }
 

@@ -46,25 +46,26 @@ namespace RTSEngine.EntityComponent
             this.entityUpgradeMgr = gameMgr.GetService<IEntityUpgradeManager>();
             this.unitMgr = gameMgr.GetService<IUnitManager>(); 
 
-            // Check for unit upgrades
-            if (!Entity.IsFree
-                && entityUpgradeMgr.TryGet (Entity.FactionID, out UpgradeElement<IEntity>[] upgradeElements))
+            if (!Entity.IsFree)
             {
-                creationTasks = creationTasks
-                    .Where(task => !upgradeElements
-                        .Select(upgradeElement => upgradeElement.sourceCode)
-                        .Contains(task.Prefab.Code))
-                    .Concat(upgradeTargetCreationTasks
-                        .Where(upgradedTask => upgradeElements
-                            .Select(upgradeElement => upgradeElement.target)
-                            .Contains(upgradedTask.Prefab))
-                    )
-                    .ToArray();
+                // Check for unit upgrades
+                if(entityUpgradeMgr.TryGet (Entity.FactionID, out UpgradeElement<IEntity>[] upgradeElements))
+                    creationTasks = creationTasks
+                        .Where(task => !upgradeElements
+                            .Select(upgradeElement => upgradeElement.sourceCode)
+                            .Contains(task.Prefab.Code))
+                        .Concat(upgradeTargetCreationTasks
+                            .Where(upgradedTask => upgradeElements
+                                .Select(upgradeElement => upgradeElement.target)
+                                .Contains(upgradedTask.Prefab))
+                        )
+                        .ToArray();
+
+                // Initialize creation tasks
+                foreach (var creationTask in creationTasks)
+                    creationTask.Init(this, gameMgr);
             }
 
-            // Initialize creation tasks
-            foreach (var creationTask in creationTasks)
-                creationTask.Init(this, gameMgr);
 
             globalEvent.UnitUpgradedGlobal += HandleUnitUpgradedGlobal;
         }

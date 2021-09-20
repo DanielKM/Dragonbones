@@ -9,8 +9,6 @@ namespace RTSEngine.EntityComponent
     {
         ErrorMessage SendAction (IUnit entity, bool playerCommand);
 
-        Vector3 GetSpawnPosition(LayerMask navMeshLayerMask);
-
         void SetGotoTransformActive(bool active);
     }
 }

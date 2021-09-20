@@ -85,7 +85,7 @@ namespace RTSEngine.EntityComponent
             this.Center = center;
 
             //apply for the initial parameters from the provided data:
-            reload.Init(gameMgr, SearchTarget);
+            reload.Init(gameMgr, SearchTarget, data.reloadTime);
             Range = data.range;
             IdleOnly = data.idleOnly;
 

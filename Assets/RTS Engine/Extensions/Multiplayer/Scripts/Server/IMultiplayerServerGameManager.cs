@@ -11,6 +11,7 @@ namespace RTSEngine.Multiplayer.Server
         void Init(IMultiplayerManager multiplayerManager);
 
         void AddInput(IEnumerable<CommandInput> inputs, int factionID);
-        void OnRelayedInputReceived(int factionID, int turnID);
+        void OnRelayedInputReceived(int factionID, int turnID, float lastRTT);
+        void UpdateTurnTimeWithRTTLogs();
     }
 }

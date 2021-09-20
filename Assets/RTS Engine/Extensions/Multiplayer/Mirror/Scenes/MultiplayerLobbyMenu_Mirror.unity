@@ -6625,7 +6625,7 @@ MonoBehaviour:
     name: Demo
     description: Demo
     factionsAmount:
-      _min: 2
+      _min: 1
       _max: 3
     factionTypes:
     - {fileID: 11400000, guid: 90d507da6715cc34db0423f78ce47e89, type: 2}

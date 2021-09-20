@@ -4,6 +4,7 @@ using UnityEngine;
 
 using RTSEngine.Multiplayer.Logging;
 using RTSEngine.Multiplayer.Utilities;
+using RTSEngine.Logging;
 
 namespace RTSEngine.Multiplayer.Server
 {
@@ -19,7 +20,6 @@ namespace RTSEngine.Multiplayer.Server
 
         private float[] rttLog;
         public IEnumerable<float> RTTLog => rttLog;
-        private bool rttLocked;
 
         private List<MultiplayerInputWrapper>[] inputLog = null;
 
@@ -28,18 +28,20 @@ namespace RTSEngine.Multiplayer.Server
 
         // Other components
         protected IMultiplayerManager multiplayerMgr { private set; get; }
+        protected IMultiplayerServerGameManager serverGameMgr { private set; get; }
+        //protected IMultiplay
         #endregion
 
         #region Initializing/Terminating
         public void Init(IMultiplayerManager multiplayerMgr, MultiplayerFactionManagerTrackerData data)
         {
             this.multiplayerMgr = multiplayerMgr;
-            this.logger = multiplayerMgr.GetService<IMultiplayerLoggingService>(); 
+            this.serverGameMgr = multiplayerMgr.ServerGameMgr;
+            this.logger = multiplayerMgr.GetService<IMultiplayerLoggingService>();
 
             this.Data = data;
 
             rttLog = new float[data.logSize];
-            rttLocked = true;
 
             inputLog = new List<MultiplayerInputWrapper>[data.logSize];
             for (int i = 0; i < data.logSize; i++)
@@ -79,16 +81,16 @@ namespace RTSEngine.Multiplayer.Server
         {
             int logIndex = turnID % Data.logSize;
 
-            // Must receive receipt confirmation to complete the round trip. Unlock to start the timer.
-            rttLocked = false;
-
             return inputLog[logIndex];
         }
 
-        public void OnRelayedInputReceived (int turnID)
+        public void OnRelayedInputReceived (int turnID, float lastRTT)
         {
-            logger.RequireTrue(turnID == CurrTurn,
-                $"[{GetType().Name} - Faction ID: {Data.factionID}] Expected input 'turnID' to be {CurrTurn} but got {turnID} instead. This MUST NOT happen!");
+            // Issue that leads to disconnection occurs here
+            if (!logger.RequireTrue(turnID == CurrTurn,
+                $"[{GetType().Name} - Server Turn: {serverGameMgr.ServerTurn} - Faction ID: {Data.factionID}] Expected input 'turnID' to be {CurrTurn} but got {turnID} instead.!",
+                type: LoggingType.warning))
+                return;
 
             CurrTurn++;
             if (!IsActive)
@@ -99,22 +101,7 @@ namespace RTSEngine.Multiplayer.Server
             // Prepare next inputLog slot
             inputLog[logIndex].Clear();
 
-            // Prepares the next rttLog slot
-            rttLog[logIndex] = 0;
-            // So that RTT timer only starts when the server relays the input back to the clients
-            rttLocked = true;
-        }
-        #endregion
-
-        #region Handling RTT
-        public void Update()
-        {
-            if (rttLocked)
-                return;
-
-            int rttIndex = (CurrTurn + 1) % Data.logSize;
-
-            rttLog[rttIndex] += Time.deltaTime;
+            rttLog[logIndex] = lastRTT;
         }
         #endregion
     }

@@ -11,6 +11,7 @@ using RTSEngine.Multiplayer.Logging;
 using RTSEngine.Multiplayer.Utilities;
 using RTSEngine.Event;
 using RTSEngine.Game;
+using RTSEngine.Multiplayer.Event;
 
 namespace RTSEngine.Multiplayer.Server
 {
@@ -159,6 +160,12 @@ namespace RTSEngine.Multiplayer.Server
                     AwaitingReceipt = false;
 
                     turnHandler.Init(multiplayerMgr, OnTurnComplete);
+                    // Set the initial turn time based on the initial RTT collected when the mutliplayer faction manager was validated
+                    turnHandler.UpdateTurnTime(
+                        multiFactionMgrTrackers.Values
+                        .Select(tracker => new float[] { tracker.Data.initialRTT })
+                        .ToArray()
+                    );
 
                     logger.Log($"[{GetType().Name} - Server Turn: {ServerTurn}] Lockstep turn handler has been initialized and the simulation has now started running.");
 
@@ -220,7 +227,8 @@ namespace RTSEngine.Multiplayer.Server
                         clientTimeoutReleaseTimer = clientTimeoutReleaseTime;
                         foreach(KeyValuePair<int, IMultiplayerFactionManagerTracker> tracker in multiFactionMgrTrackers)
                         {
-                            if (tracker.Value.CurrTurn != ServerTurn + 1)
+                            // Making sure that the tracker is active because we do not want to kick inactive trackers that might have been already kicked.
+                            if (tracker.Value.IsActive && tracker.Value.CurrTurn != ServerTurn + 1)
                                 KickTimedOutClient(tracker.Key);
                         }
 
@@ -229,14 +237,11 @@ namespace RTSEngine.Multiplayer.Server
 
                     break;
             }
-
-            foreach (IMultiplayerFactionManagerTracker tracker in multiFactionMgrTrackers.Values)
-                tracker.Update();
         }
         #endregion
 
         #region Handling State: awaitingValidation
-        private void HandleMultiplayerFactionManagerValidated(IMultiplayerFactionManager newMultiFactionMgr, EventArgs args)
+        private void HandleMultiplayerFactionManagerValidated(IMultiplayerFactionManager newMultiFactionMgr, MultiplayerFactionEventArgs args)
         {
             if (CurrState != ServerGameState.awaitingValidation)
                 return;
@@ -247,10 +252,13 @@ namespace RTSEngine.Multiplayer.Server
             nextTracker.Init(multiplayerMgr,
                 new MultiplayerFactionManagerTrackerData
                 {
+                    multiFactionMgr = newMultiFactionMgr,
                     factionID = newMultiFactionMgr.GameFactionSlot.ID,
 
                     logSize = logSize,
-                    maxInputCount = maxInputCount
+                    maxInputCount = maxInputCount,
+
+                    initialRTT = args.LastRTT
                 });
 
             multiFactionMgrTrackers.Add(newMultiFactionMgr.GameFactionSlot.ID, nextTracker);
@@ -318,21 +326,23 @@ namespace RTSEngine.Multiplayer.Server
 
             foreach (IMultiplayerFactionManager multiFactionMgr in multiplayerMgr.MultiplayerFactionMgrs)
                 if (multiFactionMgrTrackers[multiFactionMgr.GameFactionSlot.ID].CurrTurn == ServerTurn)
+                {
                     multiFactionMgr.RelayInput(
                         relayedInputs,
-                        lastInputID:relayedInputs.LastOrDefault().ID,
+                        lastInputID: relayedInputs.LastOrDefault().ID,
                         ServerTurn);
+                }
 
             AwaitingReceipt = true;
         }
 
-        public void OnRelayedInputReceived(int factionID, int turnID)
+        public void OnRelayedInputReceived(int factionID, int turnID, float lastRTT)
         {
             if (!logger.RequireTrue(turnID == ServerTurn,
               $"[{GetType().Name} - Server Turn: {ServerTurn}] Received confirmation of relayed input receipt from client of faction slot ID {factionID} for turn {turnID} while expecting it for current server turn."))
                 return; 
 
-            multiFactionMgrTrackers[factionID].OnRelayedInputReceived(turnID);
+            multiFactionMgrTrackers[factionID].OnRelayedInputReceived(turnID, lastRTT);
 
             TryIncrementServerTurn(turnID);
         }
@@ -344,13 +354,13 @@ namespace RTSEngine.Multiplayer.Server
             if (multiFactionMgrTrackers.Values.Where(tracker => tracker.IsActive).Any(tracker => tracker.CurrTurn != ServerTurn + 1))
                 return false;
 
-            AwaitingReceipt = false;
-            ServerTurn++;
-
             IEnumerable<IMultiplayerFactionManagerTracker> inactiveTrackers = multiFactionMgrTrackers.Values.Where(tracker => !tracker.IsActive);
             // To increment the current turn on inactive trackers that may still have inputs in their log to sync with the rest of the clients.
             foreach (var tracker in inactiveTrackers)
-                tracker.OnRelayedInputReceived(turnID);
+                tracker.OnRelayedInputReceived(turnID, lastRTT: 0.0f);
+
+            AwaitingReceipt = false;
+            ServerTurn++;
 
             // Destroy trackers that have been disabled for a certain amount of turns
             foreach (var destroyTracker in inactiveTrackers.Where(tracker => tracker.InactiveTurns >= logSize).ToList())
@@ -364,16 +374,21 @@ namespace RTSEngine.Multiplayer.Server
 
             if (CurrState == ServerGameState.simPaused)
             {
-                // If the simulation was previously then we consider changing the lockstep turn duration in order to adhere to clients who might be lagging
-                turnHandler.UpdateTurnTime(multiFactionMgrTrackers.Values
-                    .Where(tracker => tracker.IsActive)
-                    .Select(tracker => tracker.RTTLog.ToArray())
-                    .ToArray());
+                // If the simulation was previously paused then we consider changing the lockstep turn duration in order to adhere to clients who might be lagging
+                UpdateTurnTimeWithRTTLogs();
 
                 SetState(ServerGameState.simRunning);
             }
 
             return true;
+        }
+
+        public void UpdateTurnTimeWithRTTLogs()
+        {
+            turnHandler.UpdateTurnTime(multiFactionMgrTrackers.Values
+                .Where(tracker => tracker.IsActive)
+                .Select(tracker => tracker.RTTLog.ToArray())
+                .ToArray());
         }
 
         private void OnTurnComplete()
@@ -390,7 +405,7 @@ namespace RTSEngine.Multiplayer.Server
             disconnectedFactionIDs.Add(factionID);
 
             logger.Log(
-                $"[{GetType().Name} - Server Turn: {ServerTurn}] Client of faction slot ID: {factionID} has been requested to leave the server!",
+                $"[{GetType().Name} - Server Turn: {ServerTurn} - Client Turn: {multiFactionMgrTrackers[factionID].CurrTurn}] Client of faction slot ID: {factionID} has been requested to leave the server!",
                 source: this,
                 type: LoggingType.warning);
         }

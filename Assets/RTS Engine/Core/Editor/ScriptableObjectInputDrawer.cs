@@ -16,24 +16,29 @@ namespace RTSEngine.EditorOnly
 {
     public class ScriptableObjectInputDrawer<T> : PropertyDrawer where T : RTSEngineScriptableObject 
     {
-        public virtual bool DisplayExtra => false;
-        public virtual int FieldsAmount => 2 + (DisplayExtra ? 1 : 0);
+        private int fieldsAmount = 3;
+
+        private bool searchFoldout = true;
+        private bool didSearch = false;
+        private string searchText = "";
+        private string[] searchExceptions = new string[] { "Unassigned" };
 
         public void Draw(Rect position, SerializedProperty property, GUIContent label, Texture texture = null)
         {
             label = EditorGUI.BeginProperty(position, label, property);
 
-            float height = position.height - EditorGUIUtility.standardVerticalSpacing * FieldsAmount * 2;
+            float height = position.height - EditorGUIUtility.standardVerticalSpacing * fieldsAmount * 1.5f;
+            height /= fieldsAmount;
 
             float textureSize = texture != null
-                ? (height / FieldsAmount) * 2.0f + EditorGUIUtility.standardVerticalSpacing
+                ? height * 2.0f + EditorGUIUtility.standardVerticalSpacing
                 : 0.0f;
 
-            Rect popupRect = new Rect(
+            Rect nextRect = new Rect(
                 position.x + textureSize * 1.5f,
                 position.y,
                 position.width - textureSize * 1.5f,
-                height / FieldsAmount
+                height
             );
 
             if (property.propertyType != SerializedPropertyType.ObjectReference)
@@ -44,7 +49,7 @@ namespace RTSEngine.EditorOnly
 
             if (!RTSEditorHelper.GetAssetFilesDictionary(out Dictionary<string, T> dictionary))
             {
-                EditorGUI.LabelField(popupRect, label.text, $"Error fetching asset files! See console!");
+                EditorGUI.LabelField(nextRect, label.text, $"Error fetching asset files! See console!");
                 EditorGUI.EndProperty();
                 return;
             }
@@ -56,18 +61,50 @@ namespace RTSEngine.EditorOnly
 
             string[] keys = dictionary.Keys.ToArray();
 
-            index = EditorGUI.Popup(popupRect, label.text, index, keys);
+            index = EditorGUI.Popup(nextRect, label.text, index, keys);
 
             property.objectReferenceValue = dictionary[keys[index]] as Object;
 
-            Rect contentRect = new Rect(
-                position.x + textureSize * 1.5f,
-                position.y + height / FieldsAmount + EditorGUIUtility.standardVerticalSpacing,
-                position.width - textureSize * 1.5f,
-                height / FieldsAmount
-            );
-            EditorGUI.PropertyField(contentRect, property, GUIContent.none);
+            nextRect.y += height + EditorGUIUtility.standardVerticalSpacing;
 
+            if(!didSearch)
+            {
+                didSearch = true;
+                searchText = keys[index];
+            }
+
+            searchText = EditorGUI.TextField(nextRect, "Search", searchText);
+            if(searchText != keys[index])
+            {
+                string[] results = RTSEditorHelper.GetMatchingStrings(searchText, keys, searchExceptions);
+
+                nextRect.y += height + EditorGUIUtility.standardVerticalSpacing;
+
+                searchFoldout = EditorGUI.Foldout(nextRect, searchFoldout, $"Search results count: {results.Length}");
+
+                if (searchFoldout)
+                {
+                    fieldsAmount = 4 + results.Length;
+
+                    EditorGUI.indentLevel++;
+
+                    foreach (string result in results)
+                    {
+                        nextRect.y += height + EditorGUIUtility.standardVerticalSpacing;
+                        if(GUI.Button(nextRect, result))
+                            property.objectReferenceValue = dictionary[result] as Object;
+                    }
+
+                    EditorGUI.indentLevel--;
+                }
+                else
+                    fieldsAmount = 4;
+            }
+            else
+                fieldsAmount = 3;
+
+            nextRect.y += height + EditorGUIUtility.standardVerticalSpacing;
+            EditorGUI.PropertyField(nextRect, property, GUIContent.none);
 
             if (texture != null)
             {
@@ -79,29 +116,12 @@ namespace RTSEngine.EditorOnly
                 EditorGUI.indentLevel = lastIndent;
             }
 
-            if (DisplayExtra)
-            {
-                EditorGUI.indentLevel++;
-                if (property.objectReferenceValue == null)
-                {
-                    Rect noValueRect = new Rect(position.x, position.y + (height * 2) / FieldsAmount + EditorGUIUtility.standardVerticalSpacing, position.width, height / FieldsAmount);
-                    EditorGUI.LabelField(noValueRect, "None");
-                }
-                else
-                    DrawExtra(position, property, label, height);
-                EditorGUI.indentLevel--;
-            }
-
             EditorGUI.EndProperty();
-        }
-
-        protected virtual void DrawExtra(Rect position, SerializedProperty property, GUIContent label, float height)
-        {
         }
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return base.GetPropertyHeight(property, label) * FieldsAmount + EditorGUIUtility.standardVerticalSpacing * FieldsAmount * 2; 
+            return (base.GetPropertyHeight(property, label) + EditorGUIUtility.standardVerticalSpacing * 2f) * fieldsAmount; 
         }
     }
 
@@ -166,22 +186,9 @@ namespace RTSEngine.EditorOnly
     [CustomPropertyDrawer(typeof(ControlType))]
     public class ControlTypeDrawer : ScriptableObjectInputDrawer<ControlType>
     {
-        public override bool DisplayExtra => false;
-        public override int FieldsAmount => 2;
-
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             Draw(position, property, label);
-        }
-
-        protected override void DrawExtra(Rect position, SerializedProperty property, GUIContent label, float height)
-        {
-
-            SerializedObject currSO = new SerializedObject(property.objectReferenceValue as ControlType);
-            GUI.enabled = false;
-            Rect keyCodeRect = new Rect(position.x, position.y + (height * 2) / FieldsAmount + EditorGUIUtility.standardVerticalSpacing, position.width, height / FieldsAmount);
-            EditorGUI.PropertyField(keyCodeRect, currSO.FindProperty("defaultKeyCode"));
-            GUI.enabled = true;
         }
     }
 

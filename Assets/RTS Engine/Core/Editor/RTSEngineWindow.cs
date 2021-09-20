@@ -9,6 +9,13 @@ using RTSEngine.EntityComponent;
 using RTSEngine.ResourceExtension;
 using RTSEngine.Entities;
 using RTSEngine.Upgrades;
+using RTSEngine.UI;
+using RTSEngine.Faction;
+using RTSEngine.NPC;
+using RTSEngine.Movement;
+using RTSEngine.Terrain;
+using RTSEngine.Controls;
+using UnityEditorInternal;
 
 namespace RTSEngine.EditorOnly
 {
@@ -18,13 +25,19 @@ namespace RTSEngine.EditorOnly
         // Left view
         private Vector2 leftViewScrollPos = Vector2.zero;
         private const float leftViewWidth = 255.0f;
-        private string[] leftViewOptions = new string[] { 
+        private string[] leftViewOptions = new string[] {
             "Entities",
 
             "Entity Upgrades",
             "Entity Component Upgrades",
-            
-            "Task UI" 
+
+            "Task UI",
+            "Faction Type",
+            "Resource Type",
+            "NPC Type",
+            "Movement Formation Type",
+            "Terrain Area Type",
+            "Control Type"
         };
         private int lastLeftViewOptionID = 0;
         private int leftViewOptionID = 0;
@@ -34,9 +47,11 @@ namespace RTSEngine.EditorOnly
         private static RTSEngineWindow currWindow = null;
         private float TextureSize = 64.0f;
 
+        private float IndentSpace = 10.0f;
+
         // Entity related
-        private int categoryMask = -1;
-        private string[] currentCategoriesArray = new string[] { "" };
+        private int entityCategoryMask = -1;
+        private string[] currentEntityCategoriesArray = new string[] { "" };
         private IEnumerable<IEntity> currentCategoriesEntities = Enumerable.Empty<IEntity>();
 
         private int entitySortBy = 0;
@@ -90,6 +105,26 @@ namespace RTSEngine.EditorOnly
         private string[] excludedEntityCategories = new string[] { "new_unit_category", "new_building_category", "new_resource_category" };
         private bool excludedEntityCategoriesFoldout = false;
 
+        // Task UI related
+        private int taskCategoryMask = -1;
+        private int[] currentTaskCategoriesArray = new int[0];
+
+        private int taskSortByOptionID = 0;
+        private string[] taskSortByOptions = new string[] { "Code", "Category", "Slot Index", "Force Slot?" };
+
+        // Resource Type related
+        private int resourceTypeCategoryMask = -1;
+        private string[] currentResourceTypeCategoriesArray = new string[] { "With Capacity", "Without Capacity" };
+
+        // Shared
+        private int sharedSortByOptionID = 0;
+        private string[] sharedSortByOptions = new string[] { "Code" };
+
+        // Search related
+        private string searchInput = "";
+        private string[] searchResults = new string[0];
+        private string[] searchExceptions = new string[] { "Unassigned" };
+
         public RTSEngineWindow()
         {
             RTSEditorHelper.OnRTSPrefabsAndAssetsReload += HandleRTSPrefabsAndAssetsReload;
@@ -98,6 +133,7 @@ namespace RTSEngine.EditorOnly
         private void HandleRTSPrefabsAndAssetsReload()
         {
             RefreshEntitiesToDisplay();
+            RefreshTaskUIToDisplay();
         }
 
         [MenuItem("RTS Engine/RTS Engine Menu", priority = 1)]
@@ -111,6 +147,7 @@ namespace RTSEngine.EditorOnly
         void OnEnable()
         {
             RefreshEntitiesToDisplay();
+            RefreshTaskUIToDisplay();
         }
 
         private void OnDisable()
@@ -145,6 +182,7 @@ namespace RTSEngine.EditorOnly
             {
                 leftViewOptionID = lastLeftViewOptionID;
                 RefreshEntitiesToDisplay();
+                RefreshTaskUIToDisplay();
             }
 
             EditorGUILayout.Space();
@@ -166,7 +204,25 @@ namespace RTSEngine.EditorOnly
                     break;
 
                 case "Task UI":
-                    OnEntitiesLeftView();
+                    OnScriptableObjectLeftView<EntityComponentTaskUIAsset>();
+                    break;
+                case "Faction Type":
+                    OnScriptableObjectLeftView<FactionTypeInfo>();
+                    break;
+                case "Resource Type":
+                    OnScriptableObjectLeftView<ResourceTypeInfo>();
+                    break;
+                case "NPC Type":
+                    OnScriptableObjectLeftView<NPCType>();
+                    break;
+                case "Movement Formation Type":
+                    OnScriptableObjectLeftView<MovementFormationType>();
+                    break;
+                case "Terrain Area Type":
+                    OnScriptableObjectLeftView<TerrainAreaType>();
+                    break;
+                case "Control Type":
+                    OnScriptableObjectLeftView<ControlType>();
                     break;
             }
 
@@ -178,6 +234,14 @@ namespace RTSEngine.EditorOnly
 
         private void OnEntitiesLeftView()
         {
+            searchInput = EditorGUILayout.TextField("Search", searchInput);
+
+            EditorGUILayout.Space();
+
+            EditorGUILayout.LabelField($"Count: {searchResults.Count()}", EditorStyles.boldLabel);
+
+            EditorGUILayout.Space();
+
             nextFactionEntityMask = factionEntityMask;
             nextUnitMask = unitMask;
             nextBuildingMask = buildingMask;
@@ -249,9 +313,12 @@ namespace RTSEngine.EditorOnly
             EditorGUILayout.Space();
             EditorGUILayout.Space();
 
-            EditorGUILayout.LabelField($"Count: {currentCategoriesEntities.Count()}", EditorStyles.boldLabel);
+            searchResults = RTSEditorHelper.GetMatchingStrings(
+                searchInput,
+                currentCategoriesEntities.Select(entity => entity.Code).ToArray(),
+                searchExceptions
+            );
 
-            EditorGUILayout.Space();
             if(excludedEntityCategoriesFoldout = EditorGUILayout.Foldout(excludedEntityCategoriesFoldout, "Excluded Categories:"))
             {
                 EditorGUI.indentLevel++;
@@ -339,15 +406,15 @@ namespace RTSEngine.EditorOnly
                     break;
             }
 
-            currentCategoriesArray = currentCategoriesEntities
+            currentEntityCategoriesArray = currentCategoriesEntities
                 .SelectMany(entity => entity.Category)
                 .Distinct()
                 .ToArray();
 
-            if (currentCategoriesArray.Length == 0)
-                currentCategoriesArray = new string[] { "" };
+            if (currentEntityCategoriesArray.Length == 0)
+                currentEntityCategoriesArray = new string[] { "" };
 
-            categoryMask = -1;
+            entityCategoryMask = -1;
         }
 
         private bool CheckEntityOptions(IEntity entity, IDictionary<string, Type> options, int optionsMask)
@@ -387,7 +454,7 @@ namespace RTSEngine.EditorOnly
         private void OnRightViewTop()
         {
             GUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("", GUILayout.MinHeight(EditorGUIUtility.singleLineHeight*2), GUILayout.MaxWidth(10.0f));
+            EditorGUILayout.LabelField("", GUILayout.MinHeight(EditorGUIUtility.singleLineHeight*2), GUILayout.MaxWidth(IndentSpace));
 
             GUILayout.BeginVertical();
 
@@ -397,21 +464,69 @@ namespace RTSEngine.EditorOnly
                 case "Entity Upgrades":
                 case "Entity Component Upgrades":
 
-                    categoryMask = EditorGUILayout.MaskField(
+                    entityCategoryMask = EditorGUILayout.MaskField(
                         new GUIContent("Categories:"),
-                        categoryMask,
-                        currentCategoriesArray
+                        entityCategoryMask,
+                        currentEntityCategoriesArray,
+                        GUILayout.MaxWidth(position.width - leftViewWidth - IndentSpace * 2.0f)
                     );
 
-                    entitySortBy = EditorGUILayout.Popup(new GUIContent("Sort By:"), entitySortBy, entitySortByOptions);
+                    entitySortBy = EditorGUILayout.Popup(
+                        new GUIContent("Sort By:"),
+                        entitySortBy,
+                        entitySortByOptions,
+                        GUILayout.MaxWidth(position.width - leftViewWidth - IndentSpace * 2.0f)
+                    );
 
                         break;
                 case "Task UI":
 
-                    EditorGUILayout.Space();
-                    EditorGUILayout.Space();
+                    taskCategoryMask = EditorGUILayout.MaskField(
+                        new GUIContent("Panel Categories:"),
+                        taskCategoryMask,
+                        currentTaskCategoriesArray.Select(category => category.ToString()).ToArray(),
+                        GUILayout.MaxWidth(position.width - leftViewWidth - IndentSpace * 2.0f)
+                    );
+
+                    taskSortByOptionID = EditorGUILayout.Popup(
+                        new GUIContent("Sort By:"),
+                        taskSortByOptionID,
+                        taskSortByOptions,
+                        GUILayout.MaxWidth(position.width - leftViewWidth - IndentSpace * 2.0f)
+                    );
 
                     break;
+
+                case "Resource Type":
+
+                    resourceTypeCategoryMask = EditorGUILayout.MaskField(
+                        new GUIContent("Capacity:"),
+                        resourceTypeCategoryMask,
+                        currentResourceTypeCategoriesArray,
+                        GUILayout.MaxWidth(position.width - leftViewWidth - IndentSpace * 2.0f)
+                    );
+
+                    sharedSortByOptionID = EditorGUILayout.Popup(
+                        new GUIContent("Sort By:"),
+                        sharedSortByOptionID,
+                        sharedSortByOptions,
+                        GUILayout.MaxWidth(position.width - leftViewWidth - IndentSpace * 2.0f)
+                    );
+
+                    break;
+
+                default:
+
+                    sharedSortByOptionID = EditorGUILayout.Popup(
+                        new GUIContent("Sort By:"),
+                        sharedSortByOptionID,
+                        sharedSortByOptions,
+                        GUILayout.MaxWidth(position.width - leftViewWidth - IndentSpace * 2.0f)
+                    );
+
+                    break;
+
+
             }
 
             GUILayout.EndVertical();
@@ -426,25 +541,46 @@ namespace RTSEngine.EditorOnly
                 case "Entities":
                 case "Entity Upgrades":
                 case "Entity Component Upgrades":
-
                     OnEntitiesMenu();
-
                         break;
-                case "Task UI":
 
+                case "Task UI":
+                    OnScriptableObjectMenu<EntityComponentTaskUIAsset>(hasTexture: true, texturePropertyPath: "data.icon");
+                    break;
+
+                case "Faction Type":
+                    OnScriptableObjectMenu<FactionTypeInfo>();
+                    break;
+
+                case "Resource Type":
+                    OnScriptableObjectMenu<ResourceTypeInfo>(hasTexture: true, texturePropertyPath: "icon");
+                    break;
+
+                case "NPC Type":
+                    OnScriptableObjectMenu<NPCType>();
+                    break;
+                case "Movement Formation Type":
+                    OnScriptableObjectMenu<MovementFormationType>();
+                    break;
+                case "Terrain Area Type":
+                    OnScriptableObjectMenu<TerrainAreaType>();
+                    break;
+                case "Control Type":
+                    OnScriptableObjectMenu<ControlType>();
                     break;
             }
         }
 
         private void OnEntitiesMenu()
         {
-            IEnumerable<IEntity> entities = currentCategoriesEntities
+            IEnumerable<IEntity> entities = searchResults
+                .Select(result => RTSEditorHelper.GetEntities()[result])
                 .Where(entity =>
                 {
                     foreach (string category in entity.Category)
                     {
-                        int categoryLayer = 1 << Array.IndexOf(currentCategoriesArray, category);
-                        if ((categoryMask & categoryLayer) != 0)
+                        int categoryLayer = 1 << Array.IndexOf(currentEntityCategoriesArray, category);
+                        if ((entityCategoryMask & categoryLayer) != 0)
                             return true;
                     }
                     return false;
@@ -457,10 +593,12 @@ namespace RTSEngine.EditorOnly
             {
                 OnPreElement();
 
+                GUILayout.BeginHorizontal(GUILayout.MaxWidth(position.width - leftViewWidth - IndentSpace * 2.0f));
 
                 switch (leftViewOptions[leftViewOptionID])
                 {
                     case "Entities":
+
                         if (nextEntity.Icon.IsValid())
                             EditorGUILayout.LabelField(new GUIContent(nextEntity.Icon.texture), GUILayout.MinHeight(EditorGUIUtility.singleLineHeight * 2), GUILayout.MaxWidth(TextureSize));
                         else
@@ -486,6 +624,7 @@ namespace RTSEngine.EditorOnly
                         GUI.enabled = true;
 
                         GUILayout.EndVertical();
+
 
                         break;
 
@@ -622,6 +761,8 @@ namespace RTSEngine.EditorOnly
                         break;
                 }
 
+                GUILayout.EndHorizontal();
+
                 OnPostElement();
             }
         }
@@ -629,7 +770,7 @@ namespace RTSEngine.EditorOnly
         private void OnPreElement()
         {
             GUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("", GUILayout.MinHeight(EditorGUIUtility.singleLineHeight*2), GUILayout.MaxWidth(10.0f));
+            EditorGUILayout.LabelField("", GUILayout.MinHeight(EditorGUIUtility.singleLineHeight*2), GUILayout.MaxWidth(IndentSpace));
         }
 
         private void OnPostElement()
@@ -645,5 +786,180 @@ namespace RTSEngine.EditorOnly
             EditorGUILayout.Space();
             EditorGUILayout.Space();
         }
+
+        private void OnScriptableObjectLeftView<T>() where T : RTSEngineScriptableObject
+        {
+            if(!RTSEditorHelper.GetAssetFilesDictionary<T>(out var assetsDic))
+                    return;
+
+            searchInput = EditorGUILayout.TextField("Search", searchInput);
+
+            EditorGUILayout.Space();
+
+            searchResults = RTSEditorHelper.GetMatchingStrings(
+                searchInput,
+                assetsDic.Keys.ToArray(),
+                searchExceptions
+            );
+
+            EditorGUILayout.LabelField($"Count: {searchResults.Length}", EditorStyles.boldLabel);
+        }
+
+        private void RefreshTaskUIToDisplay()
+        {
+            if(!RTSEditorHelper.GetAssetFilesDictionary<EntityComponentTaskUIAsset>(out var assetsDic))
+                    return;
+
+            currentTaskCategoriesArray = assetsDic.Values
+               .Where(asset => asset.IsValid())
+               .Select(asset => asset.Data.panelCategory)
+               .OrderBy(category => category)
+               .Distinct()
+               .ToArray();
+
+            taskCategoryMask = -1;
+        }
+
+        private void OnScriptableObjectMenu<T>(bool hasTexture = false, string texturePropertyPath = "path") where T : RTSEngineScriptableObject
+        {
+            if (!RTSEditorHelper.GetAssetFilesDictionary<T>(out var assetsDic))
+            {
+                EditorGUILayout.LabelField($"Unable to fetch asset files!", EditorStyles.boldLabel, GUILayout.MaxWidth(TextureSize * 2.0f));
+                return;
+            }
+
+            IEnumerable<T> assetsFiltered = searchResults
+                .Select(result => assetsDic[result])
+                .Where(asset =>
+                {
+                    if (!asset.IsValid())
+                        return false;
+
+                    if (asset is EntityComponentTaskUIAsset)
+                    {
+                        int categoryLayer = 1 << Array.IndexOf(currentTaskCategoriesArray, (asset as EntityComponentTaskUIAsset).Data.panelCategory);
+                        if ((taskCategoryMask & categoryLayer) != 0)
+                            return true;
+                        return false;
+                    }
+                    else if (asset is ResourceTypeInfo)
+                    {
+                        string hasCapacityString = (asset as ResourceTypeInfo).HasCapacity ? "With Capacity" : "Without Capacity";
+                        int categoryLayer = 1 << Array.IndexOf(currentResourceTypeCategoriesArray, hasCapacityString);
+                        if ((resourceTypeCategoryMask & categoryLayer) != 0)
+                            return true;
+                        return false;
+                    }
+                    else
+                        return true;
+                })
+                .OrderBy(asset =>
+                {
+                    if (asset is EntityComponentTaskUIAsset)
+                    {
+                        EntityComponentTaskUIAsset taskAsset = asset as EntityComponentTaskUIAsset;
+                        switch (taskSortByOptions[taskSortByOptionID])
+                        {
+                            case "Category":
+                                return taskAsset.Data.panelCategory.ToString();
+                            case "Slot Index":
+                                return taskAsset.Data.slotIndex.ToString();
+                            case "Force Slot?":
+                                return taskAsset.Data.forceSlot.ToString();
+                        }
+                    }
+
+                    return asset.Key;
+                });
+
+
+            float CodeWidth = TextureSize * 8.0f;
+
+            foreach(T asset in assetsFiltered)
+            {
+                OnPreElement();
+
+                GUILayout.BeginHorizontal(GUILayout.MaxWidth(position.width - leftViewWidth - IndentSpace * 2.0f));
+
+                bool isTextureFound = false;
+
+                if (hasTexture)
+                {
+                    SerializedObject assetSO = new SerializedObject(asset);
+                    UnityEngine.Object textureObject = assetSO.FindProperty(texturePropertyPath).objectReferenceValue;
+
+                    if (textureObject.IsValid())
+                    {
+                        EditorGUILayout.LabelField(new GUIContent((textureObject as Sprite).texture), GUILayout.MinHeight(EditorGUIUtility.singleLineHeight * 2), GUILayout.MaxWidth(TextureSize));
+                        isTextureFound = true;
+                    }
+                }
+
+                if(!isTextureFound)
+                    EditorGUILayout.LabelField(new GUIContent(""), GUILayout.MinHeight(EditorGUIUtility.singleLineHeight * 2), GUILayout.MaxWidth(TextureSize));
+
+                GUILayout.BeginVertical();
+
+                EditorGUILayout.LabelField($"Code:", EditorStyles.boldLabel, GUILayout.MaxWidth(TextureSize));
+                if (asset is EntityComponentTaskUIAsset)
+                    EditorGUILayout.LabelField($"Category (Slot - Forced?):", EditorStyles.boldLabel, GUILayout.MaxWidth(TextureSize * 2.5f));
+                else if (asset is ResourceTypeInfo)
+                {
+                    ResourceTypeInfo resourceAsset = asset as ResourceTypeInfo;
+                    if(resourceAsset.HasCapacity)
+                        EditorGUILayout.LabelField($"Starting Amount/Capacity:", EditorStyles.boldLabel, GUILayout.MaxWidth(TextureSize * 2.5f));
+                    else
+                        EditorGUILayout.LabelField($"Starting Amount:", EditorStyles.boldLabel, GUILayout.MaxWidth(TextureSize * 2.5f));
+                }
+                else if (asset is TerrainAreaType)
+                    EditorGUILayout.LabelField($"Layer Mask:", EditorStyles.boldLabel, GUILayout.MaxWidth(TextureSize * 2.5f));
+                else if (asset is ControlType)
+                    EditorGUILayout.LabelField($"Default Key:", EditorStyles.boldLabel, GUILayout.MaxWidth(TextureSize * 2.5f));
+
+                GUILayout.EndVertical();
+
+                GUILayout.BeginVertical();
+
+                EditorGUILayout.SelectableLabel($"{asset.Key}", GUILayout.MaxHeight(EditorGUIUtility.singleLineHeight), GUILayout.MaxWidth(CodeWidth));
+                if (asset is EntityComponentTaskUIAsset)
+                {
+                    EntityComponentTaskUIAsset taskAsset = asset as EntityComponentTaskUIAsset;
+                    EditorGUILayout.SelectableLabel($"{taskAsset.Data.panelCategory} ({taskAsset.Data.slotIndex} - {taskAsset.Data.forceSlot})", GUILayout.MaxHeight(EditorGUIUtility.singleLineHeight), GUILayout.MaxWidth(CodeWidth));
+                }
+                else if (asset is ResourceTypeInfo)
+                {
+                    ResourceTypeInfo resourceAsset = asset as ResourceTypeInfo;
+                    if(resourceAsset.HasCapacity)
+                        EditorGUILayout.SelectableLabel($"{resourceAsset.StartingAmount.amount}/{resourceAsset.StartingAmount.capacity}", GUILayout.MaxHeight(EditorGUIUtility.singleLineHeight), GUILayout.MaxWidth(CodeWidth));
+                    else
+                        EditorGUILayout.SelectableLabel($"{resourceAsset.StartingAmount.amount}", GUILayout.MaxHeight(EditorGUIUtility.singleLineHeight), GUILayout.MaxWidth(CodeWidth));
+                }
+                else if (asset is TerrainAreaType)
+                {
+                    TerrainAreaType areaAsset = asset as TerrainAreaType;
+                    EditorGUILayout.MaskField(InternalEditorUtility.LayerMaskToConcatenatedLayersMask(areaAsset.Layers), InternalEditorUtility.layers, GUILayout.MaxHeight(EditorGUIUtility.singleLineHeight), GUILayout.MaxWidth(CodeWidth));
+                }
+                else if (asset is ControlType)
+                {
+                    ControlType controlAsset = asset as ControlType;
+                    EditorGUILayout.EnumPopup(controlAsset.DefaultKeyCode, GUILayout.MaxHeight(EditorGUIUtility.singleLineHeight), GUILayout.MaxWidth(CodeWidth));
+                }
+
+                GUILayout.EndVertical();
+
+                GUILayout.BeginVertical();
+
+                GUI.enabled = false;
+                EditorGUILayout.ObjectField(asset, typeof(IEntity), allowSceneObjects: false, GUILayout.MinHeight(EditorGUIUtility.singleLineHeight * 2), GUILayout.MaxWidth(TextureSize * 2.0f));
+                GUI.enabled = true;
+
+                GUILayout.EndVertical();
+
+                GUILayout.EndHorizontal();
+
+                OnPostElement();
+            }
+        }
+
     }
 }

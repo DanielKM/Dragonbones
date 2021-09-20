@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   networkAddress: localhost
-  port: 8787
+  port: 7777
   mainMultiplayerScene: MainMultiplayerMenu_Mirror
 --- !u!4 &66866376
 Transform:

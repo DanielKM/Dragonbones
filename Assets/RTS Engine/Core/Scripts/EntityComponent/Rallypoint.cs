@@ -21,12 +21,6 @@ namespace RTSEngine.EntityComponent
         public enum ActionType : byte { send }
         public override bool IsIdle => true;
 
-        // If the entity allows to create unit, they will spawned in this position.
-        [SerializeField, Tooltip("Where created units will spawn.")]
-        private Transform spawnTransform = null; 
-        public Vector3 GetSpawnPosition (LayerMask navMeshLayerMask)
-            => new Vector3(spawnTransform.position.x, terrainMgr.SampleHeight(spawnTransform.position, forcedTerrainAreas), spawnTransform.position.z);
-
         [SerializeField, Tooltip("Initial rallypoint transform. Determines where created units will move to after they spawn.")] 
         private Transform gotoTransform = null;
 
@@ -38,6 +32,9 @@ namespace RTSEngine.EntityComponent
         [SerializeField, Tooltip("The maximum allowed distance between the faction entity and the rallypoint."), Min(0.0f)]
         private float maxDistance = 50.0f;
 
+        // Rallypoint component does not require the faction entity it is attached on to be idle when picking a target
+        public override bool RequireIdleEntity => false;
+
         // Game services
         protected ITerrainManager terrainMgr { private set; get; }
 
@@ -48,10 +45,7 @@ namespace RTSEngine.EntityComponent
         {
             this.terrainMgr = gameMgr.GetService<ITerrainManager>();
 
-            if (!logger.RequireValid(spawnTransform,
-                  $"[{GetType().Name} - {Entity.Code}] The 'Spawn Transform' field must be assigned!")
-
-                || !logger.RequireValid(gotoTransform,
+            if (!logger.RequireValid(gotoTransform,
                   $"[{GetType().Name} - {Entity.Code}] The 'Goto Transform' field must be assigned!")
 
                 || !logger.RequireTrue(forcedTerrainAreas.Length == 0 || forcedTerrainAreas.All(terrainArea => terrainArea.IsValid()),
@@ -71,6 +65,9 @@ namespace RTSEngine.EntityComponent
                 (factionEntity as IBuilding).BuildingBuilt += HandleBuildingBuilt;
             else
                 SetTarget(gotoTransform.position, false);
+
+            // Rallypoint component requires no auto-target search
+            TargetFinder.Enabled = false;
 
             this.factionEntity.Selection.Selected += HandleFactionEntitySelectionUpdated;
             this.factionEntity.Selection.Deselected += HandleFactionEntitySelectionUpdated;

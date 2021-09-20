@@ -133,7 +133,7 @@ namespace RTSEngine.EditorOnly.EntityComponent
     public class RallypointEditor : FactionEntityTargetComponentEditor<Rallypoint, IEntity>
     {
         private string[][] toolbars = new string[][] {
-            new string [] { "General", "Target Search/Picker", "Setting Target" },
+            new string [] { "General", "Setting Target" },
             new string [] { "Rallypoint"}
         };
 
@@ -145,12 +145,18 @@ namespace RTSEngine.EditorOnly.EntityComponent
             OnInspectorGUI(toolbars);
         }
 
+        protected override void OnGeneralInspectorGUI()
+        {
+            EditorGUILayout.PropertyField(SO.FindProperty("code"));
+            EditorGUILayout.PropertyField(SO.FindProperty("isActive"));
+            EditorGUILayout.PropertyField(SO.FindProperty("priority"));
+        }
+
         protected override void OnComponentSpecificInspectorGUI(string tabName)
         {
             switch(tabName)
             {
                 case "Rallypoint":
-                    EditorGUILayout.PropertyField(SO.FindProperty("spawnTransform"));
                     EditorGUILayout.PropertyField(SO.FindProperty("gotoTransform"));
                     EditorGUILayout.PropertyField(SO.FindProperty("forcedTerrainAreas"));
 
@@ -281,14 +287,6 @@ namespace RTSEngine.EditorOnly.EntityComponent
 
             EditorGUILayout.PropertyField(SO.FindProperty("targetPicker"));
             EditorGUILayout.PropertyField(SO.FindProperty("restrictBuildingPlacementOnly"));
-
-            EditorGUILayout.PropertyField(SO.FindProperty("maxDropOffDistanceEnabled"));
-            if (SO.FindProperty("maxDropOffDistanceEnabled").boolValue == true)
-            {
-                EditorGUI.indentLevel++;
-                EditorGUILayout.PropertyField(SO.FindProperty("maxDropOffDistance"));
-                EditorGUI.indentLevel--;
-            }
         }
 
         protected override void OnHandlingProgressInspectorGUI()

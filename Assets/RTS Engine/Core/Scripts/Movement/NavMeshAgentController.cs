@@ -66,11 +66,11 @@ namespace RTSEngine.Movement
         public Vector3 NextPathTarget { get { return navAgent.steeringTarget; } }
 
         /// <summary>
-        /// The position of the last corner tof the unit's active path, AKA, the path's destination.
+        /// The position of the last corner of the unit's active path, AKA, the path's destination.
         /// </summary>
         public Vector3 FinalTarget { get { return navAgent.destination; } }
 
-        public bool IsLastPlayerCommand { private set; get; }
+        public MovementSource LastSource { get; private set; }
 
         // Game services
         protected IGameLoggingService logger { private set; get; }
@@ -90,12 +90,12 @@ namespace RTSEngine.Movement
 
             IEntity entity = mvtComponent?.Entity;
             if (!logger.RequireValid(entity
-                , $"[{GetType()}] Can not initialize without a valid Unit instance."))
+                , $"[{GetType().Name}] Can not initialize without a valid Unit instance."))
                 return;
 
             navAgent = entity.gameObject.GetComponent<NavMeshAgent>();
             if (!logger.RequireValid(navAgent,
-                $"[NavMeshAgentController - '{entity.Code}'] NavMeshAgent component must be attached to the unit."))
+                $"[{GetType().Name} - '{entity.Code}'] '{typeof(NavMeshAgent).Name}' component must be attached to the unit."))
                 return;
             navAgent.enabled = true;
 
@@ -116,16 +116,19 @@ namespace RTSEngine.Movement
         /// </summary>
         /// <param name="destination">Vector3 that represents the movement's target position.</param>
         /// <returns>True if the path is valid and complete, otherwise false.</returns>
-        public void Prepare(Vector3 destination, bool playerCommand)
+        public void Prepare(Vector3 destination, MovementSource source)
         {
-            this.IsLastPlayerCommand = playerCommand;
+            this.LastSource = source;
 
             navAgent.CalculatePath(destination, navPath);
 
             if (navPath != null && navPath.status == NavMeshPathStatus.PathComplete)
-                mvtComponent.OnPathPrepared();
+                mvtComponent.OnPathPrepared(LastSource);
             else
+            {
+                this.LastSource = new MovementSource();
                 mvtComponent.OnPathFailure();
+            }
         }
 
         /// <summary>

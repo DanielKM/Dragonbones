@@ -29,7 +29,7 @@ namespace RTSEngine.Multiplayer
         IMultiplayerServerGameManager ServerGameMgr { get; }
 
         event CustomEventHandler<IMultiplayerManager, MultiplayerStateEventArgs> MultiplayerStateUpdated;
-        event CustomEventHandler<IMultiplayerFactionManager, EventArgs> MultiplayerFactionManagerValidated;
+        event CustomEventHandler<IMultiplayerFactionManager, MultiplayerFactionEventArgs> MultiplayerFactionManagerValidated;
 
         ServerAccessData UpdateServerAccessData(ServerAccessData accessData);
 
@@ -42,7 +42,7 @@ namespace RTSEngine.Multiplayer
         ErrorMessage StartLobby();
 
         void OnGameLoaded(IGameManager gameMgr);
-        void OnMultiplayerFactionManagerValidated(IMultiplayerFactionManager multiplayerFactionMgr);
+        void OnMultiplayerFactionManagerValidated(IMultiplayerFactionManager multiplayerFactionMgr, float initialRTT);
 
         void Stop(DisconnectionReason reason);
         bool InterruptStartLobby();

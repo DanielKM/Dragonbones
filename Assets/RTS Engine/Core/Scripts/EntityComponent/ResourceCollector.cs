@@ -83,7 +83,8 @@ namespace RTSEngine.EntityComponent
         private void HandleEntityDead(IEntity resource, DeadEventArgs e)
         {
             Stop();
-            unit.DropOffSource.SendToTarget(false);
+            if(unit.DropOffSource.IsValid())
+                unit.DropOffSource.SendToTarget(false);
         }
         #endregion
 
@@ -248,7 +249,8 @@ namespace RTSEngine.EntityComponent
 
             globalEvent.RaiseEntityComponentTargetLockedGlobal(this, new TargetDataEventArgs(Target));
 
-            unit.DropOffSource.UpdateTarget();
+            if(unit.DropOffSource.IsValid())
+                unit.DropOffSource.UpdateTarget();
 
             AttemptDropOff();
         }
