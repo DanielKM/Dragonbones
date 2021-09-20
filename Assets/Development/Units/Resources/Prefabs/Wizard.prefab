@@ -653,33 +653,7 @@ MonoBehaviour:
       codes: []
       categories: []
   restrictBuildingPlacementOnly: 1
-  creationTasks:
-  - taskTitle: 
-    taskUI: {fileID: 11400000, guid: aaae59250d2993743bb952bfa038db3a, type: 2}
-    requiredResources:
-    - type: {fileID: 11400000, guid: fe734588cd6b947439ae532d4a72a670, type: 2}
-      value:
-        amount: 100
-        capacity: 0
-      nonConsumable: 0
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 21300000, guid: 9eb6045416b0cd143ab25d3067cfebc2, type: 3}
-      color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 1943697157073760, guid: 3d9c729a6cc48e941bb98e2d1d911131, type: 3}
-  - taskTitle: 
-    taskUI: {fileID: 11400000, guid: 1e8c9b1f79c01874a8c40cbf63bb0713, type: 2}
-    requiredResources:
-    - type: {fileID: 11400000, guid: fe734588cd6b947439ae532d4a72a670, type: 2}
-      value:
-        amount: 200
-        capacity: 0
-      nonConsumable: 0
-    factionEntityRequirements: []
-    missingRequirementData:
-      icon: {fileID: 21300000, guid: 9eb6045416b0cd143ab25d3067cfebc2, type: 3}
-      color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    prefabObject: {fileID: 1943697157073760, guid: defd43dfdff04f64b9d7871bf0cd457c, type: 3}
+  creationTasks: []
   upgradeTargetCreationTasks: []
   constructionAudio:
     fetchType: 0
