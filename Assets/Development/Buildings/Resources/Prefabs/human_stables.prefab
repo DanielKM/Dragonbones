@@ -603,7 +603,6 @@ GameObject:
   - component: {fileID: 4652553691148226600}
   - component: {fileID: 4949413158880518675}
   - component: {fileID: 3812573109956181614}
-  - component: {fileID: 1295098804808094358}
   m_Layer: 10
   m_Name: building_components
   m_TagString: Untagged
@@ -665,26 +664,6 @@ MonoBehaviour:
     x: 0
     y: 1
   code: upgrade_launcher
-  isActive: 1
-  upgradeTasks: []
-  entityTargetUpgradeTasks: []
-  entityComponentTargetUpgradeTasks: []
---- !u!114 &1295098804808094358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8081694838844799567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f711e2a1b7e8ca6469bc97d131f238d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 0
-  code: new_component_code
   isActive: 1
   upgradeTasks: []
   entityTargetUpgradeTasks: []
