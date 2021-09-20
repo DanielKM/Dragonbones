@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 744285025581246237}
   - component: {fileID: 698638444093132608}
   - component: {fileID: 275920883315067285}
-  - component: {fileID: 4943585549566159888}
   - component: {fileID: 6624507954725815644}
   m_Layer: 10
   m_Name: building_components
@@ -283,26 +282,6 @@ MonoBehaviour:
     x: 0
     y: 1
   code: upgrade_launcher
-  isActive: 1
-  upgradeTasks: []
-  entityTargetUpgradeTasks: []
-  entityComponentTargetUpgradeTasks: []
---- !u!114 &4943585549566159888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5208977293259312766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f711e2a1b7e8ca6469bc97d131f238d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabID:
-    x: 0
-    y: 0
-  code: new_component_code
   isActive: 1
   upgradeTasks: []
   entityTargetUpgradeTasks: []
@@ -1705,14 +1684,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
---- !u!23 &8660963394447965285 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 23912935372423356, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
-  m_PrefabInstance: {fileID: 8675367615751945433}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8679609166410690779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4840518503648258, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
+  m_PrefabInstance: {fileID: 8675367615751945433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8660963394447965285 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23912935372423356, guid: 328442f74c35c2b469d544b55cdb9164, type: 3}
   m_PrefabInstance: {fileID: 8675367615751945433}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9194480590835209850
