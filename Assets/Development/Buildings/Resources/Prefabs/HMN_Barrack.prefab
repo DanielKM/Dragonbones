@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 7752929053804657147}
   - component: {fileID: -7900438293571029893}
   m_Layer: 10
-  m_Name: barrack
+  m_Name: HMN_Barrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
