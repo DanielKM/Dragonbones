@@ -51,8 +51,6 @@ namespace RTSEngine.Entities
 
         GameObject Model { get; }
 
-        float Duration { get; }
-
         bool IsInteractable { get; }
         bool IsSearchable { get; }
 

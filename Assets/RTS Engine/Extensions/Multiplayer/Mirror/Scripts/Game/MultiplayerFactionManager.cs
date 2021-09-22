@@ -39,6 +39,8 @@ namespace RTSEngine.Multiplayer.Mirror.Game
         // Holds added inputs received before all clients are cached to re-send them as soon as the server informs this instance that all clients are ready to get inputs
         private List<CommandInput> preValidationInputCache = new List<CommandInput>();
 
+        public double LastRTT => NetworkTime.rtt;
+
         // Multiplayer Services
         protected IMultiplayerLoggingService logger { private set; get; }
 
@@ -197,7 +199,7 @@ namespace RTSEngine.Multiplayer.Mirror.Game
 
         private void OnInitComplete(int factionSlotID)
         {
-            multiplayerMgr.OnMultiplayerFactionManagerValidated(this);
+            multiplayerMgr.OnMultiplayerFactionManagerValidated(this, (float)LastRTT);
         }
 
         protected virtual void InitLocalPlayer() { }
@@ -316,8 +318,19 @@ namespace RTSEngine.Multiplayer.Mirror.Game
                     inputMgr.LaunchInput(input);
 
                 this.relayedInputs.Clear();
+
+                /*
+                 * Issue of random disconnection used to happen in case the simulation pauses and the confirmation does not get to the server before the server actually resends the input.
+                 * When this happens, the received inputs is empty. this needs further investigating. This is now fixed with the server ignoring double input relay confirmation
+                 * But a more robust solution should be implemented to avoid unnecessary network traffic.
+                 * If the transport used is reliable then it probably makes sense to not resend the confirmation on empty inputs?? but what if the turn has no inputs to relay??
+                 * Or maybe do not tie this to the inputs being empty or not but rather the serverTurn and CurrTurn
+                if(LastInputID != lastRelayedInputID && !inputs.Any())
+                    logger.LogError($"Double confirmed input of server turn {serverTurn} with local turn {CurrTurn}");
+                */
+
                 // Let the server know we received it!
-                CmdOnRelayedInputReceived(serverTurn);
+                CmdOnRelayedInputReceived(serverTurn, (float)LastRTT);
             }
 
             // Only increase the current turn in case we receive input on the expected server turn.
@@ -326,9 +339,9 @@ namespace RTSEngine.Multiplayer.Mirror.Game
         }
 
         [Command]
-        private void CmdOnRelayedInputReceived(int turnID)
+        private void CmdOnRelayedInputReceived(int turnID, float lastRTT)
         {
-            multiplayerMgr.ServerGameMgr.OnRelayedInputReceived(GameFactionSlot.ID, turnID);
+            multiplayerMgr.ServerGameMgr.OnRelayedInputReceived(GameFactionSlot.ID, turnID, lastRTT);
         }
         #endregion
 

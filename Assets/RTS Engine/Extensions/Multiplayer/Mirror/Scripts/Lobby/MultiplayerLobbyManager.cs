@@ -21,7 +21,7 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
         public override bool IsStartingLobby => multiplayerMgr.State == MultiplayerState.startingLobby;
 
         [SerializeField, Tooltip("Event triggered when the multiplayer game is confirmed to be starting. This is triggered right before the target map scene is loaded.")]
-        private UnityEvent onGameConfirmed;
+        private UnityEvent onGameConfirmed = new UnityEvent();
         #endregion
 
         #region IGameBuilder

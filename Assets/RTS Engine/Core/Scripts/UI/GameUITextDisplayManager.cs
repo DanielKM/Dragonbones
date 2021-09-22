@@ -157,7 +157,6 @@ namespace RTSEngine.UI
 
             return true;
         }
-
         #endregion
 
         #region Entities

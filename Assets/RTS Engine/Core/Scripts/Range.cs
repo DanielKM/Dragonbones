@@ -31,14 +31,14 @@ namespace RTSEngine
 
         public abstract T RandomValue { get; }
 
-        public T Clamp(T defaultValue)
+        public T Clamp(T value)
         {
-            if (defaultValue.CompareTo(_min) < 0)
+            if (value.CompareTo(_min) < 0)
                 return _min;
-            else if (defaultValue.CompareTo(_max) > 0)
+            else if (value.CompareTo(_max) > 0)
                 return _max;
 
-            return defaultValue;
+            return value;
         }
     }
 

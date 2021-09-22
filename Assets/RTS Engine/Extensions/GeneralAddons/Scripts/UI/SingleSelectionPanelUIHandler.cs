@@ -22,10 +22,13 @@ namespace RTSEngine.UI
         private Text nameText = null; 
         [SerializeField, Tooltip("Displays the description of the selected entity.")]
         public Text descriptionText = null; 
-        [SerializeField, Tooltip("Displays the active workers of the selected entity.")]
-        public Text workersText = null;
 
-        [SerializeField, Tooltip("Displays the amount of health of the selected entity.")]
+        [Space(), SerializeField, Tooltip("Displays the active workers of the selected entity.")]
+        public Text workersText = null;
+        [SerializeField, Tooltip("Define the entities that are allowed to have their workers displayed when they are selected.")]
+        public FactionEntityTargetPicker showWorkersEntityPicker = new FactionEntityTargetPicker(); // DB CHANGE
+
+        [Space(), SerializeField, Tooltip("Displays the amount of health of the selected entity.")]
         private Text healthText = null; 
         [SerializeField, Tooltip("Handles the health bar of the selected entity.")]
         private ProgressBarUI healthBar = new ProgressBarUI();
@@ -133,11 +136,11 @@ namespace RTSEngine.UI
 
         private void ShowWorkerUI(IEntityWorkerManager workerMgr)
         {
-            if(workersText && workerMgr.ShowWorkers)
-            {
+            // if(workersText && showWorkersEntityPicker.IsValidTarget(workerMgr.Entity))
+            // {
                 workersText.gameObject.SetActive(true);
                 workersText.text = $"{workerMgr.Amount} / {workerMgr.MaxAmount}";
-            }
+            // }
         }
 
         private void HideWorkerUI ()

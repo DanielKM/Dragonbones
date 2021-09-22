@@ -523,12 +523,22 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
         [ClientRpc]
         private void RpcKickRelay(int factionSlotID, DisconnectionReason reason)
         {
+            if(multiplayerMgr.CurrentGameMgr.IsValid())
+            {
+                if (factionSlotID == lobbyMgr.LocalFactionSlot.GameFactionSlot.ID)
+                    multiplayerMgr.Stop(reason);
+
+                return;
+            }
+
             ILobbyFactionSlot nextSlot = lobbyMgr.FactionSlots.ElementAtOrDefault(factionSlotID);
 
             // Only apply the lobby departure for the local player since we will close their connection from their end to complete the kick.
             // This is in case the local player is still connected...
             if (nextSlot == lobbyMgr.LocalFactionSlot)
+            {
                 multiplayerMgr.Stop(reason);
+            }
         }
 
         private void HandleFactionSlotRemoved(ILobbyFactionSlot removedSlot, EventArgs args)

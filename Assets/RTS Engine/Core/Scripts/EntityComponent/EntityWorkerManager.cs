@@ -37,10 +37,6 @@ namespace RTSEngine.EntityComponent
         public int MaxAmount => workerPositions.Length;
         public bool HasMaxAmount => Amount >= MaxAmount;
 
-        [Header("UI"), SerializeField, Tooltip("Display workers in the single selection panel UI?")]
-        private bool showWorkers = true; 
-        public bool ShowWorkers => showWorkers;
-
         // Game services
         protected IMovementManager mvtMgr { private set; get; } 
         protected IPlayerMessageHandler playerMsgHandler { private set; get; }

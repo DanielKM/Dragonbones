@@ -18,6 +18,13 @@ namespace RTSEngine.EditorOnly.Entities
 
         private Dictionary<string, ViewData> propertyViewData = new Dictionary<string, ViewData>();
 
+        private bool searchFoldout = false;
+        private string[] searchExceptions = new string[] { 
+            "new_unit_category",
+            "new_building_category",
+            "new_resource_category"
+        };
+
         private void Draw (Rect position, SerializedProperty property, GUIContent label, string attributeName, ViewData viewData)
         {
             EntityCategoryInputAttribute customAttribute = attribute as EntityCategoryInputAttribute;
@@ -26,13 +33,15 @@ namespace RTSEngine.EditorOnly.Entities
             label = EditorGUI.BeginProperty(position, label, property);
 
             float height = position.height - EditorGUIUtility.standardVerticalSpacing * viewData.fieldsAmount * 1.5f;
+            height /= viewData.fieldsAmount;
 
-            Rect nextRect = new Rect(position.x, position.y, position.width, height / viewData.fieldsAmount);
+            Rect nextRect = new Rect(position.x, position.y, position.width, height);
 
             if (property.propertyType != SerializedPropertyType.String)
             {
                 viewData.fieldsAmount = 2;
-                nextRect.height += height / viewData.fieldsAmount;
+
+                nextRect.height = height * 2.0f;
 
                 EditorGUI.HelpBox(nextRect, $"Use [{attributeName}] with string fields where you input a category for an entity.", MessageType.Error);
                 EditorGUI.EndProperty();
@@ -41,17 +50,18 @@ namespace RTSEngine.EditorOnly.Entities
 
             EditorGUI.PropertyField(nextRect, property, label);
 
-            nextRect.y += nextRect.height + EditorGUIUtility.standardVerticalSpacing;
-
             if (RTSEditorHelper.GetEntitiesPerCategory() == null)
             {
                 viewData.fieldsAmount = 3;
-                nextRect.height += height / viewData.fieldsAmount;
+                nextRect.y += nextRect.height + EditorGUIUtility.standardVerticalSpacing;
+                nextRect.height = height * 2.0f;
 
                 EditorGUI.HelpBox(nextRect, $"Can not fetch the entities placed under the '*/Resources/Prefabs/' path.", MessageType.Error);
                 EditorGUI.EndProperty();
                 return;
             }
+
+            nextRect.y += nextRect.height + EditorGUIUtility.standardVerticalSpacing;
 
             string[] categories = property.stringValue.Split(',');
             string nextCategory = customAttribute.IsDefiner ? categories[viewData.categoryID] : property.stringValue;
@@ -67,10 +77,32 @@ namespace RTSEngine.EditorOnly.Entities
                 }
                 else
                 {
-                    viewData.fieldsAmount = 3;
-                    nextRect.height += height / viewData.fieldsAmount;
+                    string[] results = RTSEditorHelper.GetMatchingStrings(nextCategory, RTSEditorHelper.GetEntitiesPerCategory().Keys.ToArray(), searchExceptions);
+
+                    searchFoldout = EditorGUI.Foldout(nextRect, searchFoldout, $"Suggestions: {results.Length}");
+
+                    if (searchFoldout)
+                    {
+                        viewData.fieldsAmount = 4 + results.Length;
+
+                        EditorGUI.indentLevel++;
+
+                        foreach (string result in results)
+                        {
+                            nextRect.y += height + EditorGUIUtility.standardVerticalSpacing;
+                            if (GUI.Button(nextRect, result))
+                                property.stringValue = result;
+                        }
+
+                        EditorGUI.indentLevel--;
+                    }
+                    else
+                        viewData.fieldsAmount = 4;
+
+                    nextRect.y += height + EditorGUIUtility.standardVerticalSpacing;
+                    nextRect.height = height * 2.0f;
                     EditorGUI.HelpBox(
-                        new Rect(nextRect.x, nextRect.y + (customAttribute.IsDefiner ? nextRect.height / 2 : 0.0f) + EditorGUIUtility.standardVerticalSpacing, nextRect.width, nextRect.height),
+                        nextRect,
                         $"Entity category: '{nextCategory}' has not been defined for any entity prefab that exists under the '.../Resources/Prefabs' path.", MessageType.Error);
                     EditorGUI.indentLevel--;
 
@@ -83,7 +115,7 @@ namespace RTSEngine.EditorOnly.Entities
                 entities = Enumerable.Empty<IEntity>();
 
             float lastHeight = nextRect.height;
-            nextRect.height += height / viewData.fieldsAmount;
+            nextRect.height += height;
 
             if (customAttribute.IsDefiner)
             {
@@ -104,12 +136,10 @@ namespace RTSEngine.EditorOnly.Entities
                 EditorGUI.indentLevel++;
                 GUI.enabled = false;
 
-                nextRect.y += nextRect.height + EditorGUIUtility.standardVerticalSpacing;
-
                 foreach (IEntity entity in entities)
                 {
-                    EditorGUI.ObjectField(nextRect, entity.gameObject, typeof(IEntity), false);
                     nextRect.y += nextRect.height + EditorGUIUtility.standardVerticalSpacing;
+                    EditorGUI.ObjectField(nextRect, entity.gameObject, typeof(IEntity), false);
                 }
 
                 GUI.enabled = true;

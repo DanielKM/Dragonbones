@@ -74,7 +74,6 @@ namespace RTSEngine.Entities.Static
         public IFactionSlot Slot { private set; get; }
 
         public GameObject Model => null; 
-        public float Duration => 0.0f;
         public bool IsInteractable => false;
         public bool IsSearchable => true;
 

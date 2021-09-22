@@ -289,7 +289,6 @@ namespace RTSEngine.Event
             handler?.Invoke(sender, e);
         }
 
-
         public event CustomEventHandler<IEntity, ResourceEventArgs> UnitResourceDropOffStartGlobal;
         public event CustomEventHandler<IEntity, ResourceEventArgs> UnitResourceDropOffCompleteGlobal;
         public void RaiseUnitResourceDropOffStartGlobal(IUnit sender, ResourceEventArgs e)
@@ -339,6 +338,7 @@ namespace RTSEngine.Event
             CustomEventHandler<IBuilding, EventArgs> handler = BuildingPlacementStopGlobal;
             handler?.Invoke(sender, EventArgs.Empty);
         }
+
 
         public void RaiseBuildingPlacementStatusUpdatedGlobal(IBuilding sender)
         {

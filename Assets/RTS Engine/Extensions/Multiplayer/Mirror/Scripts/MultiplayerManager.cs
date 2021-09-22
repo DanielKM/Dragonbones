@@ -103,12 +103,12 @@ namespace RTSEngine.Multiplayer.Mirror
             handler?.Invoke(this, args);
         }
 
-        public event CustomEventHandler<IMultiplayerFactionManager, EventArgs> MultiplayerFactionManagerValidated;
+        public event CustomEventHandler<IMultiplayerFactionManager, MultiplayerFactionEventArgs> MultiplayerFactionManagerValidated;
 
-        private void RaiseMultiplayerFactionManagerValidated(IMultiplayerFactionManager newMultiFactionMgr)
+        private void RaiseMultiplayerFactionManagerValidated(IMultiplayerFactionManager newMultiFactionMgr, MultiplayerFactionEventArgs args)
         {
             var handler = MultiplayerFactionManagerValidated;
-            handler?.Invoke(newMultiFactionMgr, EventArgs.Empty);
+            handler?.Invoke(newMultiFactionMgr, args);
         }
         #endregion
 
@@ -251,10 +251,6 @@ namespace RTSEngine.Multiplayer.Mirror
                     UIMgr.Message.Display("Your game does not match with the server!");
                     break;
             }
-
-            // Attempt to restart headless server when it stops.
-            if(ServerMgr.IsValid())
-                ServerMgr.Execute(this);
         }
 
         private void LoadPrevScene()
@@ -271,7 +267,6 @@ namespace RTSEngine.Multiplayer.Mirror
         #region Starting Lobby: Client, Host or Server
         public ServerAccessData UpdateServerAccessData(ServerAccessData accessData)
         {
-            print(accessData.networkAddress);
             if(!string.IsNullOrEmpty(accessData.networkAddress))
                 networkAddress = accessData.networkAddress;
             if (ushort.TryParse(accessData.port, out ushort nextPort))
@@ -459,7 +454,7 @@ namespace RTSEngine.Multiplayer.Mirror
             ServerGameMgr.Init(this);
         }
 
-        public void OnMultiplayerFactionManagerValidated(IMultiplayerFactionManager newMultiFactionMgr)
+        public void OnMultiplayerFactionManagerValidated(IMultiplayerFactionManager newMultiFactionMgr, float initialRTT)
         {
             multiplayerFactionMgrs.Add(newMultiFactionMgr);
 
@@ -473,7 +468,7 @@ namespace RTSEngine.Multiplayer.Mirror
                 CurrentGameMgr.CurrBuilder.OnInputAdderReady(LocalMultiplayerFactionMgr);
             }
 
-            RaiseMultiplayerFactionManagerValidated(newMultiFactionMgr);
+            RaiseMultiplayerFactionManagerValidated(newMultiFactionMgr, new MultiplayerFactionEventArgs(initialRTT));
         }
         #endregion
 

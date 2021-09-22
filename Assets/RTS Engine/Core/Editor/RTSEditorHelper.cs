@@ -131,6 +131,24 @@ namespace RTSEngine.EditorOnly
             return true;
         }
 
+        public static string[] GetMatchingStrings (string searchInput, string[] searchTargets, string[] exceptions)
+        {
+            List<string> matches = new List<string>();
+
+            string sPattern = $"{searchInput}";
+
+            foreach (string s in searchTargets)
+            {
+                if (!string.IsNullOrEmpty(s) 
+                    && !exceptions.Any(exception => exception == s)
+                    && System.Text.RegularExpressions.Regex.IsMatch(s, sPattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                    matches.Add(s);
+            }
+
+            return matches
+                .OrderBy(match => match)
+                .ToArray();
+        }
         #endregion
 
         #region Entities

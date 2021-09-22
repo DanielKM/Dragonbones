@@ -18,6 +18,7 @@ namespace RTSEngine.Multiplayer.Game
         int LastInputID { get; }
 
         bool IsSimPaused { get; }
+        double LastRTT { get; }
 
         void OnAllClientsValidatedServer();
 

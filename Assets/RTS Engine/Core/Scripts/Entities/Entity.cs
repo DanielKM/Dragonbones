@@ -62,10 +62,6 @@ namespace RTSEngine.Entities
         private GameObject model = null;
         public GameObject Model => model;
 
-        [SerializeField, Tooltip("Defines the duration that the entity is supposed to persist for")]
-        private float duration = 0f;
-        public float Duration { get { return duration; } protected set { duration = value; } }
-
         //double clicking on the unit allows to select all entities of the same type within a certain range
         private float doubleClickTimer;
 

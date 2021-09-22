@@ -16,8 +16,6 @@ namespace RTSEngine.EntityComponent
 
         IEnumerable<IUnit> Workers { get; }
 
-        bool ShowWorkers { get; }
-
         Vector3 GetOccupiedPosition(IUnit worker, out bool isStaticPosition);
         void Remove(IUnit worker);
 

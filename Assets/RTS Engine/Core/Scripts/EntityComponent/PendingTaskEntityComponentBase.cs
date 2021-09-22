@@ -67,7 +67,8 @@ namespace RTSEngine.EntityComponent
             this.factionEntity = entity as IFactionEntity;
 
             if (!logger.RequireValid(entity.PendingTasksHandler,
-                $"[{GetType().Name} - {entity.Code}] This component requires a component that implements '{typeof(IPendingTasksHandler).Name}' interface to be attached to the source entity!"))
+                $"[{GetType().Name} - {entity.Code}] This component requires a component that implements '{typeof(IPendingTasksHandler).Name}' interface to be attached to the source entity!",
+                source: entity))
                 return;
 
             OnInit();

@@ -22,7 +22,7 @@ namespace RTSEngine.BuildingExtension
 
         public bool CanPlace { private set; get; }
 
-        [SerializeField, Tooltip("If populated then this defines the types of terrain areas where the rallypoint can be placed at. When empty, all terrain area types would be valid.")]
+        [SerializeField, Tooltip("If populated then this defines the types of terrain areas where the building can be placed at. When empty, all terrain area types would be valid.")]
         private TerrainAreaType[] placableTerrainAreas = new TerrainAreaType[0];
         public IEnumerable<TerrainAreaType> PlacableTerrainAreas => placableTerrainAreas.ToList();
 
@@ -178,6 +178,7 @@ namespace RTSEngine.BuildingExtension
         public bool IsBuildingInBorder()
         {
             bool inRange = false; //true if the building is inside its faction's territory
+
             if (PlacementCenter.IsValid()) //if the building is already linked to a building center
             {
                 //check if the building is still inside this building center's territory

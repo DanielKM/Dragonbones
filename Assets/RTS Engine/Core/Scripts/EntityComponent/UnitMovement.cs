@@ -57,8 +57,6 @@ namespace RTSEngine.EntityComponent
         [SerializeField, Tooltip("How fast will the unit reach its movement speed?")]
         private TimeModifiedFloat acceleration = new TimeModifiedFloat(10.0f);
 
-        private MovementSource source;
-
         [SerializeField, Tooltip("How fast does the unit rotate while moving?")]
         private TimeModifiedFloat mvtAngularSpeed = new TimeModifiedFloat(250.0f);
 
@@ -136,7 +134,7 @@ namespace RTSEngine.EntityComponent
             Controller.Init(gameMgr, this, TimeModifiedControllerData);
             TargetPositionMarker = new UnitTargetPositionMarker(gameMgr, this);
 
-            // Movement component requires no movement
+            // Movement component requires no auto-target search
             TargetFinder.Enabled = false;
 
             isMoving = false;
@@ -186,9 +184,9 @@ namespace RTSEngine.EntityComponent
 
             UpdateMovementRotation();
 
-            if (source.targetAddableUnit.IsValid() //we have an addable target
+            if (Controller.LastSource.targetAddableUnit.IsValid() //we have an addable target
                 //and it moved further away from the fetched addable position when the path was calculated and movement started.
-                && Vector3.Distance(source.targetAddableUnitPosition, source.targetAddableUnit.GetAddablePosition(unit)) > mvtMgr.StoppingDistance)
+                && Vector3.Distance(Controller.LastSource.targetAddableUnitPosition, Controller.LastSource.targetAddableUnit.GetAddablePosition(unit)) > mvtMgr.StoppingDistance)
             {
                 OnHandleAddableUnitStop();
                 return;
@@ -204,7 +202,7 @@ namespace RTSEngine.EntityComponent
 
         public void OnHandleAddableUnitStop()
         {
-            MovementSource lastSource = source;
+            MovementSource lastSource = Controller.LastSource;
             Stop(); //stop the unit mvt
 
             if (lastSource.targetAddableUnit.IsValid()) //unit is supposed to be added to this instance.
@@ -333,9 +331,8 @@ namespace RTSEngine.EntityComponent
         public ErrorMessage OnPathDestination(TargetData<IEntity> newTarget, MovementSource source)
         {
             Target = newTarget;
-            this.source = source;
 
-            Controller.Prepare(newTarget.position, source.playerCommand);
+            Controller.Prepare(newTarget.position, source);
 
             isMoving = true; //player is now marked as moving
 
@@ -349,11 +346,11 @@ namespace RTSEngine.EntityComponent
         {
             unit.SetIdle(); //stop all unit activities in case path was supposed to be for a certain activity
 
-            if (Controller.IsLastPlayerCommand && RTSHelper.IsLocalPlayerFaction(unit)) //if the local player owns this unit and the player called this
+            if (Controller.LastSource.playerCommand && RTSHelper.IsLocalPlayerFaction(unit)) //if the local player owns this unit and the player called this
                 audioMgr.PlaySFX(invalidMvtPathAudio.Fetch());
         }
 
-        public void OnPathPrepared()
+        public void OnPathPrepared(MovementSource source)
         {
             if (unit.AnimatorController?.CurrState == AnimatorState.moving) //if the unit was already moving, then lock changing the animator state briefly
                 unit.AnimatorController.LockState = true;
@@ -377,7 +374,7 @@ namespace RTSEngine.EntityComponent
             if (!canMoveRotate) //can not move before facing the next corner in the path by a certain angle?
                 EnableMovementRotation();
 
-            if (Controller.IsLastPlayerCommand && RTSHelper.IsLocalPlayerFaction(unit))
+            if (Controller.LastSource.playerCommand && RTSHelper.IsLocalPlayerFaction(unit))
             {
                 audioMgr.PlaySFX(unit.AudioSourceComponent, mvtAudio.Fetch(), true);
             }
@@ -392,7 +389,7 @@ namespace RTSEngine.EntityComponent
             audioMgr.StopSFX(unit.AudioSourceComponent); //stop the movement audio from playing
 
             isMoving = false; //marked as not moving
-            source = new MovementSource();
+            //source = new MovementSource();
 
             globalEvent.RaiseMovementStopGlobal(this);
             RaiseMovementStop(this);

@@ -5,7 +5,7 @@ namespace RTSEngine.Multiplayer.Event
 {
     public class MultiplayerStateEventArgs : EventArgs
     {
-        public MultiplayerState State;
+        public MultiplayerState State { private set; get; }
 
         public MultiplayerStateEventArgs(MultiplayerState state)
         {

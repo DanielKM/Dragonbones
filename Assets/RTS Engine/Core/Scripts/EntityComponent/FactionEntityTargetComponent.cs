@@ -44,9 +44,9 @@ namespace RTSEngine.EntityComponent
         private int priority = 0;
         public int Priority => priority;
 
-        [SerializeField, Tooltip("Enable to require the entity where this component is attached to be idle when this component has an active target.")]
+        [SerializeField, Tooltip("Enable to require the entity, where this component is attached, to be idle when this component has an active target.")]
         private bool requireIdleEntity = true;
-        public bool RequireIdleEntity => requireIdleEntity;
+        public virtual bool RequireIdleEntity => requireIdleEntity;
         public abstract bool IsIdle { get; }
 
         /// <summary>

@@ -70,6 +70,12 @@ namespace RTSEngine.Determinism
             this.defaultValue = defaultValue;
         }
 
+        public void Init(IGameManager gameMgr, Action timerRemovedCallback, float defaultValue)
+        {
+            this.defaultValue = defaultValue;
+            Init(gameMgr, timerRemovedCallback);
+        }
+
         public void Init(IGameManager gameMgr, Action timerRemovedCallback)
         {
             this.removalCallback = timerRemovedCallback;

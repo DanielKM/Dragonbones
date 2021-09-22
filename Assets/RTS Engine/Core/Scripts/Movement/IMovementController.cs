@@ -24,14 +24,11 @@ namespace RTSEngine.Movement
 
         Vector3 NextPathTarget { get; }
 
-        /// <summary>
-        /// Was the last movement prepare call by a direct player command?
-        /// </summary>
-        bool IsLastPlayerCommand { get; }
+        MovementSource LastSource { get; }
 
         void Init(IGameManager gameMgr, IMovementComponent mvtComponent, MovementControllerData data);
 
-        void Prepare(Vector3 destination, bool playerCommand);
+        void Prepare(Vector3 destination, MovementSource source);
 
         void Launch();
     }

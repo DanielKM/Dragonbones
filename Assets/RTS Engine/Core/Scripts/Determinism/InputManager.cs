@@ -488,7 +488,7 @@ namespace RTSEngine.Determinism
                 case EntityType.resource:
                     sourceHealth = (sourceEntity as IResource).Health;
                     break;
-                    
+
                 default:
                     logger.LogError($"[{GetType().Name} - {InputMode.health}] Invalid source entity type of ID: {input.intValues.Item1}!");
                     return;

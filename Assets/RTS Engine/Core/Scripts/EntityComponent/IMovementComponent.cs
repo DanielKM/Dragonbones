@@ -31,7 +31,7 @@ namespace RTSEngine.EntityComponent
         ErrorMessage SetTargetLocal(TargetData<IEntity> newTarget, float stoppingDistance, MovementSource source);
 
         void OnPathFailure();
-        void OnPathPrepared();
+        void OnPathPrepared(MovementSource source);
 
         ErrorMessage OnPathDestination(TargetData<IEntity> newTarget, MovementSource source);
 
