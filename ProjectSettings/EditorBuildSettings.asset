@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Development/Scenes/Template_scene_balanced.unity
-    guid: 4480a63d7a0b0984cbda9df15c98ee6a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Development/Scenes/Template Scenes/MainMenu.unity
     guid: 9f91dcc8d4d667b4baf0d54e75fecda1
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Development/Scenes/Template Scenes/Template_scene.unity
     guid: ef982660309060442a837543aa0cf054
+  - enabled: 1
+    path: Assets/Development/Scenes/Template Scenes/Template_scene_obstacles.unity
+    guid: 1525b02212123d84dbd35e2e3749d2ef
   m_configObjects: {}
