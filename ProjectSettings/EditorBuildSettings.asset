@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Development/Scenes/Template_scene_balanced.unity
+    guid: 4480a63d7a0b0984cbda9df15c98ee6a
+  - enabled: 1
     path: Assets/Development/Scenes/Template Scenes/MainMenu.unity
     guid: 9f91dcc8d4d667b4baf0d54e75fecda1
   - enabled: 1
