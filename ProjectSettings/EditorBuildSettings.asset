@@ -21,6 +21,15 @@ EditorBuildSettings:
     path: Assets/Development/Scenes/Template Scenes/MainMultiplayerMenu_Mirror.unity
     guid: a8f8d29d84684e244a554f9829216c33
   - enabled: 1
+    path: Assets/Development/Scenes/Template Scenes/ProfileMenu.unity
+    guid: 970f20e5dfff50e44881bb587523e483
+  - enabled: 1
+    path: Assets/Development/Scenes/Template Scenes/CreateNewProfileMenu.unity
+    guid: efd30a77441e41b44a604e9cc6dfa1e3
+  - enabled: 1
+    path: Assets/Development/Scenes/Template Scenes/SelectProfileMenu.unity
+    guid: 9ea781bf7b0855d4d835a6e2a417f77f
+  - enabled: 1
     path: Assets/Development/Scenes/Template Scenes/Template_scene.unity
     guid: ef982660309060442a837543aa0cf054
   - enabled: 1

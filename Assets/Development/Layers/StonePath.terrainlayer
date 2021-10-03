@@ -6,11 +6,11 @@ TerrainLayer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cracked Ground
-  m_DiffuseTexture: {fileID: 2800000, guid: f5d1de47f0f760544a5596ceb8cc895f, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: af579c7a89d15d24eb8c925a43a236cf, type: 3}
+  m_Name: StonePath
+  m_DiffuseTexture: {fileID: 2800000, guid: 48f4f66d4e15b924e845a15cc353d2db, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: fff10447baa86b44aa549f50f310265a, type: 3}
   m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 4, y: 4}
+  m_TileSize: {x: 2, y: 2}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0
