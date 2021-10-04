@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Development/Scenes/Template Scenes/MainMenu.unity
     guid: 9f91dcc8d4d667b4baf0d54e75fecda1
   - enabled: 1
-    path: Assets/Development/Scenes/Template Scenes/SingleplayerLobbyMenu.unity
-    guid: 889671203d969ba48b8873a8b945a816
+    path: Assets/Development/Scenes/Template Scenes/SingleplayerMapMenu.unity
+    guid: 8d3b33533f50ccf4396654115af05ede
   - enabled: 1
     path: Assets/Development/Scenes/Template Scenes/MultiplayerLobbyMenu_Mirror.unity
     guid: db0832375549fde4384e12717b61e20d
