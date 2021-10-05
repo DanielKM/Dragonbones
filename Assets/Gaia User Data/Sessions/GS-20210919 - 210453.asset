@@ -23,18 +23,93 @@ MonoBehaviour:
   m_terrainWidth: 1000
   m_terrainDepth: 1000
   m_terrainHeight: 600
-  m_seaLevel: 14.6484375
+  m_seaLevel: 6
   m_spawnDensity: 0.8
   m_isLocked: 0
   m_previewImageBytes: 
   m_previewImageWidth: 0
   m_previewImageHeight: 0
-  m_operations: []
+  m_operations:
+  - m_description: 'Creating World: 1 x 1 tiles, tile size: 512'
+    m_operationType: 0
+    m_isActive: 1
+    m_affectedTerrainNames: []
+    m_operationDateTime: 2021-10-04 7:58:22 AM
+    scriptableObjectAssetGUID: 1dcbf69b0220b77469bddc3db058275e
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Flatten - 1 Terrains
+    m_operationType: 1
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20211004 - 075820
+    m_operationDateTime: 2021-10-04 8:00:08 AM
+    scriptableObjectAssetGUID: 29576ab4d9d9d5d4bbcfc8e235b0c69a
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Flatten - 1 Terrains
+    m_operationType: 1
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20211004 - 075820
+    m_operationDateTime: 2021-10-04 8:00:36 AM
+    scriptableObjectAssetGUID: 2a895332455e4c3448f95d95da88795b
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Flatten - 1 Terrains
+    m_operationType: 1
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20211004 - 075820
+    m_operationDateTime: 2021-10-04 12:55:37 PM
+    scriptableObjectAssetGUID: c35c1b6266755d74db41b7081ce06743
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: RaiseHeight - No Masks
+    m_operationType: 4
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20211004 - 075820
+    m_operationDateTime: 2021-10-04 12:57:58 PM
+    scriptableObjectAssetGUID: 6fa49856e69c0394aa5002b20c5067b4
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Synty Fantasy-Texture Spawner(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20211004 - 075820
+    m_operationDateTime: 2021-10-04 12:58:02 PM
+    scriptableObjectAssetGUID: 3e9318eef2618a74d9babc98ee0797b8
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
   m_terrainMinMaxCache:
   - guid: e1196d66a0a78d945bf815be4b650ca5
     isWorldmap: 0
     recalculate: 0
     min: 0
     max: 21.991302
+  - guid: fb7c20042eacccb4292b5e0a7981571a
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 0
+  - guid: 0bbb51e13464ee94eb928d65489981b1
+    isWorldmap: 0
+    recalculate: 0
+    min: 1.3593957
+    max: 21.734707
   m_bakedMaskCacheEntries: []
   m_worldBiomeMaskSettings: {fileID: 0}
