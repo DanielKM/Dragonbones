@@ -2468,3 +2468,476 @@ Received Import Request.
 Start importing Assets/New Terrain 4.asset using Guid(fb7c20042eacccb4292b5e0a7981571a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98aa24df79ca89cd7164800644a5f14f') in 0.013631 seconds 
   Import took 0.023197 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 225.880697 seconds.
+  path: Assets/Development/Layers/Ground Stones.terrainlayer
+  artifactKey: Guid(726da535d88e3784892b4180b506e8ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Layers/Ground Stones.terrainlayer using Guid(726da535d88e3784892b4180b506e8ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41a3caf09ab6b707cbbd2a6d3fc6042c') in 0.057768 seconds 
+  Import took 0.070029 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.725423 seconds.
+  path: Assets/Development/Layers/Ground Stones.terrainlayer
+  artifactKey: Guid(726da535d88e3784892b4180b506e8ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Layers/Ground Stones.terrainlayer using Guid(726da535d88e3784892b4180b506e8ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f41ed43a2a118c31cffcc210779f54e3') in 0.057007 seconds 
+  Import took 0.072869 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5511.243519 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Rocks
+  artifactKey: Guid(517f5062c92db9548a5424bd04b3cfb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Rocks using Guid(517f5062c92db9548a5424bd04b3cfb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78e9ff8bc38ffd385bcca2bc35f3ce89') in 0.008056 seconds 
+  Import took 0.021240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 54.017814 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Rocks/SM_Env_Rock_Pillar_012.prefab
+  artifactKey: Guid(6c9d5d70c0cf6f94b85a4086d254fe2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Rocks/SM_Env_Rock_Pillar_012.prefab using Guid(6c9d5d70c0cf6f94b85a4086d254fe2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca01de9a737cf7da08f1abf156820ee6') in 14.059026 seconds 
+  Import took 15.348607 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.119447 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Rocks/SM_Env_Rock_Pillar_013 1.prefab
+  artifactKey: Guid(f3e6d1d71b436804c9bb652407e03d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Rocks/SM_Env_Rock_Pillar_013 1.prefab using Guid(f3e6d1d71b436804c9bb652407e03d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a84f2adbca0da04fa9a319b78ac4df1') in 8.227349 seconds 
+  Import took 8.246639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 202.121029 seconds.
+  path: Assets/Development/Map Resources/Resources/Sources/SM_Env_Rock_Pillar_013 1.prefab
+  artifactKey: Guid(f3e6d1d71b436804c9bb652407e03d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Map Resources/Resources/Sources/SM_Env_Rock_Pillar_013 1.prefab using Guid(f3e6d1d71b436804c9bb652407e03d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dda97e53ff47541a458c063e2351f5a0') in 0.058783 seconds 
+  Import took 0.073081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 133.865761 seconds.
+  path: Assets/Development/Map Resources/Resources/Sources/Stone/SM_Env_Rock_Pillar_01 1.prefab
+  artifactKey: Guid(0fdfa3eb5c47efc4094531b0d08778ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Map Resources/Resources/Sources/Stone/SM_Env_Rock_Pillar_01 1.prefab using Guid(0fdfa3eb5c47efc4094531b0d08778ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d8ab299cd5a99755c3351db9146453c') in 0.068793 seconds 
+  Import took 0.081012 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 954.545556 seconds.
+  path: Assets/Development/Map Resources/Resources/Prefabs/stone_chunk 1.prefab
+  artifactKey: Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Map Resources/Resources/Prefabs/stone_chunk 1.prefab using Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9e546b0594d968cc21ecf1994263418') in 0.308877 seconds 
+  Import took 0.322684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.479691 seconds.
+  path: Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab
+  artifactKey: Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab using Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe8478b6aacdf547b1535e71ef6e0c58') in 0.061350 seconds 
+  Import took 0.074275 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.322148 seconds.
+  path: Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab
+  artifactKey: Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab using Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7dbaa25ed73d40af4dc46f015516c54') in 0.060053 seconds 
+  Import took 0.072530 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.050030 seconds.
+  path: Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab
+  artifactKey: Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab using Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7dbaa25ed73d40af4dc46f015516c54') in 0.107052 seconds 
+  Import took 0.119063 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.682146 seconds.
+  path: Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab
+  artifactKey: Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab using Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '174eae35190f9f2be326acd879c50a15') in 0.048336 seconds 
+  Import took 0.062407 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.486340 seconds.
+  path: Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab
+  artifactKey: Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab using Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aa708dfcdcd294b7ad2b85f7e588480') in 0.066920 seconds 
+  Import took 0.081079 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.308161 seconds.
+  path: Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab
+  artifactKey: Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Map Resources/Resources/Prefabs/stone_pillar.prefab using Guid(bbf5cd61f4cb85642923836c7351f74e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff059bea585c614ae07e4dd5f4f88cae') in 0.089420 seconds 
+  Import took 0.101049 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2557.682613 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls
+  artifactKey: Guid(2459afe7fa690eb428ba4b79ffbd251e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls using Guid(2459afe7fa690eb428ba4b79ffbd251e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '351fb03c23cd8dad278c00dfdbf6ae77') in 0.010074 seconds 
+  Import took 0.036339 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.838483 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Curved_02.prefab
+  artifactKey: Guid(df71eb9ba610fdf4087431bd6adab96b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Curved_02.prefab using Guid(df71eb9ba610fdf4087431bd6adab96b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31689ada7650c7feed5cf27ff50e0989') in 0.205804 seconds 
+  Import took 0.216259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.764250 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Curved_01.prefab
+  artifactKey: Guid(fd479d726efdf3d4da9cb024a97137e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Curved_01.prefab using Guid(fd479d726efdf3d4da9cb024a97137e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a8cf827bed0783f2fb80c72738b43bc') in 0.034170 seconds 
+  Import took 0.044324 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.236487 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Arch_01.prefab
+  artifactKey: Guid(8fef903d2d12d3c46b6a046f667b2a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Arch_01.prefab using Guid(8fef903d2d12d3c46b6a046f667b2a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8adaf26e13f132b5aabcfb46b8cc9eb8') in 0.031604 seconds 
+  Import took 0.040819 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.103407 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Curved_03.prefab
+  artifactKey: Guid(8c2d8fa38dd949f4fb0b4e40c868dd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Curved_03.prefab using Guid(8c2d8fa38dd949f4fb0b4e40c868dd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9e61a6994bd852ba792ded78f8f4f0b') in 0.049295 seconds 
+  Import took 0.058748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.236152 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Curved_Corner_02.prefab
+  artifactKey: Guid(50de44d10630cfc43a286af857d33846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Curved_Corner_02.prefab using Guid(50de44d10630cfc43a286af857d33846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5186fe1ca2ec47d980bf5baaff33cee2') in 0.029233 seconds 
+  Import took 0.039112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.165312 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Flat_02.prefab
+  artifactKey: Guid(9e2db045424bf654c94d3b0024430884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Flat_02.prefab using Guid(9e2db045424bf654c94d3b0024430884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '043543521539266b29f1d02b7cb0007b') in 0.031236 seconds 
+  Import took 0.040909 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.126377 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Flat_03.prefab
+  artifactKey: Guid(2d772d7fdfdff1b4e96deee9d48989bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Flat_03.prefab using Guid(2d772d7fdfdff1b4e96deee9d48989bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94f348d9fe5828113f517f362b5668ab') in 0.030976 seconds 
+  Import took 0.041024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.156040 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Flat_05.prefab
+  artifactKey: Guid(8dd1a7e8541c3f740a6cef5d44c0e172) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Flat_05.prefab using Guid(8dd1a7e8541c3f740a6cef5d44c0e172) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9d70854d10ea49a228fc7a348f39328') in 0.058913 seconds 
+  Import took 0.068658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.099316 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Flat_06.prefab
+  artifactKey: Guid(707e7444a2194ab43a2f2d2bb1eae43c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Flat_06.prefab using Guid(707e7444a2194ab43a2f2d2bb1eae43c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a909966c9d922739e03270744c292d0') in 0.026007 seconds 
+  Import took 0.036607 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.252426 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Stairs_01.prefab
+  artifactKey: Guid(b3a8db2c24bfe96478e34750982fb70c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Ceiling_Stone_Stairs_01.prefab using Guid(b3a8db2c24bfe96478e34750982fb70c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68e446ff57f9dbb89f8836bfc8b2b526') in 0.031844 seconds 
+  Import took 0.041816 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.161556 seconds.
+  path: Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Door_01.prefab
+  artifactKey: Guid(f7f8afc7225502240bc7b70a9419c566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/PolygonDungeon/Prefabs/Environments/Walls/SM_Env_Door_01.prefab using Guid(f7f8afc7225502240bc7b70a9419c566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '307a01b2df556618e82eef926eade919') in 0.030264 seconds 
+  Import took 0.040777 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.608098 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit
+  artifactKey: Guid(298b41c9dafb30d4fa25b2268d5c0917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit using Guid(298b41c9dafb30d4fa25b2268d5c0917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99763a6559bf20901f84ddf9636b520b') in 0.008981 seconds 
+  Import took 0.018763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.254481 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings
+  artifactKey: Guid(dbb96a14ccc30b741bc68280ee382314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings using Guid(dbb96a14ccc30b741bc68280ee382314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f4ab7759f8dfec710ccadd05411d9e5') in 0.008322 seconds 
+  Import took 0.018373 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.771697 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/Bridge.prefab
+  artifactKey: Guid(62e5065838128a543bcdbf79cc55c6c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/Bridge.prefab using Guid(62e5065838128a543bcdbf79cc55c6c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b521ee914daaba2b648ee503be00530f') in 0.035715 seconds 
+  Import took 0.045944 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.790482 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/Dock.prefab
+  artifactKey: Guid(17642025decfe15489b6193b5cfb8bbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/Dock.prefab using Guid(17642025decfe15489b6193b5cfb8bbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e81056917643cba4ea4f4988d677b182') in 0.022966 seconds 
+  Import took 0.032546 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.227580 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/House 1.prefab
+  artifactKey: Guid(3721ca31d10e44545a5927f255d735b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/House 1.prefab using Guid(3721ca31d10e44545a5927f255d735b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf2fd5b53c2c37857109913ff44d51a2') in 0.080709 seconds 
+  Import took 0.090006 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.832629 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/Tower broken 1.prefab
+  artifactKey: Guid(712bda54accf1054aae167160c8fbbe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/Tower broken 1.prefab using Guid(712bda54accf1054aae167160c8fbbe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0668076a494843ece540b9b17927aafd') in 0.024284 seconds 
+  Import took 0.034196 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.620712 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/Tower broken 2.prefab
+  artifactKey: Guid(60b21b795ff041c4c867001e896ba1ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings/Tower broken 2.prefab using Guid(60b21b795ff041c4c867001e896ba1ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dc1bf0741d7e2deec0e8ec451c787dd') in 0.019217 seconds 
+  Import took 0.029115 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.891473 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Objects
+  artifactKey: Guid(fdf9ff0a5126087468a7df295972344e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Objects using Guid(fdf9ff0a5126087468a7df295972344e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39bc92af6abad7f72caa76e0e1ba29a8') in 0.008730 seconds 
+  Import took 0.017964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 53.466307 seconds.
+  path: Assets/Development/Layers/CliffStone.terrainlayer
+  artifactKey: Guid(42b07d93c3135d845a08304fb690eeb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Layers/CliffStone.terrainlayer using Guid(42b07d93c3135d845a08304fb690eeb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06b14cb7b28dd4baa21621b7e2c5bb77') in 0.068348 seconds 
+  Import took 0.077700 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 907.755222 seconds.
+  path: Assets/Development/Scenes/Dirt.terrainlayer
+  artifactKey: Guid(1eb28d4bb9c79304a856fefd4efbb2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Scenes/Dirt.terrainlayer using Guid(1eb28d4bb9c79304a856fefd4efbb2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '885c70f94641a81e30fd4457a0d92030') in 0.110341 seconds 
+  Import took 0.120887 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.641485 seconds.
+  path: Assets/Development/Layers/Scattered Grass.terrainlayer
+  artifactKey: Guid(425c731a9e4b6b1438c4d037525117f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Layers/Scattered Grass.terrainlayer using Guid(425c731a9e4b6b1438c4d037525117f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '479791835f6e8eebed80c17dea92b0ba') in 0.508511 seconds 
+  Import took 0.527633 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 93.815988 seconds.
+  path: Assets/Development/Layers/Grass & Leaves.terrainlayer
+  artifactKey: Guid(820447c92139ff741a6caa1a2739ec38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Layers/Grass & Leaves.terrainlayer using Guid(820447c92139ff741a6caa1a2739ec38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7285971986c1ab6394a2bdc4d4588635') in 0.040336 seconds 
+  Import took 0.050644 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.027461 seconds.
+  path: Assets/Development/Layers/Dark Grass.terrainlayer
+  artifactKey: Guid(c2ef12bdc135ddc40adc7ab52103cff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Layers/Dark Grass.terrainlayer using Guid(c2ef12bdc135ddc40adc7ab52103cff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6596cb768636dba7d38f7fba927b01ab') in 0.434322 seconds 
+  Import took 0.451563 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 86.221240 seconds.
+  path: Assets/Development/Layers/Stone Tiles.terrainlayer
+  artifactKey: Guid(88dfdf97c88eb954c9753c3428b75508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Development/Layers/Stone Tiles.terrainlayer using Guid(88dfdf97c88eb954c9753c3428b75508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9cde0262360e9d5b5caed4e85b7b8e9') in 0.054056 seconds 
+  Import took 0.063223 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 49.664861 seconds.
+  path: Assets/Imports/Procedural Worlds/Content Packs/Synty/Fantasy Kingdom/Content Resources/Prefabs/FK_Castles_Templates/FK_Castles_Floors/Castle_Floor_Stone_5x5_3.prefab
+  artifactKey: Guid(d051c96ddd1956345a1fa3790526c30d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Procedural Worlds/Content Packs/Synty/Fantasy Kingdom/Content Resources/Prefabs/FK_Castles_Templates/FK_Castles_Floors/Castle_Floor_Stone_5x5_3.prefab using Guid(d051c96ddd1956345a1fa3790526c30d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f80ffc9df224fa8ca657617f854d021') in 0.068314 seconds 
+  Import took 0.077980 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.688618 seconds.
+  path: Assets/Imports/Procedural Worlds/Content Packs/Synty/Fantasy Kingdom/Content Resources/Prefabs/FK_Castles_Templates/FK_Castles_Floors/Castle_Floor_Stone_5x5_2.prefab
+  artifactKey: Guid(3dcd82b87d9aed54c9d72cd46ffc7fe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Procedural Worlds/Content Packs/Synty/Fantasy Kingdom/Content Resources/Prefabs/FK_Castles_Templates/FK_Castles_Floors/Castle_Floor_Stone_5x5_2.prefab using Guid(3dcd82b87d9aed54c9d72cd46ffc7fe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf6e311d51bd844cf280b504458aa925') in 0.027570 seconds 
+  Import took 0.037299 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.318934 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Meshes/Castle.fbx
+  artifactKey: Guid(dfb4fa96d5164464b8f0f2e679026d15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Meshes/Castle.fbx using Guid(dfb4fa96d5164464b8f0f2e679026d15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e86a7ebeb24f0cdf5486e937a2f4f7d5') in 0.472900 seconds 
+  Import took 0.483494 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.128155 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 3.prefab
+  artifactKey: Guid(73299fff293f7c74d94e5b357375ec3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 3.prefab using Guid(73299fff293f7c74d94e5b357375ec3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba46b1755bac11cf73f318fbf53e8ed9') in 0.020649 seconds 
+  Import took 0.029826 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.699053 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 1.prefab
+  artifactKey: Guid(2f3b9abae49122d47a17439f41a141a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 1.prefab using Guid(2f3b9abae49122d47a17439f41a141a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b553e11fd2c22efb85df86c3c69bad6e') in 0.020018 seconds 
+  Import took 0.029183 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.733959 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Tower 4.prefab
+  artifactKey: Guid(e9af180c5892d10468257e3bd37935df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Tower 4.prefab using Guid(e9af180c5892d10468257e3bd37935df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a34dabb30dbb457c98cf86a6db00c65') in 0.024031 seconds 
+  Import took 0.033538 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.473565 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 2.prefab
+  artifactKey: Guid(0edcf9c2ab7cde9458ccfa48ed406ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 2.prefab using Guid(0edcf9c2ab7cde9458ccfa48ed406ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88a5d5d6bf1d44002b5cca36a5608703') in 0.018962 seconds 
+  Import took 0.027985 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.603234 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 5.prefab
+  artifactKey: Guid(d0722714d0e63cf4fbf78d1059068f1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 5.prefab using Guid(d0722714d0e63cf4fbf78d1059068f1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67254c99108fbd7dcebb383f31261707') in 0.018583 seconds 
+  Import took 0.027480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.665019 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Gate Wall 2 .prefab
+  artifactKey: Guid(cb89e082777bf2840947314c0d709c31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Gate Wall 2 .prefab using Guid(cb89e082777bf2840947314c0d709c31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7900d564441b0006e8198dc3e8de043f') in 0.018598 seconds 
+  Import took 0.027327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.141158 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Gate Wall 1.prefab
+  artifactKey: Guid(73609064b16320a468c759b84be43d05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Gate Wall 1.prefab using Guid(73609064b16320a468c759b84be43d05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60956914e7246c2bafbc91c48bfaf141') in 0.017872 seconds 
+  Import took 0.027175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.536013 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Tower 2.prefab
+  artifactKey: Guid(018d5723469232e4da8dcb22eaf19e4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Tower 2.prefab using Guid(018d5723469232e4da8dcb22eaf19e4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fe7aaeabcd8976d4cf6b14cf04c0f43') in 0.019584 seconds 
+  Import took 0.028560 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.504999 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Tower 3.prefab
+  artifactKey: Guid(97aec58dc4e1c6c4f9258ba69d786006) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Tower 3.prefab using Guid(97aec58dc4e1c6c4f9258ba69d786006) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab4be9f23020355006957d779f346347') in 0.018256 seconds 
+  Import took 0.027224 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.505494 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Tower 1.prefab
+  artifactKey: Guid(47fca4736253de24b87236a0ed022149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Tower 1.prefab using Guid(47fca4736253de24b87236a0ed022149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08799a4dfdfe9c03d282bf8c10b4667b') in 0.018740 seconds 
+  Import took 0.027622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.849750 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Bridge 6.prefab
+  artifactKey: Guid(d0a6faa05c1c8214aa053d07cb4e343e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Bridge 6.prefab using Guid(d0a6faa05c1c8214aa053d07cb4e343e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef609f531efd50abe442a741886a4583') in 0.020490 seconds 
+  Import took 0.029816 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.645366 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Bridge 3.prefab
+  artifactKey: Guid(efc3c34d885e5f24793482b2e7024623) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Bridge 3.prefab using Guid(efc3c34d885e5f24793482b2e7024623) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a92d379bc1c1267720d976809168f87') in 0.019390 seconds 
+  Import took 0.028235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.604908 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Gate Wall 3.prefab
+  artifactKey: Guid(26dcdb4eb4822664c8eeb1121d70859b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Gate Wall 3.prefab using Guid(26dcdb4eb4822664c8eeb1121d70859b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01e01948fcb95f04530dd88357c4ac40') in 0.019345 seconds 
+  Import took 0.028189 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.848298 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Gate Wall 3 1.prefab
+  artifactKey: Guid(09789be561eb5a64ba75d9c1f4fc50ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Gate Wall 3 1.prefab using Guid(09789be561eb5a64ba75d9c1f4fc50ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71ab6f8a7fb54fe00c77c9df54bbb67a') in 0.019213 seconds 
+  Import took 0.028234 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.163187 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Fort.prefab
+  artifactKey: Guid(0a56db8a00523134aaceadaae62647e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Fort.prefab using Guid(0a56db8a00523134aaceadaae62647e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06fe31414c74bb7feabf91331a002e44') in 0.015061 seconds 
+  Import took 0.025285 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.632411 seconds.
+  path: Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 4.prefab
+  artifactKey: Guid(2b7b00772021b0d499805ecf95cf8a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Low Poly Medieval Kit/Prefabs/Buildings Parts/Castle Wall 4.prefab using Guid(2b7b00772021b0d499805ecf95cf8a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb239dd0e8b4f81aa960ecff596baa31') in 0.018089 seconds 
+  Import took 0.026765 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
